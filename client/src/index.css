@@ -1,0 +1,1158 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --main-color: #f6fafc;
+    --color-dark: #1D2231;
+    --text-grey: #8390A2;
+
+
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand";
+    text-decoration: none;
+    list-style-type: none;
+
+}
+.sidebar{
+    height: 100%;
+    width: 240px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    background: var(--main-color);
+    color: rgb(139, 37, 37);
+    overflow: auto;
+    /* padding: 1rem; */
+    margin-top: 140px;
+    box-shadow: 6px 6px 10px rgba(0,0,0,0.3);
+    background-color: crimson;
+
+}
+
+.sidebar-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0rem 1rem;
+    background:linear-gradient(135deg, rgb(168, 168, 168), #fff);
+
+}
+.sidebar-menu{
+    padding: 1rem;
+    background:linear-gradient(135deg, rgb(168, 168, 168), #fff);
+    
+}
+.sidebar li{
+margin-bottom: 0.1rem;
+
+}
+.sidebar a {
+    color: rgb(8, 8, 8);
+    font-size: .9rem;
+  
+
+}
+
+.sidebar a span:last-child{
+    padding-left: 0rem .6rem ;
+   /* waa  qoraalada */
+}
+main {
+    margin-top: 3px ;
+    min-height: 90vh;
+    padding: 1rem;
+    margin-bottom: 500px;
+}
+
+.dash-cards{
+    display: grid;
+    grid-template-columns: repeat(3,250px);
+    grid-column-gap: 5rem;
+    margin-left: 300px;
+    padding: 20px;
+   background:linear-gradient(135deg, #89CFF0, #fff);
+   
+   
+}
+.card-single{
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 6px 6px 10px rgba(0,0,0,0.3);
+    margin-bottom: 50px;
+    /* background-color: cadetblue; */
+    
+
+}
+
+.card-body{
+    padding: 1.3rem 1rem;
+    display: flex;
+    align-items: center;
+  
+}
+.card-body:hover{
+    background-color: rgb(243, 155, 199);
+   transition: transform 300ms, box-shadow 300ms;;
+   position: relative;
+
+}
+.brand{
+    color: black;
+    /* background-color: red; */
+}
+.card-body span{
+    font-size: 1.7rem;
+    color: #777;
+    padding-right: 1rem;
+    
+}
+.card-body h5{
+    color: var(--text-grey);
+    font-size: 1.5rem;
+    /* waa magacyada   */
+   
+}
+
+.card-body h4{
+color: var(--color-dark);
+font-size: 1.1rem;
+margin-top: 2rem;
+/* waa tirada 10++  */
+}
+
+.card-footer{
+    padding: .2rem 1rem;
+    background: #f9fafc;
+    color: var(--main-color);
+   /* waa qaybta view all ka  */
+  
+}
+
+.cards{
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 3px;
+    
+   
+}
+.card .image{
+    margin-bottom: 30px;
+}
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    
+}
+.card:hover {
+    box-shadow: 0 8px 16px 0 #0867c5;
+  }
+
+  /* img {
+    border-radius: 5px 5px 0 0;
+  } */
+
+  .not-found{
+      position: fixed;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .table{
+     
+      box-shadow: 1px 1px;
+      margin-top: 20px;
+      margin-left: 350px;
+      margin-right: 100px;
+  }
+  form{
+    background: #f1f5f9;
+    margin-top: 10px;
+  }
+.add{
+    border-radius: 1px 1px;
+    margin-left: 350px;
+    margin-right: 100px;
+    margin-top: 50px;
+    align-items: center;
+}
+.containerr{
+display: flex;
+flex-direction: column;
+gap: 10px;
+padding: 1rem;
+margin-left: 350px;
+}
+th,td{
+    border: 1px solid #ffffff;
+    text-align: left;
+    padding: 8px;
+    
+}
+th{
+    background-color: rgb(117,201,250);
+}
+
+.border{
+   
+    flex-direction: column;
+    gap: 10px;
+    padding: 1rem;
+    width: 600px;
+}
+.thread-dark{
+    background-color: #89CFF0
+}
+
+.container{
+    display: flex;
+    /* height: 100vh; */
+    justify-content: center;
+    background: linear-gradient(135deg, #89CFF0, rgb(238, 237, 237));
+    margin-left: 300px;
+    max-width: 700px;
+    width: 100%;
+    padding: 25px 30px;
+    border-radius: 1px;
+    
+}
+
+.container form .hospital-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+form .hospital-details .input-box{
+   margin-bottom: 15px;
+    width: calc(100% /2 -20px);
+}
+
+.hospital-details .input-box .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+
+}
+.hospital-details .input-box input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 1px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.hospital-details .input-box input:focus,
+.hospital-details .input-box input:valid{
+border-color: var(--text-grey);
+}
+
+form .button {
+    height: 20%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-weight: 500;
+    margin-top: 20px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #89CFF0, rgb(141, 137, 137));
+}
+
+form .button:hover{
+    background: linear-gradient(-135deg, #89CFF0, rgb(141, 137, 137));
+}
+
+
+/* Responsive ka form ka add ka */
+
+@media (max-width: 584px){
+    .container{
+        max-width: 100px;
+    }
+    form .hospital-details .input-box{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    .container form .hospital-details{
+        max-width: 300px;
+        overflow-y: scroll; 
+    }
+    .hospital-details::-webkit-scrollbar{
+        width: 0;
+    }
+}
+.parent{
+    display:flex;
+    background:linear-gradient(135deg, #89CFF0, rgb(238, 237, 237));
+    box-shadow: 5px 10px 8px 0px var(--main-color), -5px 10px 8px 0px var(--color-dark),
+    insert -5px -10px 5px 2px var(--color-dark);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 10px;
+}
+
+.logo {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.parent ul li a {
+    color: rgb(28, 32, 231);
+    font-size: 17px;
+    padding: 7px 0px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+.parent ul li a:hover{
+    background-color: #89CFF0;
+}
+
+.login-nav{
+    margin-left: 240px;
+    color: #fff;
+
+}
+.font{
+    color: blue;
+    font-size: 35px;
+
+}
+.menu{
+    margin-left: 0px;
+
+}
+.menu ul,
+li{
+display: flex;
+flex-direction: row;
+padding: 20px 0px 20px 0px ;
+margin-left: 78px;
+
+}
+
+.btnn{
+    padding: 8px;
+    width: 90px;
+    font-size: 20px;
+    border-radius: 3px;
+    margin-left: 10px;
+    background-color: rgb(53,53,240);
+}
+/* Hospital section  */
+.ab{
+margin: 0;
+padding: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+font-family: 'Poppins', sans-serif;
+
+}
+
+.containerrr{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.containerrr .boxx{
+    position: relative;
+    width: 350px;
+    padding: 40px;
+    background: #fff;
+    border: .5px solid;
+    /* box-shadow: 0 5px 15px rgba(0,0,0,0.1); */
+    border-radius: 0.001px;
+    margin: 20px;
+    box-sizing: border-box;
+    overflow:hidden;
+    text-align: center;
+    
+}
+
+
+.containerrr .boxx:before{
+    content: '';
+    width: 50px;
+    height: 100%;
+    position:absolute;
+    top:0;
+    left: 0;
+    background: rgba(255,255,255,.2);
+    z-index:2;
+    /* pointer-events: none; */
+transform: scale(1.1);
+
+}
+
+.containerrr .boxx .iconn{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    color: #fff;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border-radius: 50%;
+    font-size: 40px;
+    font-weight: 700;
+    transition: 1s;
+}
+
+.containerrr .boxx:nth-child(1) .iconn{
+    box-shadow: 0 0 0 #e91e63;
+    background: #e91e63;
+}
+
+.containerrr .boxx:nth-child(1):hover .iconn{
+box-shadow: 0 0 0 400px #ec0851;
+
+}
+
+
+.containerrr .boxx:nth-child(2) .iconn{
+    box-shadow: 0 0 0 green;
+    background: green;
+}
+
+.containerrr .boxx:nth-child(2):hover .iconn{
+box-shadow: 0 0 0 400px green;
+
+} 
+
+.containerrr .boxx:nth-child(3) .iconn{
+    box-shadow: 0 0 0 blue;
+    background: blue;
+}
+
+.containerrr .boxx:nth-child(3):hover .iconn{
+box-shadow: 0 0 0 400px rgb(0, 0, 255);
+
+}
+.containerrr .boxx .contentt{
+    position: relative;
+    z-index: 1;
+    transition: 0.5s;
+}
+.containerrr .boxx:hover .contentt{
+    color: #fff;
+
+}
+
+.containerrr .boxx .contentt h3{
+font-size: 20px;
+margin: 10px 0;
+padding: 0px;
+}
+
+.containerrr .boxx .contentt p {
+    margin: 0;
+    padding: 0;
+    
+}
+
+.aaa{
+    display: inline-block;
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    margin-top: 20px;
+    /* box-shadow: 0 2px 5px rgba(0,0,0,0.2); */
+    border: 1px solid;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* doctor section  */
+
+.y{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+   
+}
+.card-img-top{
+    height: 200px;
+    width: 100%;
+}
+.card{
+    z-index: 1;
+    overflow:hidden;
+    transition: 0.5s;
+    border: 1px solid;
+}
+.card:hover{
+    color: #fff !important;
+}
+.card::before{
+    content: "";
+    position: absolute;
+    left: -100%;
+    top: 0;
+    background: yellow;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.card:hover::before{
+    left: 0%;
+}
+
+.rga {
+    background-color: hotpink;
+    margin-right: 30px;
+}
+
+/* Doctor page  */
+
+
+
+
+
+.j{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 14px;
+    user-select: none;
+
+}
+.docAll{
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, rgba(255,255,255,.5));
+    background: #ecf0f3;
+}
+.fa {
+    color: #33ccff;
+}
+.docContainer{
+    width: 90%;
+    height: 92vh;
+    border-radius: 8px;
+    box-shadow: 13px 13px 20px #cbced1,
+               -13px -13px 20px #ffffff;
+}
+/* Top CSS */
+
+.docContainer .docNavbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 25px ;
+    margin-top: .5rem;
+}
+
+.docContainer .docNavbar .hosLogo{
+    display: flex;
+    align-items: center;
+    
+}
+
+.docContainer .docNavbar .hosLogo .logoname{
+    font-size: 18px;
+    margin-left: .5em;
+    text-shadow: 1px 1px 1px rgba(16,16,16,.1),
+                 1px 2px 1px rgba(16,16,16,.1),
+                 1px 3px 1px rgba(16,16,16,.1),
+                 1px 4px 1px rgba(16,16,16,.1),
+                 1px 5px 1px rgba(16,16,16,.1);
+}
+
+
+.docContainer .docNavbar .hosLogo img{
+    animation: rotate 7s linear infinite;
+    width: 25%;
+    border-radius: 50%;
+
+}
+@keyframes rotate{
+    from{
+        transform: rotate(-360deg);
+    }
+}
+
+
+.docContainer .docNavbar .time-period {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.docContainer .docNavbar .time-period .select{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 25px;
+    border-radius: 8px;
+    box-shadow: inset 3px 3px 3px #cbced1,
+    inset -3px -3px 3px #ffffff;
+}
+
+
+.docContainer .docNavbar .time-period .select div{
+    margin: 8px;
+}
+
+
+.docContainer .docNavbar .time-period .select div .fa{
+    margin: 0 5px;
+}
+
+
+.docContainer .docNavbar .time-period .select span{
+    font-weight: 700;
+    font-size: 16px;
+}
+
+
+.docContainer .docNavbar .time-period .docPatient select {
+outline: none;
+border: none;
+padding: 6px 10px ;
+background: transparent;
+border-radius: 8px;
+box-shadow: inset 3px 3px 3px #a7a7a7,
+inset -3px -3px 3px #ffffff;
+}
+
+/* TOP CSS END  */
+
+
+
+/* MIN CSS  */
+
+.container-body{
+    display: grid;
+    grid-template-columns: 18% auto;
+}
+
+.container-body .docSidebar{
+    margin: 10px 0 0 20px;
+    border-radius: 14px;
+    padding: 10px; 
+    border-radius: 8px;
+    box-shadow: 13px 13px 20px #cbced1,
+    -13px -13px 20px #ffffff;
+
+}
+
+.container-body .docMain-body .docCards {
+display: grid;
+grid-template-rows: 120px auto;
+grid-gap: 20px;
+padding: 0 20px;
+}
+
+.container-body .docMain-body .docCards .docRow .col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow:  inset 13px 13px 20px #cbced1,
+   inset -13px -13px 20px #ffffff;
+   background: linear-gradient(135deg, #a2e5fc, rgb(255, 254, 254), yellow)
+   
+}
+
+.container-body .docMain-body .docCards .docRow .col .docCard{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* ROW-1 CSS */
+
+.container-body .docMain-body .docCards .row-1 {
+    display: grid;
+    grid-template-columns:repeat(3,auto) ;
+    grid-gap: 20px;
+
+}
+
+.container-body .docMain-body .docCards  .row-1 .three{
+    box-shadow: inset 3px 3px 3px #cbced1,
+    inset -3px -3px 3px #ffffff;
+}
+
+.container-body .docMain-body .docCards .row-1 .col .docCard .logoo{
+    padding: 20px 24px ;
+    border-radius: 50%;
+    box-shadow: inset 3px 3px 3px #cbced1,
+     inset -3px -3px 3px #ffffff;
+}
+
+
+.container-body .docMain-body .docCards .row-1 .col .docCard .logoo .fa{
+    font-size: 30px;
+}
+
+.container-body .docMain-body .docCards .row-1 .col .docCard .logoo .docContent{
+    margin-left: 1em;
+}
+
+
+.container-body .docMain-body .docCards .row-1 .col .docCard  .docContent h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin: 5px 0;
+
+}
+
+.container-body .docMain-body .docCards .row-1 .col .docCard  .docContent a{
+    font-size: 12px;
+    color: #33ccff;
+
+}
+/* Row-1 CSS END */
+
+/* CHART-CSS */
+
+.chart{
+    position: relative;
+    width: 100%;
+    height: 240px;
+    border-radius: 14px;
+    box-shadow: inset 2px 2px 2px #cbced1,
+    inset -2px -2px 2px #cbced1;
+  
+    margin-top: 15px;
+}
+
+.chart .status{
+    position: absolute;
+    top: 1.5em;
+    left:1.8em;
+
+}
+.chart .status span{
+    padding: 6px 15px;
+    margin: 0.5em;
+    border-radius: 8px;
+    box-shadow: inset 3px 3px 3px #cbced1,
+    inset -3px -3px 3px #cbced1;
+}
+
+.chart ul{
+    position: absolute;
+    bottom: 2.2em;
+    left: 1em;
+
+}
+
+.chart ul li{
+    list-style: none;
+    padding: .5em 0;
+    text-align: center;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+.chart .docbox {
+    position: relative;
+}
+
+.chart .docbox li{
+    position: absolute;
+    top: 6.25em;
+    left: 5em;
+    width: 25px;
+    height: 110px;
+    border-radius: 8px;
+    list-style: none;
+    box-shadow: 13px 13px 20px #cbced1,
+    -13px -13px 20px #ffffff;
+}
+
+
+.chart .docbox li:nth-child(1)
+{
+    left:7em;
+
+}
+.chart .docbox li:nth-child(2)
+{
+    left:14em;
+    
+}.chart .docbox li:nth-child(3)
+{
+    left:21em;
+    
+}.chart .docbox li:nth-child(4)
+{
+    left:28em;
+    
+}.chart .docbox li:nth-child(5)
+{
+    left:35em;
+    
+}.chart .docbox li:nth-child(6)
+{
+    left:42em;
+    
+}.chart .docbox li:nth-child(7)
+{
+    left:49em;
+    
+}
+
+
+.chart .docbox li .doctext{
+    position: absolute;
+    bottom: -2.5em;
+    left: -.5em;
+    width: 80px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+.chart .docbox li .bar{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #33ccff;
+    border-radius: 6px;
+    box-shadow: 13px 13px 20px #cbced1,
+    -13px -13px 20px #ffffff;
+}
+
+.chart .docbox li .bar1{
+    animation: bar1 30s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bar1{
+    0%{height: 0;}
+    25%{height: 10%;}
+    50%{height: 15%;}
+    75%{height: 60%;}
+    100%{height: 40%;}
+}
+
+.chart .docbox li .bar2{
+    animation: bar2 30s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bar2{
+    0%{height: 80;}
+    25%{height: 20%;}
+    50%{height: 25%;}
+    75%{height: 80%;}
+    100%{height: 60%;}
+}
+
+
+.chart .docbox li .bar3{
+    animation: bar3 30s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bar3{
+    0%{height: 40;}
+    25%{height: 10%;}
+    50%{height: 75%;}
+    75%{height: 30%;}
+    100%{height: 25%;}
+}
+
+.chart .docbox li .bar4{
+    animation: bar4 30s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bar4{
+    0%{height: 100;}
+    25%{height: 90%;}
+    50%{height: 75%;}
+    75%{height: 10%;}
+    100%{height: 55%;}
+}
+
+
+.chart .docbox li .bar5{
+    animation: bar5 30s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bar5{
+    0%{height: 0%;}
+    25%{height: 10%;}
+    50%{height: 15%;}
+    75%{height: 50%;}
+    100%{height: 80%;}
+}
+
+.chart .docbox li .bar6{
+    animation: bar6 30s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bar6{
+    0%{height: 60%;}
+    25%{height: 55%;}
+    50%{height: 45%;}
+    75%{height: 20%;}
+    100%{height: 45%;}
+}
+
+.chart .docbox li .bar7{
+    animation: bar7 30s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bar7{
+    0%{height: 80;}
+    25%{height: 50%;}
+    50%{height: 35%;}
+    75%{height: 70%;}
+    100%{height: 30%;}
+}
+
+
+
+/* CHART CSS END  */
+
+
+
+
+/* ROW-3 CSS */
+.container-body .docMain-body .docCards .row-3{
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    grid-gap: 20px;
+}
+
+.container-body .docMain-body .docCards .row-3 .col {
+    height: 80px;
+    transition: 1s;
+    box-shadow: inset 3px 3px 3px #cbced1,
+    inset -3px -3px 3px #cbced1;
+   
+    margin-top: 15px;
+}
+
+.container-body .docMain-body .docCards .row-3 .col:hover{
+    height: 80px;
+    box-shadow: 13px 13px 20px #cbced1,
+    -13px -13px 20px #ffffff;
+}
+
+.container-body .docMain-body .docCards .row-3  .col .docCard .logoo{
+    padding: 20px 25px;
+
+}
+
+.container-body .docMain-body .docCards .row-3 .col .docCard .logoo .fa{
+    font-size: 28px;
+
+}
+
+
+
+.container-body .docMain-body .docCards .row-3 .col .docCard .docContent h1{
+    font-size: 18px;
+    font-weight: 500;
+
+}
+
+/* ROW-3 CSS END */
+
+.container-body .docSidebar ul li {
+padding: 10px 10px;
+margin: 5px 0;
+
+}
+
+
+.container-body .docSidebar ul li a{
+    color: rgb(139, 29, 29);
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+.container-body .docSidebar ul li .fa{
+    font-size: 18px;
+    padding: 0 5px ;
+}
+
+
+.container-body .docSidebar ul .doctorDropdown a {
+margin: 5px 0 ;
+text-transform: capitalize;
+color: #000;
+padding: 8px;
+padding-left: 40px;
+
+}
+
+
+.container-body .docSidebar ul .doctorDropdown .dash{
+    box-shadow: inset 3px 3px 3px #cbced1,
+    inset -3px -3px 3px #cbced1;
+    border-radius: 14px ;
+
+} 
+
+.container-body .docSidebar ul .dashboard
+{
+    background: #00004d;
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+
+}
+.container-body .docSidebar ul .dashboard a {
+    color: #fff;
+}
+.container-body .docSidebar ul .notification span{
+    font-size: 12px;
+    background: #33ccff;
+    color: #fff;
+    padding:  3px 12px ;
+    font-weight: 700;
+    border-radius: 14px;
+
+}
+
+.container-body .docSidebar ul .docProfile{
+    position: relative;
+    top: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: inset 3px 3px 3px #cbced1,
+    inset -3px -3px 3px #cbced1;
+    border-radius: 12px;
+
+}
+
+.container-body .docSidebar ul .docProfile img{
+    border-radius: 50%;
+
+}
+
+.container-body .docSidebar ul .docProfile .doctorName{
+    margin: 3px 0;
+    text-transform: capitalize;
+    font-weight: 700;
+
+}
+
+
+.container-body .docSidebar ul .docProfile .docUsername{
+    color: #490bf5;
+    margin: 2px 0;
+
+}
+
+
+.container-body .docSidebar ul .docProfile a{
+    margin: 5px 0 ;
+    text-transform: capitalize;
+    color: #000;
+
+}
+
+.container-body .docMain-body .docTittle{
+    padding: 15px;
+    margin: 0 20px;
+
+}
+
+.container-body .docMain-body .docTittle .greet{
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+
+.container-body .docMain-body .docTittle h2{
+    font-size: 25px;
+    font-weight: normal;
+
+}
+
+
+
+.departtt{
+    border: none;
+}
+
+.selectt{
+    display: block;
+    border: 1px solid #ccc;
+    width: 100%;
+    height: 45px;
+    font-weight: 500;
+    padding-left: 15px;
+    border-radius: 1px;
+    margin-bottom: 5px;
+    outline: none;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.selectt:focus,
+.selectt:valid{
+    border-color: (--text-grey);
+}
+
+.selectt{
+    display: flex;
+   
+    flex-direction: row;
+    margin-bottom: 15px;
+    width: 28%;
+}
+
+.selectt .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
