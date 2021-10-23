@@ -8,9 +8,7 @@ const Record = () => {
 
     return ( 
         <div>
-            <h1>Patient Record </h1> 
-            <h1>Patient Record </h1>
-            <h1>Patient Record </h1>
+        
 
         </div>
     )
