@@ -1,28 +1,65 @@
-// import React from 'react'
-// import {Link } from 'react-router-dom';
-// import { useState } from 'react';
-// const Line1 = () => {
-//     const [value,setvalue]= useState([]);
+import React from 'react'
+import { Link } from "react-router-dom";
+import Appoinments from './Admin/Appoinments/OverviewAppoinments';
+import TotalAppoinments from './Admin/Appoinments/TotalAppoinments';
+import { useEffect ,useState } from 'react';
+import axios from 'axios'; 
 
-//     return (
-//         <div> 
-//         <div className= "image-holder">
-// <img src="" alt="" /></div>
-// <div className="col-2"></div>
-// <h3 style={{fontSize: 20, color: "yellowgreen"}}>60% off Discount</h3>
-//             <h1 style={{fontSize: 40,color: 'blueviolet'}}>Iphone 12</h1>
-//             <h3 style={{fontSize: 20, color: "teal"}}> Desc of the product 
-//             <br/>
-//             <br/>
-//             <button className="btn btn-primary"> 
-//  <Link to ='/hospitals/'>See more!</Link>
-//  </button>
-//  </h3>
-// </div>
+const Line1 = (props) => {
+    const [id,setId] = useState("");
+    const [Appoinment, setAppoinment]= useState([]);
 
+    useEffect(()=> {
+        axios
+        .get(`http://localhost:8000/api/appoinment/${id}`)
+        .then((res)=> setAppoinment(res.data.data))
 
-     
-//     );
-// }
+     .catch((e)=> console.log( Appoinment,"uuuuuu",e.response))
+         console.log('hhh',Appoinment);
+    },[]);
+    
+    
+    return (
+      
+     <div className= "all">
+        {Appoinment.map((Appoinments) =>(
+          
+            
+     <div className= "cards">
+          
+         <div className="card" style={{width: 300, height: 400}}>
 
-// export default Line1
+             
+
+{/* <img src="https://th.bing.com/th/id/OIP.WCYtTJcc_qaElfnKLYV2dwAAAA?w=185&h=185&c=7&r=0&o=5&pid=1.7" class="card-img-top" alt="..."/> */}
+
+<div className="card-body">
+    <div className="wawa">
+   <h5 className= "card-text ">{Appoinments.firstName} {Appoinments.middleName} {Appoinments.lastName}</h5>
+   
+   <h5 className= "card-text ">{Appoinments.department.hospital.name}</h5>
+   <h5 className= "card-text ">{Appoinments.department.name}</h5>
+  
+   <h5 className= "card-text ">{Appoinments.department.doctor[0].docName}</h5>
+   {/* <select className="selectt">
+       <option value="">Systems</option>
+       <option value="" onClick= {()=> huuhaa} />
+
+      
+   
+   </select> */}
+</div>
+   <Link/>
+ 
+ <a href= "#" className= "btn2">
+
+ </a>
+       </div>
+       </div>
+       </div>
+       ))}
+       </div>
+    )
+}
+
+export default Line1

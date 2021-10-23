@@ -6,7 +6,6 @@ import axios from 'axios';
 import {ToastContainer} from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
 
-
 import Header from './components/Header/Header';
 import Navbar from './components/Admin/Navbar';
 import Departments from './components/Admin/Hospitals/Departments';
@@ -33,6 +32,9 @@ import Overview from './components/Admin/Overview';
 import Login from './components/Admin/Login';
 import Appoinment from './components/Admin/Appoinments/Appoinment';
 import Record from './components/Record';
+import AllDoctors from './components/Doctors/AllDoctors';
+
+import AllHospitals from './components/Admin/Hospitals/AllHospitals';
 
 function App() {
 const [hospitals, sethospitals]= useState([]);
@@ -84,7 +86,9 @@ axios
 <Home/> 
  </Route> 
 <Route path = '/Home'><Home/> </Route>
-<Route path = '/Appoinments'><Appoinments/>  </Route>
+<Route path = '/Appoinments'><Appoinments/>  
+
+</Route>
 <Route path = "/TodayTAppoinments"><TodayTAppoinments/></Route>
 <Route path = "/yesterdayTotalAppoinments"><YesterdayTAppoinments/></Route>
 <Route path = "/total Appoinments"><TodayTAppoinments/></Route>
@@ -98,6 +102,9 @@ axios
 <Route path= '/Doctor'><Doctor/></Route>
 <Route path= '/Appoinment'><Appoinment/></Route>
 <Route path = '/Record'><Record/></Route>
+<Route path = '/Line1'><Line1/></Route>
+<Route path = '/AllDoctors'><AllDoctors/></Route>
+<Route path = '/AllHospitals'><AllHospitals/></Route>
  </Switch>
  </BrowserRouter>
 

@@ -17,12 +17,15 @@ const Routes= require ('./server/route')
 const departmentRouter= require('./routes/departmentRoutes');
 const appoinmentRouter= require('./routes/appoinmentRoutes');
 const authRouter= require ('./routes/authroute');
+const doctorRouter= require ('./routes/doctorRoute')
 //middle ware
 app.use('/api/hospital', hospitalRouter);
 app.use('/users', Routes);
 app.use('/api/Department',departmentRouter );
 app.use('/api/appoinment', appoinmentRouter);
-app.use('/api/auth',authRouter)
+app.use('/api/auth',authRouter);
+app.use('/api/doctor', doctorRouter);
+
 const port= process.env.port;
 app.listen(port,()=> console.log(`started on port ${port}`));
 

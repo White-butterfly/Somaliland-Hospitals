@@ -4,8 +4,6 @@ const appoinment = require('./../model/appoinmentModel');
 
 exports.createAppoinment= async(req,res)=>{
     try{
-// const hospital = await Hospital.findOne({name:req.body.hospital}) 
-// req.body.hospital = hospital._id 
 
         const createAppoinment= await appoinment.create(req.body);
         res.status(200).json({
@@ -22,10 +20,18 @@ exports.createAppoinment= async(req,res)=>{
 exports.getAppoinment= async(req,res)=>{
     try{
        
-        const  appoinments= await appoinment.find({});
+        const  appoinments= await appoinment.find({})
+          .populate({
+            path:     'department',			
+            populate: { path:  'hospital',
+                    model: 'hospital' }
+          })
+        
+
+        ;
         res.status(200).json({
             message: 'all Appoinments',
-            data: appoinments, 
+            data: appoinments,  
         });
 
     }catch(e){
@@ -62,7 +68,7 @@ exports.deleteApp= async(req,res)=>{
         });
     }}
 
-    exports.getAppoinmentt= async(req,res)=>{
+    exports.getAppoinmentById= async(req,res)=>{
         try{
 
            

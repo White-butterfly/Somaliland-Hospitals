@@ -4,7 +4,7 @@ const appoinmentSchema=  mongoose.Schema({
     
     firstName:{
         type: String, 
-        required: true,
+        required: true, 
     },
     middleName: {
         type: String, 
@@ -25,11 +25,11 @@ const appoinmentSchema=  mongoose.Schema({
     },
 
     region: {
-        type: String,
+        type: String, 
         required: true, 
     },
 
-    hopital: {
+    hospital: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "hospital",
     },

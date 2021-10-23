@@ -4,12 +4,12 @@
 
  router
  .route('/')
- .get(appoinmentController.getAppoinment)
+ .get(appoinmentController.getAppoinment) 
  .post(appoinmentController.createAppoinment)
 
  router
- .route('/:id')
- .get(appoinmentController.getAppoinmentt)
+ .route('/:id') 
+ .get(appoinmentController.getAppoinmentById)
  .post(appoinmentController.updateAppoinment)
  .delete(appoinmentController.deleteApp)
 

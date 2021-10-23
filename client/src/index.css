@@ -1151,8 +1151,135 @@ padding-left: 40px;
     width: 28%;
 }
 
-.selectt .details{
+.selectt .details .wawa{
     display: block;
     font-weight: 500;
     margin-bottom: 5px;
 }
+.wawa .card-text{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.cards{
+    /* display: grid;
+    grid-template-columns: repeat(1,23px);
+    grid-column-gap: 3rem;
+    margin-left: 0;
+    padding: 20px;
+   background:linear-gradient(135deg, #89CFF0, #fff); */
+   
+    display: flex;
+    gap: 150px;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 10px;
+    width: 100px;
+    /* height: 100px; */
+}
+
+/* All Doctor Cards */
+
+.bodyy{
+    background-color: #fff;
+  }
+  .bodyy::-webkit-scrollbar {
+    display: none;
+  }
+  .mainn{
+    display:flex;
+  }
+  @media only screen and (max-width:900px){
+    .mainn{
+        flex-direction: column;
+        margin:30px;
+      }
+  }
+  .cardd{
+    
+    width: 90%;
+    height: 500px;
+   background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(242,245,248,1) 35%, rgba(236,236,237,1) 100%);
+    box-shadow: 0 13px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin: 30px 20px 20px 10px;
+    transition: background-color .5s, box-shadow .5s, margin-left .5s;
+    
+  }
+  .cardd:hover{
+   
+    background-color: #ffff;
+    box-shadow: 0 30px 30px rgba(0, 0, 0, 0.3);
+    transition: background-color .5s, box-shadow .5s, margin-left .5s;
+  }
+  .post-image{
+    width: 92%;
+    height: 220px;
+    margin: 15px;
+    border-radius: 10px 10px 10px;
+    float: left;
+  }
+  .post-content{
+    width: 90%;
+    height: 250px;
+    float: left;
+    margin-left: 10px;
+    overflow: hidden;
+  }
+  .yaya{
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+    text-decoration: none;
+  }
+  .post-header{
+    font-size: 28px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 15px;
+    color: #000000;
+    margin-left: 5px;
+    text-align: center;
+  }
+  .post-text{
+    font-size: 15px;
+    padding-left: 20px;
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    
+  }
+  .author{
+    width: 95%;
+    height: 60px;
+    background-color: #12192c;
+    margin-left: 20px;
+    margin-top: 5px;
+    color:#fff;
+    border-radius:15px;
+    
+  }
+  .author-content{
+    width: 60%;
+    height: 60px;
+    margin-left: 10px;
+    float: left;
+    color:#fff
+  }
+ 
+  .author-name{
+    font-size: 20px;
+    color: rgb(8, 8, 8);
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    margin-top: 10px;
+    padding-left: 10px;
+  }
+  .datee{
+    font-size: 13px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: -15px;
+    padding-left: 10px;
+  }
+  
+  

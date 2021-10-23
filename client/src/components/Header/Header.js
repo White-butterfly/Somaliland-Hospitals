@@ -15,10 +15,10 @@ const Header = () => {
               <Link to="/Overview">Users</Link>
             </li>
             <li>
-              <Link to="/Doctor">Doctors</Link>
+              <Link to="/AllDoctors">Doctors</Link>
             </li>
             <li>
-              <Link to="/Blogs"></Link>
+              <Link to="/Blogs">Blogs</Link>
             </li>
  
             <li>
@@ -27,6 +27,9 @@ const Header = () => {
 
             <li>
               <Link to="/Contact">Contact</Link>
+            </li>
+            <li>
+              <Link to = "/AllHospitals">Hospitals</Link>
             </li>
             <div className="login-nav">
               <button className="aaa rga">

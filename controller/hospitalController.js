@@ -52,7 +52,7 @@ exports.getHospital= async(req,res)=>{
                 }); 
             }
         };
-
+ 
         exports.getHospitall= async(req,res)=>{
             try{
                 const hospitalsss= await hospitalModel.findById(req.params.id);

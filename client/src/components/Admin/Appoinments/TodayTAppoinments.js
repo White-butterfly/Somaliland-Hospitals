@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import {useState, useEffect}from "react";
 import axios from 'axios';
+import Line1 from "../../Line1";
 
 const TodayTAppoinments = () => {
 
@@ -39,22 +40,15 @@ const TodayTAppoinments = () => {
 </thead>
 {Appoinment.map((Appoinments) =>(
                 
-           
 <tbody>
     <tr>
         <th scope = "row">1</th>
-       <Link to = "/Record" ><td>{Appoinments.firstName}</td></Link>
-        {/* <td>{Appoinments.middleName}</td>
-        <td>{Appoinments.lastName}</td> */}
-        <td>{Appoinments.hospital}</td>
-        <td>{Appoinments.department}</td>
-
-        <td>{Appoinments.doctor}</td>
-        {/* <td>{Appoinments.syptoms}</td> */}
-
-
-
-
+ 
+       <Link to = {`/Line1/${Appoinments._id}`} ><td>{Appoinments.firstName}</td></Link>
+<td>{Appoinments.department.hospital.name}</td>
+        <td>{Appoinments.department.name}</td>
+        <td>{Appoinments.department.doctor[0].docName}</td>
+        <td>{Appoinments.syptoms}</td>
     </tr>
 </tbody>
 ))}

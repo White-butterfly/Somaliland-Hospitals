@@ -18,11 +18,12 @@ res.status(200).json({
 
 });
 } catch (e){
-    res.status(400).json({
+    res.status(400).json({ 
         message:e.message,
     });
 }
 };
+
 exports.getDepartments= async (req,res)=>{
     try{
         const departmentss = await department.find({});
