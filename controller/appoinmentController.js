@@ -1,12 +1,8 @@
 const appoinment = require('./../model/appoinmentModel');
- //const Hospital = require("./../model/hospitalModel");
-// const department= require('./../model/departmentModel');
-
+ 
 exports.createAppoinment= async(req,res)=>{
     try{
-// const hospital = await Hospital.findOne({name:req.body.hospital}) 
-// req.body.hospital = hospital._id 
-
+// console.log(req.body)
         const createAppoinment= await appoinment.create(req.body);
         res.status(200).json({
             message: "appoinment created",
@@ -22,10 +18,18 @@ exports.createAppoinment= async(req,res)=>{
 exports.getAppoinment= async(req,res)=>{
     try{
        
-        const  appoinments= await appoinment.find({});
+        const  appoinments= await appoinment.find({})
+          .populate({
+            path:     'department',			
+            populate: { path:  'hospital',
+                    model: 'hospital' }
+          })
+        
+
+        ;
         res.status(200).json({
             message: 'all Appoinments',
-            data: appoinments, 
+            data: appoinments,  
         });
 
     }catch(e){
@@ -62,13 +66,14 @@ exports.deleteApp= async(req,res)=>{
         });
     }}
 
-    exports.getAppoinmentt= async(req,res)=>{
+    exports.getAppoinmentById= async(req,res)=>{
         try{
 
            
-            const Appoinm= await appoinment.find({hospital: req.params.id}, {department: req.params.id}) 
+            const Appoinm= await appoinment.find({hospital: req.params.id}, {department: req.params.id}, {doctor: req.params.id}) 
             .populate('hospital')
-            .populate('department');
+            .populate('department')
+            .populate('doctor');
 
 
             res.status(200).json({

@@ -5,7 +5,7 @@ const verifyToken = require("../middleware/auth");
 
 router
   .route("/")
-  .get(verifyToken, hospitalController.getHospital)
+  .get(hospitalController.getHospital)
   .post(hospitalController.createHospital);
 
 router
@@ -13,8 +13,5 @@ router
   .get(hospitalController.getHospitall)
   .put(hospitalController.updateHospital)
   .delete(hospitalController.deleteHospital);
-
-// router
-// .post('/updateHospital', hospitalController.updateHospital)
 
 module.exports = router;

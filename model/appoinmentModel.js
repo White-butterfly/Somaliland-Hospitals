@@ -4,7 +4,7 @@ const appoinmentSchema=  mongoose.Schema({
     
     firstName:{
         type: String, 
-        required: true,
+        required: true, 
     },
     middleName: {
         type: String, 
@@ -14,10 +14,10 @@ const appoinmentSchema=  mongoose.Schema({
         required: true,
     },
 
-    syptoms: {
-        type: String,
-        // required: true,
-    },
+    // syptoms: {
+    //     type: String,
+    //     // required: true,
+    // },
   
     city: {
         type: String,
@@ -25,17 +25,22 @@ const appoinmentSchema=  mongoose.Schema({
     },
 
     region: {
-        type: String,
+        type: String, 
         required: true, 
     },
 
-    hopital: {
+    hospital: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "hospital",
     },
     department: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "department",
+    },
+
+    doctor: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "doctor",
     },
    
     date: Date,

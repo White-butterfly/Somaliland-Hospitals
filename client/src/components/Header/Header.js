@@ -6,14 +6,12 @@ const Header = () => {
       {/* <div className="parentt">
         <div className="menu">
           <ul>
+         
             <li>
-              <Link to="/Overview">Users</Link>
+              <Link to="/AllDoctors">Doctors</Link>
             </li>
             <li>
-              <Link to="/Doctor">Doctors</Link>
-            </li>
-            <li>
-              <Link to="/Blogs"></Link>
+              <Link to="/Blogs">Blogs</Link>
             </li>
 
             <li>
@@ -21,7 +19,10 @@ const Header = () => {
             </li>
 
             <li>
-              <Link to="/Contact">Contact</Link>
+              <Link to="/Appoinment">Appoinment</Link>
+            </li>
+            <li>
+              <Link to = "/AllHospitals">Hospitals</Link>
             </li>
             <div className="login-nav">
               <button className="aaa rga">

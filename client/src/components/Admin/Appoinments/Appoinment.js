@@ -15,16 +15,19 @@ const Appoinment = () => {
     
     const [hospitall, setHospitall]= useState("");
     const [departmentt, setDepartmentt]= useState("");
+    const [doctorr, setdoctorr]=useState("");
     const [department, setdepartment]= useState([]);
     const [hospitals,sethospitals] = useState([]);
-    const [Appoinment, setAppoinment]= useState([]);
+    const [doctor, Setdoctor]=useState([]);
+    const [AddAppoinment,setAddAppoinment]= useState([]);
+   
+    
 
     useEffect(()=> {
-        axios
-        .get(`http://localhost:8000/api/appoinment/${id}`)
-        .then((res)=> setAppoinment(res.data.data));
-        
-
+    
+axios
+.get(`http://localhost:8000/api/Department/${id}`)
+.then((res)=> setAddAppoinment(res.data.data));
         axios
         .get(`http://localhost:8000/api/Department/`, department)
         .then((res)=> setdepartment(res.data.data));
@@ -33,29 +36,30 @@ const Appoinment = () => {
         .get(`http://localhost:8000/api/hospital`, hospitals)
         .then((res)=> sethospitals(res.data.data))
         .catch(error => console.log(error)); 
+        
+        axios
+        .get (`http://localhost:8000/api/doctor`,doctor)
+        .then((res)=> Setdoctor(res.data.data));
+
 
    },[]);
 
-   function AddAppoinment(){
+    function AddAppoinments(){
 
         axios
         .post('http://localhost:8000/api/appoinment',{
-
         firstName: "",
         middleName: "",
         lastName: "", 
-        syptoms: "",
         city: "",
         region: "",
 
         hospital: hospitall,
-        department: departmentt
-       
-
-
-    })
-    .then((res)=> console.log(res))
-     .catch((e)=> console.log( Appoinment,"uuuuuu",e.response))
+        department: departmentt,
+        doctor:doctorr
+            
+        })
+        .then((res)=> console.log(res)).catch((e)=> console.log(e.response))
    }
 
     return ( 
@@ -64,7 +68,7 @@ const Appoinment = () => {
             <h1>Great to see you !</h1>
             </div>
             <div className="container">
-              <form onSubmit={ AddAppoinment}> 
+            <form onSubmit={AddAppoinments}>
               
                   <div className="hospital-details">
 
@@ -114,44 +118,26 @@ const Appoinment = () => {
     )}
     </select>
 {/* Department map */}
+
 <select 
 className= "selectt" 
 onChange={(e)=>{setDepartmentt(e.target.value)}}>
                       <option>Choose Depart</option>
                           {department.map((departments)=>
-                              <option value= {departments.name}> {departments.name}</option>
+                              <option  value= {departments.name}> {departments.name}</option>
                           )}
-                      </select>
-{/* Doctor Map */}
-                      {/* <select className= "selectt" onChange = {(e)=> {setDepartmentt(e.target.value)}}>
-                      <div className="input-box">
-                          <span className="details">  Department Name</span>
-                        <option>  Seleect a Department</option>
-                          {department.map((department)=>(
-<div className="hhhh">
-    <div className="lll">
-                              {department.map((doctor)=>(
-                                
-                                <option value= {doctor.name}></option>
+  </select>
 
-                              ))}
-                                </div>
-</div>
-                          ))}
-                      </div>
-                      </select> */}
-
-                
-                      <div className="input-box">
-                          <span className="details"> Syptoms</span>
-                          <input type="text" 
-                          placeholder="Enter a Syptom " 
-                          required
-                          
-                          name= "syptoms"
-                           onChange={(e)=>setsyptoms(e.target.value)}
-                          />
-                      </div>
+  {/* doctor map */}
+  
+<select 
+className= "selectt" 
+onChange={(e)=>{setdoctorr(e.target.value)}}>
+                      <option>Choose Doctor</option>
+                          {doctor.map((doctors)=>
+                              <option value= {doctors.docName}> {doctors.docName}</option>
+                          )}
+  </select>
 
                       <div className="input-box">
                           <span className="details"> City</span>
@@ -179,7 +165,7 @@ onChange={(e)=>{setDepartmentt(e.target.value)}}>
                   </div>
 
                   <div className="form-group">
-          <button type="submit" className="btn btn-primary">
+                  <button type="submit" className="btn btn-primary">
             Submit
           </button>
         </div>

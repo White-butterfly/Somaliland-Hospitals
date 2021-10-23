@@ -44,6 +44,13 @@
 .sidebar li {
   margin-bottom: 0.1rem;
 }
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+:root {
+  --main-color: #f6fafc;
+  --color-dark: #1d2231;
+  --text-grey: #8390a2;
+}
 .sidebar a {
   color: rgb(8, 8, 8);
   font-size: 0.9rem;
@@ -85,6 +92,45 @@ main {
   background-color: rgb(243, 155, 199);
   transition: transform 300ms, box-shadow 300ms;
   position: relative;
+}
+.sidebar a span:last-child {
+  padding-left: 0rem 0.6rem;
+  /* waa  qoraalada */
+}
+main {
+  margin-top: 3px;
+  min-height: 90vh;
+  padding: 1rem;
+  margin-bottom: 500px;
+}
+
+.dash-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 250px);
+  grid-column-gap: 5rem;
+  /* margin-left: 300px; */
+  padding: 20px;
+  background: linear-gradient(135deg, #f3f4f5, #fff);
+}
+.card-single {
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 50px;
+  /* transition: background-color .5s, box-shadow .5s, margin-left .5s; */
+  /* background-color: cadetblue; */
+}
+
+.card-body {
+  padding: 1.3rem 1rem;
+  display: flex;
+  align-items: center;
+}
+.card-body:hover {
+  /* background-color: rgb(236, 230, 233); */
+  transition: transform 300ms, box-shadow 300ms;
+  position: relative;
+  transition: background-color 0.9s, box-shadow 0.7s, margin-left 0.7s;
 }
 .brand {
   color: black;
@@ -1096,4 +1142,352 @@ margin-left: 78px;
   display: block;
   font-weight: 500;
   margin-bottom: 5px;
+}
+.selectt .details .wawa {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.wawa .card-text {
+  display: flex;
+  flex-direction: row;
+}
+
+.cards {
+  /* display: grid;
+    grid-template-columns: repeat(1,23px);
+    grid-column-gap: 3rem;
+    margin-left: 0;
+    padding: 20px;
+   background:linear-gradient(135deg, #89CFF0, #fff); */
+
+  display: flex;
+  gap: 150px;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 10px;
+  width: 100px;
+  /* height: 100px; */
+}
+
+/* All Doctor Cards */
+
+.bodyy {
+  background-color: #fff;
+}
+.bodyy::-webkit-scrollbar {
+  display: none;
+}
+.mainn {
+  display: flex;
+}
+@media only screen and (max-width: 900px) {
+  .mainn {
+    flex-direction: column;
+    margin: 30px;
+  }
+}
+.cardd {
+  width: 90%;
+  height: 500px;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(242, 245, 248, 1) 35%,
+    rgba(236, 236, 237, 1) 100%
+  );
+  box-shadow: 0 13px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  margin: 30px 20px 20px 10px;
+  transition: background-color 0.5s, box-shadow 0.5s, margin-left 0.5s;
+}
+.cardd:hover {
+  background-color: #ffff;
+  box-shadow: 0 30px 30px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.5s, box-shadow 0.5s, margin-left 0.5s;
+}
+.post-image {
+  width: 92%;
+  height: 220px;
+  margin: 15px;
+  border-radius: 10px 10px 10px;
+  float: left;
+}
+.post-content {
+  width: 90%;
+  height: 250px;
+  float: left;
+  margin-left: 10px;
+  overflow: hidden;
+}
+.yaya {
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  color: #000;
+  text-decoration: none;
+}
+.post-header {
+  font-size: 28px;
+  font-family: "Roboto", sans-serif;
+  margin-top: 15px;
+  color: #000000;
+  margin-left: 5px;
+  text-align: center;
+}
+.post-text {
+  font-size: 15px;
+  padding-left: 20px;
+  color: #000;
+  font-family: "Roboto", sans-serif;
+}
+.author {
+  width: 95%;
+  height: 60px;
+  background-color: #12192c;
+  margin-left: 20px;
+  margin-top: 5px;
+  color: #fff;
+  border-radius: 15px;
+}
+.author-content {
+  width: 60%;
+  height: 60px;
+  margin-left: 10px;
+  float: left;
+  color: #fff;
+}
+
+.author-name {
+  font-size: 20px;
+  color: rgb(8, 8, 8);
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+.datee {
+  font-size: 13px;
+  font-family: "Roboto", sans-serif;
+  margin-top: -15px;
+  padding-left: 10px;
+}
+
+/* New Header */
+
+/* @font-face {
+    font-family: AstroSpace;
+    src: url(/fonts/AstroSpace.ttf);
+  } */
+.bodyyy {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: #212c3b;
+}
+
+.headerr {
+  background-color: #141b25;
+}
+
+.main-nav {
+  height: 90px;
+}
+
+.loggo {
+  color: white;
+  line-height: 90px;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 30px;
+  font-family: "AstroSpace", sans-serif;
+}
+
+.navlinks {
+  list-style: none;
+  float: right;
+  line-height: 90px;
+  margin: 0;
+  padding: 0;
+}
+.navlinks li {
+  display: inline-block;
+  margin: 0px 20px;
+}
+.navlinks li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.3s linear 0s;
+  text-transform: uppercase;
+}
+.navlinks li a:hover {
+  color: #7ebcb9;
+  padding-bottom: 7px;
+  border-bottom: 2px solid #7ebcb9;
+}
+li a.contact {
+  background-color: #00adb5;
+  padding: 9px 20px;
+  border-radius: 50px;
+  transition: all 0.3s ease 0s;
+  border-bottom: none;
+}
+li a.contact:hover {
+  background-color: #047e85;
+  color: white;
+  border-bottom: none;
+}
+#check {
+  display: none;
+}
+.menu-btn {
+  font-size: 25px;
+  color: white;
+  float: right;
+  line-height: 90px;
+  margin-right: 40px;
+  display: none;
+  cursor: pointer;
+}
+@media (max-width: 800px) {
+  .navlinks {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    transition: all 0.5s;
+    right: -100%;
+    background: #222831;
+  }
+  .navlinks li {
+    display: block;
+  }
+  .navlinks li a {
+    font-size: 20px;
+  }
+  .navlinks li a:hover {
+    border-bottom: none;
+  }
+  .menu-btn {
+    display: block;
+  }
+  #check:checked ~ .navlinks {
+    right: 0;
+  }
+}
+@media (max-width: 360px) {
+  .loggo {
+    margin-left: 10px;
+    font-size: 25px;
+  }
+  .menu-btn {
+    margin-right: 10px;
+    font-size: 25px;
+  }
+  .menu-btn:focus {
+    color: blue;
+  }
+}
+
+/* Add Doctor CSS FORM */
+
+.boddy {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Slab", serif;
+}
+div#envelope {
+  width: 55%;
+  margin: 10px 30% 10px 25%;
+  padding: 10px 0;
+  border: 2px solid gray;
+  border-radius: 10px;
+  /* margin-bottom: 300px; */
+}
+.formm {
+  width: 70%;
+  margin: 4% 15%;
+}
+.headder {
+  background-color: #4180c5;
+  text-align: center;
+  padding-top: 12px;
+  padding-bottom: 8px;
+  margin-top: -11px;
+  margin-bottom: 5px;
+  border-radius: 10px 10px 0 0;
+  color: aliceblue;
+}
+
+/* Makes responsive fields. Sets size and field alignment.*/
+.innput[type="text"] {
+  margin-bottom: 20px;
+  margin-top: 10px;
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #7ac9b7;
+}
+input[type="submit"] {
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #7ac9b7;
+  background-color: #4180c5;
+  color: aliceblue;
+  font-size: 15px;
+  cursor: pointer;
+}
+#submit:hover {
+  background-color: black;
+}
+textarea {
+  width: 100%;
+  padding: 15px;
+  margin-top: 10px;
+  border: 1px solid #7ac9b7;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  resize: none;
+}
+.innput[type="text"]:focus,
+textarea:focus {
+  border-color: #4697e4;
+}
+div#envelope {
+  width: 80%;
+  margin: 10px 30% 10px 11%;
+}
+
+label {
+  font-size: 18px;
+}
+input[type="submit"] {
+  padding: 5px;
+}
+.innput[type="text"] {
+  padding: 8px;
+}
+div#envelope {
+  width: 80%;
+  margin: 10px 30% 10px 11%;
+}
+
+input[type="submit"] {
+  padding: 4px;
+  font-size: 18px;
+}
+.innput[type="text"] {
+  padding: 8px;
+}
+label {
+  font-size: 18px;
+}
+
+div#envelope {
+  width: 80%;
+  margin: 10px 30% 10px 11%;
 }
