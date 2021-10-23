@@ -5,18 +5,18 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 
 function Register() {
-  const [user, setUser] = useState({
-    userName: "",
-    email: "",
-    password: "",
-  });
-  function signUp() {
-    //code
-    axios
-      .post("http://localhost:8000/api/user", user)
-      .then((res) => toast.success("User created successfully"))
-      .catch((e) => toast.error(e.response.data.message));
-  }
+  // const [user, setUser] = useState({
+  //   userName: "",
+  //   email: "",
+  //   password: "",
+  // });
+  // function signUp() {
+  //   //code
+  //   axios
+  //     .post("http://localhost:8000/api/user", user)
+  //     .then((res) => toast.success("User created successfully"))
+  //     .catch((e) => toast.error(e.response.data.message));
+  // }
   return (
     <div>
       <div className="containerrr">
