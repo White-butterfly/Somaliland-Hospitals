@@ -11,30 +11,12 @@ const Header = () => {
         </div>
         <div className="menu">
           <ul>
-         
-            <li>
-              <Link to="/AllDoctors">Doctors</Link>
-            </li>
-            <li>
-              <Link to="/Blogs">Blogs</Link>
-            </li>
- 
             <li>
               <Link to="/Admin">Admin</Link>
             </li>
-
-            <li>
-              <Link to="/Appoinment">Appoinment</Link>
-            </li>
-            <li>
-              <Link to = "/AllHospitals">Hospitals</Link>
-            </li>
-            <div className="login-nav">
-              <button className="aaa rga">
-                <Link to="/Login">login</Link>
-              </button>
-            </div>
-           
+            {/* <li>
+              <link to = '/doctor'>Doctor</link>
+            </li> */}
           </ul>
         </div>
       </div>

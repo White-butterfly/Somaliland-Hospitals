@@ -71,7 +71,7 @@ main {
 
 .dash-cards{
     display: grid;
-    grid-template-columns: repeat(3,250px);
+    grid-template-columns: repeat(4,250px);
     grid-column-gap: 5rem;
     /* margin-left: 300px; */
     padding: 20px;
@@ -123,7 +123,7 @@ main {
 
 .card-body h4{
 color: var(--color-dark);
-font-size: 1.1rem;
+font-size: 1rem;
 margin-top: 2rem;
 /* waa tirada 10++  */
 }
@@ -157,9 +157,7 @@ margin-top: 2rem;
     box-shadow: 0 8px 16px 0 #0867c5;
   }
 
-  /* img {
-    border-radius: 5px 5px 0 0;
-  } */
+
 
   .not-found{
       position: fixed;
