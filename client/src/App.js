@@ -33,7 +33,7 @@ import Login from './components/Admin/Login';
 import Appoinment from './components/Admin/Appoinments/Appoinment';
 import Record from './components/Record';
 import AllDoctors from './components/Doctors/AllDoctors';
-
+import AddDoctor from './components/Doctors/AddDoctor'
 import AllHospitals from './components/Admin/Hospitals/AllHospitals';
 
 function App() {
@@ -77,12 +77,12 @@ axios
  <Route path = "/hospitals">
 
   {loading===false && <Hospitals value = {hospitals} handeleSettingHospitals={handeleSettingHospitals}/> }
-  <Navbar/>
+  {/* <Navbar/> */}
   </Route>
 <Route path = '/EditUser'> <EditUser/></Route>
 <Route path = '/404'>  <NotFound/> </Route>
 <Route path = '/Admin'><Admin/> 
-<Navbar/>
+
 <Home/> 
  </Route> 
 <Route path = '/Home'><Home/> </Route>
@@ -105,6 +105,7 @@ axios
 <Route path = '/Line1'><Line1/></Route>
 <Route path = '/AllDoctors'><AllDoctors/></Route>
 <Route path = '/AllHospitals'><AllHospitals/></Route>
+<Route path = '/AddDoctor'><AddDoctor/></Route>
  </Switch>
  </BrowserRouter>
 

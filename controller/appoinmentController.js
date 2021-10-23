@@ -1,10 +1,8 @@
 const appoinment = require('./../model/appoinmentModel');
- //const Hospital = require("./../model/hospitalModel");
-// const department= require('./../model/departmentModel');
-
+ 
 exports.createAppoinment= async(req,res)=>{
     try{
-
+// console.log(req.body)
         const createAppoinment= await appoinment.create(req.body);
         res.status(200).json({
             message: "appoinment created",
@@ -72,9 +70,10 @@ exports.deleteApp= async(req,res)=>{
         try{
 
            
-            const Appoinm= await appoinment.find({hospital: req.params.id}, {department: req.params.id}) 
+            const Appoinm= await appoinment.find({hospital: req.params.id}, {department: req.params.id}, {doctor: req.params.id}) 
             .populate('hospital')
-            .populate('department');
+            .populate('department')
+            .populate('doctor');
 
 
             res.status(200).json({

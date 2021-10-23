@@ -4,7 +4,7 @@ import { useState,useEffect} from 'react';
 // import { useParams,} from "react-router-dom";
 
 const AddDepartment = () => {
-// const {id} = useParams();
+
 const [id,setId] = useState("")
 const [ name, setName] = useState("");
 const [ docName, setdocName] = useState("");

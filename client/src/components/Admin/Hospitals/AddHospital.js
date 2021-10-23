@@ -10,7 +10,7 @@ const AddHospital = () => {
         address: { 
             city: "",
             region: "",
-        }
+        } 
     });
       const onChange = e => {
           let data= { ...Addhospital };
@@ -34,7 +34,7 @@ console.log("on change ",onChange);
 
       const register = e => {
         e.preventDefault();
-        console.log(JSON.stringify("hhhhhh",Addhospital));
+        console.log(JSON.stringify("Added a hospital",Addhospital));
         axios
         .post(`http://localhost:8000/api/hospital`,Addhospital)
         .then((res)=> console.log(res)).catch((e)=> console.log(e.response))

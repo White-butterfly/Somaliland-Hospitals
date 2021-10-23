@@ -22,13 +22,6 @@ const doctorSchema= mongoose.Schema({
         type: String,
         required: true,
     },
-    // closedTime: {
-    //     type: false,
-    // },
-    // openTime: {
-    //     type: true,
-    // },
-
     hospital: {
         type: mongoose.Schema.Types.ObjectId, 
         ref: "hospital",
@@ -38,11 +31,6 @@ const doctorSchema= mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "department",
     },
-    // appoinment: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "appoinment",
-    // }
-
 });
 
 const doctorModel = mongoose.model ('doctor', doctorSchema);

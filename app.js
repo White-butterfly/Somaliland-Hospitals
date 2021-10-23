@@ -26,6 +26,7 @@ app.use('/api/appoinment', appoinmentRouter);
 app.use('/api/auth',authRouter);
 app.use('/api/doctor', doctorRouter);
 
+
 const port= process.env.port;
 app.listen(port,()=> console.log(`started on port ${port}`));
 

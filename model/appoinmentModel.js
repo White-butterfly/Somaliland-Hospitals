@@ -14,10 +14,10 @@ const appoinmentSchema=  mongoose.Schema({
         required: true,
     },
 
-    syptoms: {
-        type: String,
-        // required: true,
-    },
+    // syptoms: {
+    //     type: String,
+    //     // required: true,
+    // },
   
     city: {
         type: String,
@@ -36,6 +36,11 @@ const appoinmentSchema=  mongoose.Schema({
     department: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "department",
+    },
+
+    doctor: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "doctor",
     },
    
     date: Date,

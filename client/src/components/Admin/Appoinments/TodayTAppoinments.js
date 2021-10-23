@@ -28,12 +28,11 @@ const TodayTAppoinments = () => {
     <tr> 
         <th scope= "col">#</th>
         <th scope= "col">First Name</th>
-        {/* <th scope= "col">Middle Name</th>
-        <th scope= "col">Last Name</th> */}
+      
         <th scope= "col">Hospital</th>
         <th scope= "col">Department</th>
         <th scope= "col">Doctor</th>
-        {/* <th scope= "col">Syptoms</th> */}
+     
         <th>Action</th>
 
     </tr>
@@ -48,7 +47,7 @@ const TodayTAppoinments = () => {
 <td>{Appoinments.department.hospital.name}</td>
         <td>{Appoinments.department.name}</td>
         <td>{Appoinments.department.doctor[0].docName}</td>
-        <td>{Appoinments.syptoms}</td>
+      
     </tr>
 </tbody>
 ))}
