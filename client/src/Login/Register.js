@@ -5,18 +5,18 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 
 function Register() {
-  // const [user, setUser] = useState({
-  //   userName: "",
-  //   email: "",
-  //   password: "",
-  // });
-  // function signUp() {
-  //   //code
-  //   axios
-  //     .post("http://localhost:8000/api/user", user)
-  //     .then((res) => toast.success("User created successfully"))
-  //     .catch((e) => toast.error(e.response.data.message));
-  // }
+  const [user, setUser] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+  function signUp() {
+    //code
+    axios
+      .post("http://localhost:8000/api/user", user)
+      .then((res) => toast.success("User created successfully"))
+      .catch((e) => console.log(e));
+  }
   return (
     <div>
       <div className="containerrr">
@@ -43,7 +43,7 @@ function Register() {
                 id="username"
                 autocomplete="off"
                 placeholder="example"
-                onChange={(e) => setUser({ ...user, userName: e.target.value })}
+                onChange={(e) => setUser({ ...user, username: e.target.value })}
               />
               <label className="label" for="username">
                 User Name

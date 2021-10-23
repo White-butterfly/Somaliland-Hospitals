@@ -1,7 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useState } from "react";
+import { toast } from "react-toastify";
 
 function LoginBody() {
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
+
+  function login() {
+    //code
+
+    axios
+      .post("http://localhost:8000/api/user/signUp", user)
+      .then((res) => {
+        localStorage.setItem("user", JSON.stringify(res.data.user));
+        localStorage.setItem("token", JSON.stringify(res.data.token));
+        toast.success("User Logged In");
+      })
+      .catch((e) => toast.error(e.response.data.message));
+  }
   return (
     <div>
       {
@@ -20,6 +40,7 @@ function LoginBody() {
                   id="username"
                   placeholder="UserName"
                   autocomplete="off"
+                  onChange={(e) => setUser({ ...user, email: e.target.value })}
                 />
 
                 <span className="line"></span>
@@ -33,6 +54,9 @@ function LoginBody() {
                   id="password"
                   placeholder="Password"
                   autocomplete="off"
+                  onChange={(e) =>
+                    setUser({ ...user, password: e.target.value })
+                  }
                 />
 
                 <span className="line"></span>
@@ -48,7 +72,7 @@ function LoginBody() {
               </div>
 
               <div className="button">
-                <input type="button" value="Login" />
+                <input type="button" value="Login" onClick={() => login()} />
               </div>
             </div>
             <div className="footerr">
