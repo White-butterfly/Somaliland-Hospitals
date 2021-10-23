@@ -1,7 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useState } from "react";
+import { toast } from "react-toastify";
 
 function Register() {
+  const [user, setUser] = useState({
+    userName: "",
+    email: "",
+    password: "",
+  });
+  function signUp() {
+    //code
+    axios
+      .post("http://localhost:8000/api/user", user)
+      .then((res) => toast.success("User created successfully"))
+      .catch((e) => toast.error(e.response.data.message));
+  }
   return (
     <div>
       <div className="containerrr">
@@ -11,34 +26,11 @@ function Register() {
             <div className="input-boxx">
               <input
                 type="text"
-                name="fullName"
-                id="fullName"
-                autocomplete="off"
-                placeholder="example"
-              />
-              <label className="label" for="fullName">
-                Full Name
-              </label>
-            </div>
-            <div className="input-boxx">
-              <input
-                type="text"
-                name="mobileNumber"
-                id="mobileNumber"
-                autocomplete="off"
-                placeholder="example"
-              />
-              <label className="label" for="mobileNumber">
-                Mobile Number
-              </label>
-            </div>
-            <div className="input-boxx">
-              <input
-                type="text"
                 name="email"
                 id="email"
                 autocomplete="off"
                 placeholder="example"
+                onChange={(e) => setUser({ ...user, email: e.target.value })}
               />
               <label className="label" for="email">
                 E-Mail
@@ -51,6 +43,7 @@ function Register() {
                 id="username"
                 autocomplete="off"
                 placeholder="example"
+                onChange={(e) => setUser({ ...user, userName: e.target.value })}
               />
               <label className="label" for="username">
                 User Name
@@ -63,26 +56,15 @@ function Register() {
                 id="password"
                 autocomplete="off"
                 placeholder="example"
+                onChange={(e) => setUser({ ...user, password: e.target.value })}
               />
               <label className="label" for="password">
                 Password
               </label>
             </div>
-            <div className="input-boxx">
-              <input
-                type="password"
-                name="confirmPassword"
-                id="confirmPassword"
-                autocomplete="off"
-                placeholder="example"
-              />
-              <label className="label" for="confirmPassword">
-                Confirm Password
-              </label>
-            </div>
 
             <div className="buttonn">
-              <input type="submit" value="Register" />
+              <input type="submit" value="Register" onClick={() => signUp()} />
             </div>
           </div>
 

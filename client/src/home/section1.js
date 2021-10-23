@@ -17,18 +17,19 @@ const Section1 = () => {
             doctors can
             <span className="font-color">cure patients</span>
           </motion.h2>
-
-          <Link to="/Hospitals">
-            <motion.button
-              className="input"
-              type="button"
-              initial={{ x: -210 }}
-              animate={{ x: -10 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-            >
-              Hospitals
-            </motion.button>
-          </Link>
+          <div className="home-btn">
+            <Link to="/Hospitals">
+              <motion.button
+                className="input"
+                type="button"
+                initial={{ x: -210 }}
+                animate={{ x: -10 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+              >
+                Hospitals
+              </motion.button>
+            </Link>
+          </div>
         </div>
         <div className="col-1 flex">
           <motion.img

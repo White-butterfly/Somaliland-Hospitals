@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div>
-      <div className="parentt">
+      {/* <div className="parentt">
         <div className="menu">
           <ul>
             <li>
@@ -30,7 +30,7 @@ const Header = () => {
             </div>
           </ul>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

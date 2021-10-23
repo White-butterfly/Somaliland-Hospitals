@@ -7,7 +7,8 @@ const HeaderUser = () => {
       <div className="parent">
         <div className="logo">
           <h2>
-            Somali<span className="font">Hospitals</span>
+            <span className="logo-h2"> Somali</span>
+            <span className="font">Hospitals</span>
           </h2>
         </div>
         <div className="menu">
@@ -23,6 +24,13 @@ const HeaderUser = () => {
             </li>
             <li>
               <Link to="/Contact">Contact</Link>
+            </li>
+            <li>
+              <Link to="/Doctor">Doctors</Link>
+            </li>
+
+            <li>
+              <Link to="/Admin">Admin</Link>
             </li>
           </ul>
           <div className="log-reg">

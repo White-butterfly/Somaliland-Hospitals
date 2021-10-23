@@ -77,35 +77,10 @@ function HospitalsUser() {
           ))}
 
         <div className="hos-sidebar">
-          <h1>⌛Filter</h1>
-          <div className="filter-list">
-            <ul>
-              <select>
-                <h2>Hospitals</h2>
-                <option>x-ray</option>
-                <option>dentist</option>
-                <option>neurology</option>
-              </select>
-              <select>
-                <option>department</option>
-                <option>x-ray</option>
-                <option>dentist</option>
-                <option>neurology</option>
-              </select>
-              <select>
-                <option>Doctors</option>
-                <option>x-ray</option>
-                <option>dentist</option>
-                <option>neurology</option>
-              </select>
-              <select>
-                <option>Expirence</option>
-                <option>5 years</option>
-                <option>8 years</option>
-                <option>1 years</option>
-              </select>
-            </ul>
-          </div>
+          <img
+            className="img-hos-sidebar"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Ads_logo.svg/820px-Google_Ads_logo.svg.png"
+          />
         </div>
       </div>
     </>

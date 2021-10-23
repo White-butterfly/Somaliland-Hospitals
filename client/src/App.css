@@ -46,12 +46,19 @@ textarea {
   display: flex;
   align-items: center;
 }
+
+.logo .logo-h2 {
+  color: rgb(92, 91, 91);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 27px;
+}
 .parent ul li a {
   color: var(--primary-color);
   font-size: 17px;
   padding: 7px 0px;
   border-radius: 3px;
   text-transform: uppercase;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .parent ul li a:hover {
@@ -62,7 +69,8 @@ textarea {
 
 .font {
   color: blue;
-  font-size: 30px;
+  font-size: 40px;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 .menu {
   margin-left: 0px;
@@ -73,7 +81,13 @@ li {
   display: flex;
   flex-direction: row;
   padding: 20px 0px 20px 0px;
-  margin-left: 78px;
+  margin-left: 50px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 20px;
+}
+.menu ul,
+li a {
+  text-decoration: none;
 }
 .btn {
   padding: 8px;
@@ -103,21 +117,23 @@ li {
 /* section1 */
 
 .main {
-  display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   margin-left: 200px;
   margin-top: 170px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 40px;
+  font-weight: 300px;
 }
+
 .col-1 .img {
-  width: 580%;
+  width: 650%;
   height: 100%;
   background-color: #eff6fc;
-  margin-right: 600px;
+  margin-left: 30px;
 }
 .col-1 {
-  margin-top: 30px;
+  margin-top: 20px;
   margin-bottom: 10px;
 }
 
@@ -748,6 +764,11 @@ li {
 .hospital {
   padding: 20px;
 }
+.img-hos-sidebar {
+  width: 200px;
+  height: 400px;
+  margin-left: 30px;
+}
 
 .input-hos {
   width: 43%;
@@ -756,9 +777,9 @@ li {
   margin-left: 30px;
 }
 .hos-head {
-  margin-left: 350px;
+  margin-left: 500px;
   margin-top: 30px;
-  font-size: 25px;
+  font-size: 50px;
   font-family: Georgia, "Times New Roman", Times, serif;
   color: blue;
 }
@@ -768,8 +789,9 @@ li {
 }
 .search {
   margin-top: 30px;
-  margin-left: 550px;
+  margin-left: 500px;
   padding: 5px;
+  color: #000;
 }
 .hospital .hos-sidebar {
   width: 20%;
