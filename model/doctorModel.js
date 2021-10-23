@@ -1,6 +1,6 @@
 const mongoose= require('mongoose');
 const doctorSchema= mongoose.Schema({
-    
+
     docName:{
         type: String,
         required: true,
@@ -14,7 +14,7 @@ const doctorSchema= mongoose.Schema({
         required: true,
     },
     email:{
-        type: Email,
+        type: String,
         required: true,
     },
 

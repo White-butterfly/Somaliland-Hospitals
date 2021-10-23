@@ -15,9 +15,11 @@ const Appoinment = () => {
     
     const [hospitall, setHospitall]= useState("");
     const [departmentt, setDepartmentt]= useState("");
+    const [doctorr, setdoctorr]=useState("");
     const [department, setdepartment]= useState([]);
     const [hospitals,sethospitals] = useState([]);
     const [Appoinment, setAppoinment]= useState([]);
+    const [doctor, Setdoctor]=useState([]);
 
     useEffect(()=> {
         axios
@@ -33,6 +35,11 @@ const Appoinment = () => {
         .get(`http://localhost:8000/api/hospital`, hospitals)
         .then((res)=> sethospitals(res.data.data))
         .catch(error => console.log(error)); 
+        
+        axios
+        .get (`http://localhost:8000/api/doctor`,doctor)
+        .then((res)=> Setdoctor(res.data.data));
+
 
    },[]);
 
@@ -49,7 +56,8 @@ const Appoinment = () => {
         region: "",
 
         hospital: hospitall,
-        department: departmentt
+        department: departmentt,
+        doctor:doctorr
        
 
 
@@ -114,6 +122,7 @@ const Appoinment = () => {
     )}
     </select>
 {/* Department map */}
+
 <select 
 className= "selectt" 
 onChange={(e)=>{setDepartmentt(e.target.value)}}>
@@ -121,37 +130,21 @@ onChange={(e)=>{setDepartmentt(e.target.value)}}>
                           {department.map((departments)=>
                               <option value= {departments.name}> {departments.name}</option>
                           )}
-                      </select>
-{/* Doctor Map */}
-                      {/* <select className= "selectt" onChange = {(e)=> {setDepartmentt(e.target.value)}}>
-                      <div className="input-box">
-                          <span className="details">  Department Name</span>
-                        <option>  Seleect a Department</option>
-                          {department.map((department)=>(
-<div className="hhhh">
-    <div className="lll">
-                              {department.map((doctor)=>(
-                                
-                                <option value= {doctor.name}></option>
+  </select>
 
-                              ))}
-                                </div>
-</div>
-                          ))}
-                      </div>
-                      </select> */}
-
+  {/* doctor map */}
+  
+<select 
+className= "selectt" 
+onChange={(e)=>{setdoctorr(e.target.value)}}>
+                      <option>Choose Doctor</option>
+                          {doctor.map((doctors)=>
+                              <option value= {doctors.name}> {doctors.name}</option>
+                          )}
+  </select>
+    
                 
-                      <div className="input-box">
-                          <span className="details"> Syptoms</span>
-                          <input type="text" 
-                          placeholder="Enter a Syptom " 
-                          required
-                          
-                          name= "syptoms"
-                           onChange={(e)=>setsyptoms(e.target.value)}
-                          />
-                      </div>
+                  
 
                       <div className="input-box">
                           <span className="details"> City</span>

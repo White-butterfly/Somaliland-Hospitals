@@ -17,7 +17,7 @@ const AllDoctors = () => {
 
 
     return (
-        <>
+    
 <div className="bodyy">
            <div className="mainn">
                {Doctors.map((doctor)=>(
@@ -48,17 +48,9 @@ const AllDoctors = () => {
           
 
           </div>
-          <h1 style= {{alignItems: 'center'}}> Haldoor Doctors </h1>
         
-               {Doctors.map((doctor)=>(
-<div className="hh">
-    if (doctor) {
-        
-    }
-</div>
-          ))}
           
-      </>
+      
           
     )
 }
