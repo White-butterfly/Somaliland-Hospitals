@@ -9,7 +9,7 @@ const AllHospitals = () => {
 
     useEffect(()=> {
         axios
-        .get(`http://localhost:8000/api/hospital/${id}`)
+        .get(`http://localhost:8000/api/hospital/${id}`) 
         .then((res)=> setAllHospitals(res.data.data))
 
      .catch((e)=> console.log(e.response))
