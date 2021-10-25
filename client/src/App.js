@@ -49,6 +49,7 @@ import Overview from "./components/Admin/Overview";
 import Login from "./components/Admin/Login";
 import Appoinment from "./components/Admin/Appoinments/Appoinment";
 import Record from "./components/Record";
+import AllHospital from "./components/Admin/Hospitals/AllHospital";
 
 function App() {
   const [hospitals, sethospitals] = useState([]);
@@ -157,6 +158,7 @@ function App() {
           <Route path="/Doctor"> <Doctor /></Route>
           <Route path="/Appoinment"> <Appoinment /> </Route>
           <Route path="/Record"> <Record />
+          <Route path = '/AllHospital'><AllHospital/></Route>
           </Route>
         </Switch>
         

@@ -24,7 +24,7 @@ const Home = () => {
 </div>
 <div className="card-footer">
 
-<Link to = {`/AllHospitals/`}><button className="aaa">View All</button></Link>
+<Link to = {`/AllHospital/`}><button className="aaa">View All</button></Link>
 </div>
 </div>
 
