@@ -3,7 +3,11 @@ import Appiontment from "./Appiontment";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import DepartmentCards from "./DepartmentCards";
+import Reviews from "./Reviews"
+import ReviewForm from "./ReviewForm"
+import {FaRegTimesCircle} from "react-icons/fa";
 // import GoogleMapReact from "google-map-react";
+
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 
 // const defaultProps = {
@@ -15,7 +19,7 @@ import ReactMapGL, { Marker, Popup } from "react-map-gl";
 // };
 // const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
-function DepartmentsUser() {
+function DepartmentUser() {
   const [viewport, setViewport] = useState({
     latitude: 45.4211,
     longitude: -75.6903,
@@ -25,6 +29,7 @@ function DepartmentsUser() {
   });
 
   const [info, setinfo] = useState(false);
+  const [addReview, setaddReview] = useState(false);
 
   return (
     <>
@@ -38,14 +43,7 @@ function DepartmentsUser() {
         </GoogleMapReact>
       </div> */}
 
-      <ReactMapGL
-        {...viewport}
-        mapboxApiAccessToken="pk.eyJ1IjoibmVtbzEyIiwiYSI6ImNrdXhxdG05aTRndWcycG82OTd4M216enAifQ.A8O4oNRUEKQPa32yaH74eQ"
-        mapStyle="mapbox://styles/nemo12/ckuxt0r1p8kam18qvjpxydf4d"
-        onViewportChange={(viewport) => {
-          setViewport(viewport);
-        }}
-      ></ReactMapGL>
+     
 
       <div>
         {info ? (
@@ -92,11 +90,53 @@ function DepartmentsUser() {
         />
       </div>
       <DepartmentCards />
+      <Reviews/>
+      {addReview && review()}
+       {addReview ? (
+         <FaRegTimesCircle style={{
+              backgroundColor: "red",
+             fontSize:"20px",
+              marginLeft: "20%",
+              borderRadius: "7px",
+              color: "white",
+            }}
+            onClick={() => setaddReview(false)}/>
+         
+        ) : (
+          
+          <button
+            style={{
+              backgroundColor: "blue",
+              width: " 150px",
+              height: "35px",
+              marginLeft: "30px",
+              borderRadius: "7px",
+              color: "white",
+              marginTop: "20px",
+              fontSize: "20px",
+            }}
+            onClick={() => setaddReview(true)}
+          >
+            Add review
+          </button>
+        )}
+     
+       <ReactMapGL 
+        {...viewport}
+        mapboxApiAccessToken="pk.eyJ1IjoibmVtbzEyIiwiYSI6ImNrdXhxdG05aTRndWcycG82OTd4M216enAifQ.A8O4oNRUEKQPa32yaH74eQ"
+        mapStyle="mapbox://styles/nemo12/ckuxt0r1p8kam18qvjpxydf4d"
+        onViewportChange={(viewport) => {
+          setViewport(viewport);
+        }}
+      ></ReactMapGL>
     </>
   );
   function form() {
     return <Appiontment />;
   }
+  function review() {
+    return  <ReviewForm/>;
+  }
 }
 
-export default DepartmentsUser;
+export default DepartmentUser;

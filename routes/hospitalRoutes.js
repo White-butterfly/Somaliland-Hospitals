@@ -1,7 +1,7 @@
 const express = require("express");
 const hospitalController = require("../controller/hospitalController");
 const router = express.Router();
-const verifyToken = require("../middleware/auth");
+//const verifyToken = require("../middleware/auth");
 
 router
   .route("/")

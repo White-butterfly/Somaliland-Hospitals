@@ -1,5 +1,5 @@
 import "./App.css";
-import Footer from "./home/Footer";
+//import Footer from "./home/Footer";
 import HeaderUser from "./home/HeaderUser";
 import Section1 from "./home/section1";
 import Section2 from "./home/Section2";
@@ -8,7 +8,7 @@ import Section4 from "./home/Section4";
 import LoginBody from "./Login/LoginBody";
 import Register from "./Login/Register";
 import HospitalsUser from "./Hospitals/HospitalsUser";
-import DepartmentsUser from "./Hospitals/DepartmentsUser";
+import DepartmentUser from "./Hospitals/DepartmentUser";
 import DoctorsUser from "./Hospitals/DoctorsUser";
 import Appiontment from "./Hospitals/Appiontment";
 import DepartmentCards from "./Hospitals/DepartmentCards";
@@ -25,21 +25,21 @@ import "./index.css";
 import Header from "./components/Header/Header";
 import Navbar from "./components/Admin/Navbar";
 import Departments from "./components/Admin/Hospitals/Departments";
-import Line1 from "./components/Line1";
+//import Line1 from "./components/Line1";
 import Admin from "./components/Admin/Admin";
 import AllUsers from "./components/Admin/Users/AllUsers";
 import AddUser from "./components/Admin/Users/AddUser";
 import EditUser from "./components/Admin/Users/EditUser";
 import NotFound from "./components/Admin/NotFound";
-import ReadUser from "./components/Admin/Users/ReadUser";
+//import ReadUser from "./components/Admin/Users/ReadUser";
 import Home from "./components/Admin/Home";
 import Appoinments from "./components/Admin/Appoinments/OverviewAppoinments";
 import TodayTAppoinments from "./components/Admin/Appoinments/TodayTAppoinments";
 import YesterdayTAppoinments from "./components/Admin/Appoinments/YesterdayTAppoinments";
-import TotalAppoinments from "./components/Admin/Appoinments/TotalAppoinments";
+//import TotalAppoinments from "./components/Admin/Appoinments/TotalAppoinments";
 import TotalRegisteredPatient from "./components/Admin/Appoinments/TotalRegisteredPatient";
 import Hospitals from "./components/Admin/Hospitals/Hospitals";
-import Department from "./components/Admin/Hospitals/Departments";
+//import Departments from "./components/Admin/Hospitals/Departments";
 import Doctors from "./components/Admin/Hospitals/Doctors";
 import AddHospital from "./components/Admin/Hospitals/AddHospital";
 import AddDepartment from "./components/Admin/Hospitals/AddDepartment";
@@ -95,7 +95,7 @@ function App() {
           </Route>
 
           <Route path="/DepartmentsUser/:id">
-            <DepartmentsUser />
+            <DepartmentUser />
           </Route>
           <Route path="/DoctorsUser/:id">
             <DoctorsUser />
