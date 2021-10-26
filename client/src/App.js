@@ -17,7 +17,7 @@ import Section5 from "./home/Section5";
 import Section6 from "./home/Section6";
 import Blogs from "./Blogs/Blogs";
 
-import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Link, Router} from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { ToastContainer } from "react-toastify";
@@ -49,7 +49,8 @@ import Overview from "./components/Admin/Overview";
 import Login from "./components/Admin/Login";
 import Appoinment from "./components/Admin/Appoinments/Appoinment";
 import Record from "./components/Record";
-import AllHospital from "./components/Admin/Hospitals/AllHospital";
+import AllHospitals from "./components/Admin/Hospitals/AllHospitals";
+import AllDoctors from './components/Doctors/AllDoctors';
 
 function App() {
   const [hospitals, sethospitals] = useState([]);
@@ -78,11 +79,87 @@ function App() {
   }, []);
   return (
     <div>
+      {/* My Routes */}
+      
+ <BrowserRouter>
+     <div className="content">
+     <Header/>
+     </div>
+<Switch>
+   <Route path = '/AddUser'> <AddUser/> </Route>
+<Route path = '/AllUsers'>
+{loading === false &&  <AllUsers value={users} handleSettingUsers={handleSettingUsers}/> }
+ </Route>
+ <Route path = "/hospitals">
+  {loading===false && <Hospitals value = {hospitals} handeleSettingHospitals={handeleSettingHospitals}/> }
+  <Navbar/>
+  </Route>
+<Route path = '/EditUser'> <EditUser/></Route>
+<Route path = '/404'>  <NotFound/> </Route>
+<Route path = '/Admin'><Admin/>
+<Navbar/>
+<Homee/>
+ </Route>
+<Route path = '/Homee'><Homee/> </Route>
+<Route path = '/Appoinments'><Appoinments/>  </Route>
+<Route path = "/TodayTAppoinments"><TodayTAppoinments/></Route>
+<Route path = "/yesterdayTotalAppoinments"><YesterdayTAppoinments/></Route>
+<Route path = "/total Appoinments"><TodayTAppoinments/></Route>
+<Route path = "/TotalRegisteredPatient"><TotalRegisteredPatient/></Route>
+<Route path = "/Departments/:id"><Departments/></Route>
+<Route path = '/Doctors/:id'><Doctors/></Route>
+<Route path = "/AddHospital"><AddHospital/></Route>
+<Route path = '/AddDepartment'><AddDepartment/></Route>
+<Route path = '/overview'><Overview/></Route>
+<Route path = '/Login'><Login/></Route>
+<Route path= '/Doctor'><Doctor/></Route>
+<Route path= '/Appoinment'><Appoinment/></Route>
+<Route path = '/Record'><Record/></Route>
+ </Switch>
+ </BrowserRouter> 
+
+{/* Nemo's Route */}
+<Router>       
+   <Header />      
+     <Switch>         
+        <Route path="/home">            
+        <Section1 />            
+        <Section4 />            
+        <Section5 />            
+        <Section2 />
+        <Section6 /></Route>
+          <Route path="/Hospitals" component={Hospitals}> <Hospitals /></Route>
+          <Route path="/Department/:id" component={Hospitals}><Departments /></Route>
+          <Route path="/Doctors/:id">            <Doctors />          </Route>          
+          <Route path="/Bolgs">            <Doctors />          </Route>
+          <Route path="/Appiontment"> <Appiontment />  </Route>          
+          <Route path="/DepartmentCards">            <DepartmentCards />          </Route>          
+          <Route path="/Contact">            <Section6 />          </Route>          
+          <Route path="/Blogs">            <Blogs />          </Route>
+          <Route path="/Login">  <LoginBody /></Route>          
+          <Route path="/Register"><Register />  </Route>        
+          </Switch>         
+            </Router>
+
+
+
+
+
+
+
+
+
+
+
+{/* 
       <BrowserRouter>
-        <HeaderUser />
+      <Route path="/Homee"> <Homee /> </Route>
+
+      <HeaderUser />
        
 
         <Switch>
+       
           <Route path="/home">
             <Section1 />
             <Section4 />
@@ -122,6 +199,8 @@ function App() {
           <Route path="/Register">
             <Register />
           </Route>
+
+
           <Route path="/AddUser">
             <AddUser />
           </Route>
@@ -143,7 +222,7 @@ function App() {
           <Route path="/EditUser"> <EditUser /> </Route>
           <Route path="/404"> <NotFound /> </Route>
           <Route path="/Admin"> <Admin />  <Homee /> </Route>
-          <Route path="/Homee"> <Homee /> </Route>
+       
           <Route path="/Appoinments"> <Appoinments /> </Route>
           <Route path="/TodayTAppoinments"> <TodayTAppoinments /> </Route>
           <Route path="/yesterdayTotalAppoinments"> <YesterdayTAppoinments /> </Route>
@@ -158,11 +237,12 @@ function App() {
           <Route path="/Doctor"> <Doctor /></Route>
           <Route path="/Appoinment"> <Appoinment /> </Route>
           <Route path="/Record"> <Record />
-          <Route path = '/AllHospital'><AllHospital/></Route>
+          <Route path = '/AllHospitals'><AllHospitals/></Route>
+          <Route path = '/AllDoctors'><AllDoctors/></Route>
           </Route>
         </Switch>
         
-      </BrowserRouter>
+      </BrowserRouter> */}
 
       <ToastContainer
         position="top-right"

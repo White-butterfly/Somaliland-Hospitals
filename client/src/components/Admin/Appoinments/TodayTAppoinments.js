@@ -22,36 +22,37 @@ const TodayTAppoinments = () => {
                   <div className="add">
             <h1>Today's Total Appoinments</h1>
             </div>
-           
-         <table className= "table border shadow">
-<thead className= "thread-dark "> 
-    <tr> 
-        <th scope= "col">#</th>
-        <th scope= "col">First Name</th>
-      
-        <th scope= "col">Hospital</th>
-        <th scope= "col">Department</th>
-        <th scope= "col">Doctor</th>
-     
-        <th>Action</th>
-
-    </tr>
-</thead>
-{Appoinment.map((Appoinments) =>(
-                
+            <table width= '100%'>
+                                <thead>
+                                    <tr>
+                                        <td>Patient Names</td>
+                                        <td>Hospitals</td>
+                                        <td>Department</td>
+                                        <td>Doctors</td>
+                                        <td>status</td>
+                                    </tr>
+                                </thead>
+                                {Appoinment.map((Appoinments) =>(
 <tbody>
     <tr>
-        <th scope = "row">1</th>
- 
+        
        <Link to = {`/Line1/${Appoinments._id}`} ><td>{Appoinments.firstName}</td></Link>
+       
 <td>{Appoinments.department.hospital.name}</td>
         <td>{Appoinments.department.name}</td>
         <td>{Appoinments.department.doctor[0].docName}</td>
-      
+       
+        
+        <td>
+            <span className="status purple"> Pending</span>
+           
+            </td>
     </tr>
+    
 </tbody>
 ))}
-         </table>
+                            </table>
+
         </div>
     )
 }

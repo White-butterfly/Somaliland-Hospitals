@@ -16,8 +16,9 @@ const AllHospitals = () => {
     },[]);
 
     return (
-        <div className="bodyy">
+        <div className="bodyy"> 
         <div className="mainn">
+          <h2>helooooow</h2>
             {AllHospitals.map((hospital)=>(
 
            
