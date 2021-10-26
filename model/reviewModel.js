@@ -20,10 +20,7 @@ const ReviewSchema= mongoose.Schema({
         required: true,
     },
 
-    hospital: {
-        type: String,
-        required: true,
-    },
+
     review: {
         type: String,
         required: true,

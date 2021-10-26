@@ -14,8 +14,8 @@ exports.createReview = async (req, res) => {
 
 exports.reviews = async (req, res) => {
   try {
-    const reviews = await Review.find({ product: req.params.id }).populate(
-      "user"
+    const reviews = await Review.find({ hospital: req.params.id }).populate(
+      "hospital"
     );
     res.status(200).json({ reviews });
   } catch (e) {

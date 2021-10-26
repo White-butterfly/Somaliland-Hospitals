@@ -3,9 +3,9 @@ import Appiontment from "./Appiontment";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import DepartmentCards from "./DepartmentCards";
-import Reviews from "./Reviews"
-import ReviewForm from "./ReviewForm"
-import {FaRegTimesCircle} from "react-icons/fa";
+import Reviews from "./Reviews";
+import ReviewForm from "./ReviewForm";
+import { FaRegTimesCircle } from "react-icons/fa";
 // import GoogleMapReact from "google-map-react";
 
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
@@ -20,6 +20,7 @@ import ReactMapGL, { Marker, Popup } from "react-map-gl";
 // const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 function DepartmentUser() {
+  const { id } = useParams();
   const [viewport, setViewport] = useState({
     latitude: 45.4211,
     longitude: -75.6903,
@@ -42,8 +43,6 @@ function DepartmentUser() {
           <AnyReactComponent lat={59.955413} lng={30.337844} text="My Marker" />
         </GoogleMapReact>
       </div> */}
-
-     
 
       <div>
         {info ? (
@@ -90,38 +89,38 @@ function DepartmentUser() {
         />
       </div>
       <DepartmentCards />
-      <Reviews/>
+      <Reviews />
       {addReview && review()}
-       {addReview ? (
-         <FaRegTimesCircle style={{
-              backgroundColor: "red",
-             fontSize:"20px",
-              marginLeft: "20%",
-              borderRadius: "7px",
-              color: "white",
-            }}
-            onClick={() => setaddReview(false)}/>
-         
-        ) : (
-          
-          <button
-            style={{
-              backgroundColor: "blue",
-              width: " 150px",
-              height: "35px",
-              marginLeft: "30px",
-              borderRadius: "7px",
-              color: "white",
-              marginTop: "20px",
-              fontSize: "20px",
-            }}
-            onClick={() => setaddReview(true)}
-          >
-            Add review
-          </button>
-        )}
-     
-       <ReactMapGL 
+      {addReview ? (
+        <FaRegTimesCircle
+          style={{
+            backgroundColor: "red",
+            fontSize: "20px",
+            marginLeft: "20%",
+            borderRadius: "7px",
+            color: "white",
+          }}
+          onClick={() => setaddReview(false)}
+        />
+      ) : (
+        <button
+          style={{
+            backgroundColor: "blue",
+            width: " 150px",
+            height: "35px",
+            marginLeft: "30px",
+            borderRadius: "7px",
+            color: "white",
+            marginTop: "20px",
+            fontSize: "20px",
+          }}
+          onClick={() => setaddReview(true)}
+        >
+          Add review
+        </button>
+      )}
+
+      <ReactMapGL
         {...viewport}
         mapboxApiAccessToken="pk.eyJ1IjoibmVtbzEyIiwiYSI6ImNrdXhxdG05aTRndWcycG82OTd4M216enAifQ.A8O4oNRUEKQPa32yaH74eQ"
         mapStyle="mapbox://styles/nemo12/ckuxt0r1p8kam18qvjpxydf4d"
@@ -135,7 +134,7 @@ function DepartmentUser() {
     return <Appiontment />;
   }
   function review() {
-    return  <ReviewForm/>;
+    return <ReviewForm hospitalId={id} />;
   }
 }
 
