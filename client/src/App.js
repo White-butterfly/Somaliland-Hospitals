@@ -32,7 +32,7 @@ import AddUser from "./components/Admin/Users/AddUser";
 import EditUser from "./components/Admin/Users/EditUser";
 import NotFound from "./components/Admin/NotFound";
 //import ReadUser from "./components/Admin/Users/ReadUser";
-import Home from "./components/Admin/Home";
+import Homee from "./components/Admin/Homee";
 import Appoinments from "./components/Admin/Appoinments/OverviewAppoinments";
 import TodayTAppoinments from "./components/Admin/Appoinments/TodayTAppoinments";
 import YesterdayTAppoinments from "./components/Admin/Appoinments/YesterdayTAppoinments";
@@ -52,22 +52,22 @@ import Record from "./components/Record";
 function App() {
   const [hospitals, sethospitals] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [users, setUsers] = useState([]);
+  // const [users, setUsers] = useState([]);
 
-  const handleSettingUsers = (user) => {
-    setUsers(user);
-  };
+  // const handleSettingUsers = (user) => {
+  //   setUsers(user);
+  // };
   const handeleSettingHospitals = (hospital) => {
     sethospitals(hospital);
   };
   useEffect(() => {
-    axios
-      .get("http://localhost:8000/users/", users)
-      .then((res) => {
-        setUsers(res.data.data);
-        setLoading(false);
-      })
-      .catch((e) => console.log(e.responce));
+    // axios
+    //   .get("http://localhost:8000/users/", users)
+    //   .then((res) => {
+    //     setUsers(res.data.data);
+    //     setLoading(false);
+    //   })
+    //   .catch((e) => console.log(e.responce));
 
     axios
       .get(`http://localhost:8000/api/hospital`, hospitals)
@@ -81,7 +81,7 @@ function App() {
         <Header />
 
         <Switch>
-          <Route path="/home">
+          <Route path="/Home">
             <Section1 />
             <Section4 />
             <Section5 />
@@ -120,16 +120,16 @@ function App() {
           <Route path="/Register">
             <Register />
           </Route>
-          <Route path="/AddUser">
+          {/* <Route path="/AddUser">
             <AddUser />{" "}
-          </Route>
-          <Route path="/AllUsers">
+          </Route> */}
+          {/* <Route path="/AllUsers">
             {loading === false && (
               <AllUsers value={users} handleSettingUsers={handleSettingUsers} />
             )}
-          </Route>
+          </Route> */}
 
-          <Route path="/hospitals">
+          {/* <Route path="/hospitals">
             {loading === false && (
               <Hospitals
                 value={hospitals}
@@ -137,7 +137,7 @@ function App() {
               />
             )}
             <Navbar />
-          </Route>
+          </Route> */}
           <Route path="/EditUser">
             <EditUser />
           </Route>
@@ -147,10 +147,10 @@ function App() {
           <Route path="/Admin">
             <Admin />
             <Navbar />
-            <Home />
+            <Homee />
           </Route>
           <Route path="/Home">
-            <Home />{" "}
+            <Homee />{" "}
           </Route>
           <Route path="/Appoinments">
             <Appoinments />{" "}

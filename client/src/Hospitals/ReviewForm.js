@@ -3,6 +3,7 @@ import { MdStar } from "react-icons/md";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 function ReviewForm() {
   const [patientName, setpatientName] = useState("");
@@ -10,8 +11,9 @@ function ReviewForm() {
   const [review, setreview] = useState("");
   const [country, setcountry] = useState("");
   const [age, setage] = useState("");
+  const { id } = useParams();
 
-  function saveReview({ hospitalId }) {
+  function saveReview() {
     //code
     axios
       .post(`http://localhost:8000/api/review`, {
@@ -20,16 +22,23 @@ function ReviewForm() {
         review,
         country,
         age,
-        hospital: hospitalId,
+        hospital: id,
       })
 
-      .then(() => toast.success("Thanks for the review"))
-      .catch((e) => console.log(e));
+      .then((res) => console.log(res));
   }
 
   return (
     <>
-      <div style={{ width: "50%", marginLeft: "30%", border: "1px solid" }}>
+      <div
+        style={{
+          width: "50%",
+          marginLeft: "25%",
+          border: "1px solid",
+          paddingBottom: "35px",
+          fontSize: "40px",
+        }}
+      >
         <h1
           style={{
             width: "50%",
@@ -84,9 +93,12 @@ function ReviewForm() {
           <label for="floatingPassword">Review</label>
         </div>
 
-        <div className="review-stars flex">
-          <h4>Rating</h4>
-          <div style={{ marginLeft: "47%" }}>
+        <div
+          className="review-stars flex"
+          style={{ marginTop: "10px", fontSize: "25px" }}
+        >
+          <h2 style={{ marginLeft: "10px", marginTop: "10px" }}>Rating</h2>
+          <div style={{ marginLeft: "20%" }}>
             <MdStar
               className={rating >= 1 ? "review-star star" : "review-star"}
               onClick={() => setRating(1)}
@@ -122,7 +134,7 @@ function ReviewForm() {
         }}
         onClick={() => saveReview()}
       >
-        Primary
+        submit
       </button>
     </>
   );

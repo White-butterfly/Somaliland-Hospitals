@@ -78,16 +78,7 @@ function DepartmentUser() {
         )}
       </div>
       {info && form()}
-      <div className="flex">
-        <img
-          src="https://th.bing.com/th/id/R.cbfb18c509cad24d89d664b2d6f44ba8?rik=oMcrX5zThM75hA&pid=ImgRaw&r=0"
-          className="hos-img"
-        />
-        <img
-          className="hos-img"
-          src="https://th.bing.com/th/id/R.9e27ac44ce28c62b6eedbdca3858d342?rik=Jm9b13yLyN4Ztw&pid=ImgRaw&r=0"
-        />
-      </div>
+
       <DepartmentCards />
       <Reviews />
       {addReview && review()}
@@ -108,11 +99,12 @@ function DepartmentUser() {
             backgroundColor: "blue",
             width: " 150px",
             height: "35px",
-            marginLeft: "30px",
+            marginLeft: "540px",
             borderRadius: "7px",
             color: "white",
             marginTop: "20px",
             fontSize: "20px",
+            marginBottom: "20px",
           }}
           onClick={() => setaddReview(true)}
         >
@@ -134,7 +126,7 @@ function DepartmentUser() {
     return <Appiontment />;
   }
   function review() {
-    return <ReviewForm hospitalId={id} />;
+    return <ReviewForm />;
   }
 }
 
