@@ -5,7 +5,6 @@ const Hospital = require("../model/hospitalModel")
 exports.createDepartment = async (req,res)=> {
     try{
 
-
 const hospital = await Hospital.findOne({name:req.body.hospital}) 
 req.body.hospital = hospital._id 
 
@@ -31,7 +30,7 @@ res.status(200).json({
     message: "found a department",
     data: departmentss,
 });
-    }catch(e){
+    }catch(e){ 
 res.status(400).json({
     message:e.message
 })

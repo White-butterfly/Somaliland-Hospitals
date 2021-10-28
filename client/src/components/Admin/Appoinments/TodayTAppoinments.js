@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 import {useState, useEffect}from "react";
 import axios from 'axios';
 import Line1 from "../../Line1";
-
+import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'
+import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css'
+import { MdModeEdit, MdDelete , MdAdd } from "react-icons/md";
 const TodayTAppoinments = () => {
 
     const [id,setId] = useState("");
@@ -14,47 +16,74 @@ const TodayTAppoinments = () => {
         .then((res)=> setAppoinment(res.data.data))
 
      .catch((e)=> console.log( Appoinment,"uuuuuu",e.response))
-         console.log('hhh',Appoinment);
+        
     },[]);
 
+    function delDoctor(id){
+        axios
+        .delete(`http://localhost:8000/api/Appoinment/${id}`)
+        .then((res)=>console.log(res));
+    }
     return (
-        <div>
-                  <div className="add">
-            <h1>Today's Total Appoinments</h1>
-            </div>
-            <table width= '100%'>
-                                <thead>
-                                    <tr>
-                                        <td>Patient Names</td>
-                                        <td>Hospitals</td>
-                                        <td>Department</td>
-                                        <td>Doctors</td>
-                                        <td>status</td>
-                                    </tr>
-                                </thead>
-                                {Appoinment.map((Appoinments) =>(
-<tbody>
-    <tr>
-        
-       <Link to = {`/Line1/${Appoinments._id}`} ><td>{Appoinments.firstName}</td></Link>
-       
-<td>{Appoinments.department.hospital.name}</td>
-        <td>{Appoinments.department.name}</td>
-        <td>{Appoinments.department.doctor[0].docName}</td>
-       
-        
-        <td>
-            <span className="status purple"> Pending</span>
-           
-            </td>
-    </tr>
-    
-</tbody>
-))}
-                            </table>
+     <>
+ <h1 style={{marginLeft: "345px", marginTop: "20px", color: "#000"}}>All Appoinments </h1>
+<Table className= "center">
+	<Thead>
+		<Tr>
+			<Th>First Name</Th>
+			<Th>Hospital Name</Th>
+			<Th>Depart Name</Th>
+			<Th>Doctor Name</Th>
+      <Th>Actions</Th>
+		</Tr>
+	</Thead>
+             {Appoinment.map((Appoinments)=>( 
+	<Tbody style={{marginLeft: "345px"}}>
+	 <Tr>
+     <Td >{Appoinments.firstName}</Td>
+            <Td>{Appoinments.firstName}</Td> 
+            <Td>{Appoinments.firstName}</Td>
+            <Td>{Appoinments.firstName}</Td>  
 
-        </div>
+            <Link to= {`/Line1/${Appoinments._id}`} > <Td>See More</Td></Link>
+            </Tr>
+	</Tbody>
+/* 			
+ <Td>{Appoinments.department.hospital}</Td>
+         <Td>{Appoinments.department.name}</Td>
+        <Td>{Appoinments.department.doctor.name}</Td> */
+
+	
+		))}
+</Table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     </>
     )
 }
 
 export default TodayTAppoinments
+
+
+
+
+// <td>{Appoinments.department.hospital.name}</td>
+//         <td>{Appoinments.department.name}</td>
+//         <td>{Appoinments.department.doctor[0].docName}</td>
+       
+     

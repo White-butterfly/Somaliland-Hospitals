@@ -52,7 +52,7 @@ const handleEditFormSubmit= async(event)=>{
     const data = await axios
     .put(`http://localhost:8000/api/hospital/updateHospital`, editFormData)
     .then((res)=>console.log("mmmmmmmm",res.data.data));
-    // history.push('/Hospitals');
+    // history.push('/Hospitals'); 
 }
 
 

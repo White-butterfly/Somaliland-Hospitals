@@ -7,7 +7,7 @@ exports.getHospital= async(req,res)=>{
             message: 'all hospitals',
             data: hospitals, 
         });
-    }catch(e){
+    }catch(e){ 
         res.status(400).json({
             message:e.message
         })

@@ -2,52 +2,73 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import { useEffect ,useState } from 'react';
 import axios from 'axios';
+import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'
+import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css'
+import { MdModeEdit, MdDelete , MdAdd } from "react-icons/md";
 const AllDoctors = () => {
 
     const [id,setId] = useState("");
     const [Doctors, setDoctors]= useState([]);
 
     useEffect(()=> {
-        axios
-        .get(`http://localhost:8000/api/doctor/${id}`)
-        .then((res)=> setDoctors(res.data.data))
+      axios
+      .get(`http://localhost:8000/api/doctor/${id}`) 
+      .then((res)=> setDoctors(res.data.data))
 
-     .catch((e)=> console.log( Doctors,e.response))
-    },[]);
+   .catch((e)=> console.log(e.response))
+  },[]);
 
+    function delDoctor(id){
+      axios
+      .delete(`http://localhost:8000/api/doctor/${id}`)
+      .then((res)=>console.log(res));
+  }
 
     return (
-    
-<div className="bodyy">
-           <div className="mainn">
-               {Doctors.map((doctor)=>(
+         <>
+ <h1 style={{marginLeft: "345px", marginTop: "20px", color: "#000"}}>All Doctors </h1>
+<Table className= "center">
+	<Thead>
+		<Tr>
+			<Th>Doctor Name</Th>
+			<Th>Expirence</Th>
+			<Th>Language</Th>
+			<Th>Email</Th>
+      <Th>Hours</Th>
+			<Th>hospital Name</Th>
+      <Th>Depart Name</Th>
+      <Th>Actions</Th>
+			
+		</Tr>
+	</Thead>
+             {Doctors.map((doctor)=>( 
+	<Tbody>
+	 <Tr>
+			<Td>{doctor.docName}</Td> 
+				<Td>{doctor.expirence}</Td>
+			<Td>{doctor.language}</Td>
+			<Td>{doctor.email}</Td>
+      <Td>{doctor.hours}</Td>
+      <Td>{doctor.department.hospital.name}</Td>
+      <Td>{doctor.department.name}</Td>
 
-              
-        <div className="cardd">
-        <div className="postt">
-          <img className="post-image" src="https://th.bing.com/th/id/OIP.zmT8WMtoF7CcUrhQ5JRCUQHaE8?w=270&h=180&c=7&r=0&o=5&pid=1.7"/>
+			<Td><MdModeEdit/> <MdDelete onClick= {()=>delDoctor(doctor._id)}/> </Td>
+		<Link to = {'/AddHospital'} ><Td> <MdAdd/> </Td></Link> 
+		</Tr>
+	</Tbody>
+		))}
+</Table>
 
-          
-          <div className="post-content">
-            <p className="post-header"> 
-          <div className= "yaya">Doctor Name : {doctor.docName}</div> </p>
-          
 
-            <p> experience: {doctor.expirence}  </p>
-            <p> Works in: {doctor.department.hospital.name}</p>
-             <p>Specialist in: {doctor.department.name}</p>
-                <p >Speaks: {doctor.language}</p>
-               <p>Email: {doctor.email}</p>
-           <p>Hours of working:{doctor. hours}</p>
-            
-          </div>
-          </div>
-          </div>
- ))}
-          </div>
-          
 
-          </div>
+
+
+
+
+
+
+
+         </>
         
           
       
