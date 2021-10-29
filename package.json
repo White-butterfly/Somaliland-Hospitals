@@ -12,15 +12,25 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "form-data": "^4.0.0",
+    "framer-motion": "^4.1.17",
     "jsonwebtoken": "^8.5.1",
     "localStorage": "^1.0.4",
     "mongoose": "^6.0.5",
     "mongoose-auto-increment": "^5.0.1",
     "nodemon": "^2.0.12",
+<<<<<<< HEAD
     "react-icons": "^4.3.1",
+=======
+    "react-countup": "^6.0.0",
+    "react-icons": "^4.2.0",
+    "react-map-gl": "^6.1.17",
+>>>>>>> 70ac12b96b66971055418f65b2f59f5f44cabf54
     "react-modules": "^1.0.8",
     "react-router-dom": "^5.3.0",
-    "react-toastify": "^8.0.3"
+    "react-slick": "^0.28.1",
+    "react-super-responsive-table": "^5.2.0",
+    "react-toastify": "^8.0.3",
+    "slick-carousel": "^1.8.1"
   },
   "scripts": {
     "dev": "nodemon app.js",

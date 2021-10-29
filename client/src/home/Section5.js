@@ -10,7 +10,7 @@ function Section5() {
   const NextArrow = ({ onClick }) => {
     return (
       <div className="arrow next" onClick={onClick}>
-        <MdKeyboardArrowRight />
+        <MdKeyboardArrowRight /> 
       </div>
     );
   };

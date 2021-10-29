@@ -18,14 +18,16 @@ const appoinmentRouter = require("./routes/appoinmentRoutes");
 const reviewRouter = require("./routes/reviewRoutes");
 const doctorRouter = require("./routes/doctorRoute");
 const contactRouter = require("./routes/contactRoutes");
+const blogRouter = require("./routes/blogRoutes");
 
-//middle ware
+//middle ware 
 app.use("/api/hospital", hospitalRouter);
-app.use("/api/user", userRouter);
+app.use("/api/user", userRouter); 
 app.use("/api/Department", departmentRouter);
+app.use('/api/doctor', doctorRouter);
 app.use("/api/appoinment", appoinmentRouter);
 app.use("/api/review", reviewRouter);
-app.use("/api/doctor", doctorRouter);
+app.use("/api/blog", blogRouter);
 app.use("/api/contact", contactRouter);
 
 const port = process.env.port;

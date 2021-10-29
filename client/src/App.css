@@ -684,6 +684,7 @@ li {
   object-fit: cover;
   display: block;
   border-radius: 0.8rem;
+  background: #000;
 }
 .blog-post_img::before {
   content: "";
@@ -1292,6 +1293,15 @@ li {
   width: 60%;
   padding: 10px;
   float: right;
+}
+
+.img-fluid .rounded-start img{
+  width: 100%;
+  height: 100%;
+  margin-right: 20px;
+  background: violet;
+  margin-top: 15px;
+ 
 }
 
 .bbtn {
@@ -1935,6 +1945,10 @@ forM {
   border-radius: 50%;
   overflow: hidden;
   margin-right: 10px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 .profile-img img {
   width: 100%;
@@ -1976,6 +1990,7 @@ forM {
 .testimonial-box:hover {
   transform: translateY(-10px);
   transition: all ease 0.3s;
+ 
 }
 @media (max-width: 1060px) {
   .testimonial-box {

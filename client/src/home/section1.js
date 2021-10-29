@@ -4,20 +4,22 @@ import { Link } from "react-router-dom";
 
 const Section1 = () => {
   return (
-    <>
+    <>  
+
+
       <div className=" flex">
         <div className=" main">
           <motion.h2
             initial={{ y: -210 }}
-            animate={{ y: -10 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
+            animate={{ y: -10 }} 
+            transition={{ delay: 0.3, duration: 0.6 }} 
           >
             <span className="font-color"> Medicine </span>cure diseases but only
             <br />
             doctors can
-            <span className="font-color">cure patients</span>
+            <span className="font-color">cure patients</span> 
           </motion.h2>
-          <div className="home-btn">
+          <div className="home-btn">  
             <Link to="/Hospitals">
               <motion.button
                 className="input"
