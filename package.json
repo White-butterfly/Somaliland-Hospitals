@@ -17,6 +17,7 @@
     "localStorage": "^1.0.4",
     "mongoose": "^6.0.5",
     "mongoose-auto-increment": "^5.0.1",
+    "multer": "^1.4.3",
     "nodemon": "^2.0.12",
     "react-countup": "^6.0.0",
     "react-icons": "^4.2.0",
