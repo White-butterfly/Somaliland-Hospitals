@@ -25,7 +25,8 @@ function ReviewForm() {
         hospital: id,
       })
 
-      .then((res) => console.log(res));
+      .then((res) => toast.success("Thanks for the review"))
+      .catch((e) => console.log(e));
   }
 
   return (

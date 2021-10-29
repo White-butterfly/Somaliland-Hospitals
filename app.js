@@ -16,6 +16,8 @@ const userRouter = require("./routes/userRoutes");
 const departmentRouter = require("./routes/departmentRoutes");
 const appoinmentRouter = require("./routes/appoinmentRoutes");
 const reviewRouter = require("./routes/reviewRoutes");
+const doctorRouter = require("./routes/doctorRoute");
+const contactRouter = require("./routes/contactRoutes");
 
 //middle ware
 app.use("/api/hospital", hospitalRouter);
@@ -23,6 +25,8 @@ app.use("/api/user", userRouter);
 app.use("/api/Department", departmentRouter);
 app.use("/api/appoinment", appoinmentRouter);
 app.use("/api/review", reviewRouter);
+app.use("/api/doctor", doctorRouter);
+app.use("/api/contact", contactRouter);
 
 const port = process.env.port;
 app.listen(port, () => console.log(`started on port ${port}`));

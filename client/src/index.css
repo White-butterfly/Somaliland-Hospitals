@@ -127,10 +127,15 @@ main {
   align-items: center;
 }
 .card-body:hover {
-  /* background-color: rgb(236, 230, 233); */
+  /*background-color: rgb(236, 230, 233);
+  */
   transition: transform 300ms, box-shadow 300ms;
   position: relative;
   transition: background-color 0.9s, box-shadow 0.7s, margin-left 0.7s;
+  -webkit-transition: transform 300ms, box-shadow 300ms;
+  -moz-transition: transform 300ms, box-shadow 300ms;
+  -ms-transition: transform 300ms, box-shadow 300ms;
+  -o-transition: transform 300ms, box-shadow 300ms;
 }
 .brand {
   color: black;
@@ -387,13 +392,13 @@ margin-left: 78px;
   font-family: "Poppins", sans-serif;
 }
 
-.containerrr {
+.containerrr-card {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.containerrr .boxx {
+.containerrr-card .boxx {
   position: relative;
   width: 350px;
   padding: 40px;
@@ -407,7 +412,7 @@ margin-left: 78px;
   text-align: center;
 }
 
-.containerrr .boxx:before {
+.containerrr-card .boxx:before {
   content: "";
   width: 50px;
   height: 100%;
@@ -420,7 +425,7 @@ margin-left: 78px;
   transform: scale(1.1);
 }
 
-.containerrr .boxx .iconn {
+.containerrr-card .boxx .iconn {
   position: relative;
   width: 80px;
   height: 80px;
@@ -436,48 +441,48 @@ margin-left: 78px;
   transition: 1s;
 }
 
-.containerrr .boxx:nth-child(1) .iconn {
+.containerrr-card .boxx:nth-child(1) .iconn {
   box-shadow: 0 0 0 #e91e63;
   background: #e91e63;
 }
 
-.containerrr .boxx:nth-child(1):hover .iconn {
+.containerrr-card .boxx:nth-child(1):hover .iconn {
   box-shadow: 0 0 0 400px #ec0851;
 }
 
-.containerrr .boxx:nth-child(2) .iconn {
+.containerrr-card .boxx:nth-child(2) .iconn {
   box-shadow: 0 0 0 green;
   background: green;
 }
 
-.containerrr .boxx:nth-child(2):hover .iconn {
+.containerrr-card .boxx:nth-child(2):hover .iconn {
   box-shadow: 0 0 0 400px green;
 }
 
-.containerrr .boxx:nth-child(3) .iconn {
+.containerrr-card .boxx:nth-child(3) .iconn {
   box-shadow: 0 0 0 blue;
   background: blue;
 }
 
-.containerrr .boxx:nth-child(3):hover .iconn {
+.containerrr-card .boxx:nth-child(3):hover .iconn {
   box-shadow: 0 0 0 400px rgb(0, 0, 255);
 }
-.containerrr .boxx .contentt {
+.containerrr-card .boxx .contentt {
   position: relative;
   z-index: 1;
   transition: 0.5s;
 }
-.containerrr .boxx:hover .contentt {
+.containerrr-card .boxx:hover .contentt {
   color: #fff;
 }
 
-.containerrr .boxx .contentt h3 {
+.containerrr-card .boxx .contentt h3 {
   font-size: 20px;
   margin: 10px 0;
   padding: 0px;
 }
 
-.containerrr .boxx .contentt p {
+.containerrr-card .boxx .contentt p {
   margin: 0;
   padding: 0;
 }

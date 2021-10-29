@@ -30,7 +30,7 @@ const HeaderUser = () => {
             </li>
 
             <li>
-              <Link to="/Admin">Admin</Link>
+              <Link to="/Homee">Admin</Link>
             </li>
           </ul>
           <div className="log-reg">

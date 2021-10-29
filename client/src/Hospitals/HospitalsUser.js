@@ -18,6 +18,7 @@ function HospitalsUser() {
       <div className="hospital">
         <div className="hos-head">
           <h1>Best Hospitals in Somaliland </h1>
+          <h1>{hospital.length}</h1>
         </div>
         <div className="flex search">
           <input

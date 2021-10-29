@@ -16,7 +16,7 @@ import Section5 from "./home/Section5";
 import Section6 from "./home/Section6";
 import Blogs from "./Blogs/Blogs";
 
-import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Link, Router } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { ToastContainer } from "react-toastify";
@@ -78,8 +78,6 @@ function App() {
     <div>
       <BrowserRouter>
         <HeaderUser />
-        <Header />
-
         <Switch>
           <Route path="/Home">
             <Section1 />
@@ -120,9 +118,15 @@ function App() {
           <Route path="/Register">
             <Register />
           </Route>
-          {/* <Route path="/AddUser">
+        </Switch>
+      </BrowserRouter>
+      <BrowserRouter>
+        <Header />
+
+        <Switch>
+          <Route path="/AddUser">
             <AddUser />{" "}
-          </Route> */}
+          </Route>
           {/* <Route path="/AllUsers">
             {loading === false && (
               <AllUsers value={users} handleSettingUsers={handleSettingUsers} />
@@ -142,18 +146,18 @@ function App() {
             <EditUser />
           </Route>
           <Route path="/404">
-            <NotFound />{" "}
+            <NotFound />
           </Route>
-          <Route path="/Admin">
+          {/* <Route path="/Homee">
             <Admin />
             <Navbar />
             <Homee />
-          </Route>
-          <Route path="/Home">
-            <Homee />{" "}
+          </Route> */}
+          <Route path="/Homee">
+            <Homee />
           </Route>
           <Route path="/Appoinments">
-            <Appoinments />{" "}
+            <Appoinments />
           </Route>
           <Route path="/TodayTAppoinments">
             <TodayTAppoinments />

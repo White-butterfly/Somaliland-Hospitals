@@ -171,9 +171,6 @@ li a {
 .container {
   max-width: 970px;
   margin: auto;
-  position: relative;
-  top: 0;
-  left: 0;
 }
 .row {
   display: flex;
@@ -850,7 +847,7 @@ li {
 
 /* doctors */
 
-.boxes {
+/* .boxes {
   color: #e00f0f;
 }
 .doc-box {
@@ -928,8 +925,17 @@ li {
   margin-top: 60px;
   padding-top: 0px 50px;
   align-items: center;
+} */
+.dept-head {
+  margin-left: 370px;
+  font-size: 50px;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
 }
-
+.user {
+  box-shadow: 2px 2px 10px blue;
+  border-radius: 10px;
+}
 /* ************** counter /********** */
 .counter-num {
   background-color: rgb(226, 221, 221);
@@ -1311,8 +1317,7 @@ li {
   font-family: sans-serif;
   position: relative;
   background: linear-gradient(to bottom, #336699 0%, #000066 100%);
-
-  padding: 5px;
+  padding-left: 50px;
 }
 .slider_title {
   font-size: 5vw;
@@ -1459,7 +1464,7 @@ li {
 }
 
 .arrow svg:hover {
-  color: #68edff;
+  color: #fefeff;
 }
 
 .next {
@@ -1467,17 +1472,22 @@ li {
   top: 40%;
   margin-left: 24px;
   background-color: transparent;
-  color: #fff;
+  color: rgb(1, 1, 39);
   font-size: 50px;
 }
 
 .prev {
   right: 1050px;
   top: 40%;
-  margin-right: 200px;
+  margin-right: 260px;
   background-color: transparent;
-  color: #fff;
+  color: rgb(1, 5, 61);
   font-size: 50px;
+}
+.doctor-silder {
+  padding-left: 60px;
+  background-color: rgb(179, 216, 247);
+  height: 300%;
 }
 
 /* contact */
@@ -1506,7 +1516,7 @@ li {
   height: 500px;
 }
 
-.contact-forM {
+.contact_form {
   background-color: #1a5bbc;
   position: relative;
   padding: 5px;
@@ -1534,7 +1544,7 @@ li {
   right: 30px;
 }
 
-.contact-forM:before {
+.contact_form:before {
   content: "";
   position: absolute;
   width: 26px;
@@ -1559,6 +1569,7 @@ forM {
   line-height: 1;
   margin-bottom: 0.7rem;
   margin-bottom: 40px;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .INPUT-CONTAINER {
@@ -1579,6 +1590,10 @@ forM {
   letter-spacing: 0.5px;
   border-radius: 25px;
   transition: 0.3s;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
 }
 
 .textarea.inpuT {
@@ -1603,9 +1618,13 @@ forM {
   transition: 0.5s;
 }
 
-.INPUT-CONTAINER .textarea label {
+.INPUT-CONTAINER.textarea label {
   top: 1rem;
   transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
 }
 
 .btN {
@@ -1667,8 +1686,8 @@ forM {
   font-size: 0.8rem;
 }
 
-.input-container.focus span:before,
-.input-container.focus span:after {
+.INPUT-CONTAINER.focus span:before,
+.INPUT-CONTAINER.focus span:after {
   width: 50%;
   opacity: 1;
 }
@@ -1699,6 +1718,11 @@ forM {
   width: 28px;
   margin-right: 0.7rem;
 }
+.icon-contact {
+  color: blue;
+  margin: 7px;
+  font-size: 26px;
+}
 
 .social-mediA {
   padding: 2rem 0 0 0;
@@ -1717,7 +1741,7 @@ forM {
   width: 35px;
   height: 35px;
   border-radius: 5px;
-  background: linear-gradient(45deg, #1a25bc, #1a6dcc);
+  background: linear-gradient(45deg, #191927, #1a6dcc);
   color: #fff;
   text-align: center;
   line-height: 35px;
