@@ -1,12 +1,11 @@
-const blog= require('../model/blogModel');
-const Hospital = require("../model/hospitalModel")
+const blog= require('./../model/blogModel');
+
 
 
 exports.createBlog = async (req,res)=> {
     try{
 
-// const hospital = await Hospital.findOne({name:req.body.hospital}) 
-// req.body.hospital = hospital._id 
+
 
 const createBlog = await blog.create(req.body); 
 

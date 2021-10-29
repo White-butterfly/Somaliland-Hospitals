@@ -89,7 +89,7 @@ function App() {
         <Route path="/404">
           {" "}
           <NotFound />{" "}
-        </Route>
+        </Route> 
         <Route path="/Admin">
           <Admin />
 
@@ -198,7 +198,7 @@ function App() {
       <Route path="/Register">
         <Register />
       </Route>
-    </Switch>
+    </Switch> 
   </BrowserRouter>) }
  </>
 )
