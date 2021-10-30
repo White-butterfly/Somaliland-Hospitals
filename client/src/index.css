@@ -393,7 +393,7 @@ margin-left: 78px;
   text-decoration: none;
   color: #000;
   font-weight: 50;
-  margin-top: 20px; 
+  margin-top: 20px;
   /* box-shadow: 0 2px 5px rgba(0,0,0,0.2); */
   border: 1px solid;
 }
@@ -424,14 +424,13 @@ margin-left: 78px;
   margin-left: 345px;
   padding: 10px;
 } */
-.hello{
+.hello {
   display: grid;
   grid-template-columns: repeat(2, auto);
   /* grid-gap: .2px; */
   margin-top: 90px;
   color: #000;
- align-items: center;
- 
+  align-items: center;
 }
 .card:hover {
   color: #fff !important;
@@ -447,11 +446,9 @@ margin-left: 78px;
   transition: 0.5s;
   z-index: -1;
 }
-.img-fluid img{
-
-  width: '30%' ;
+.img-fluid img {
+  width: "30%";
   height: "200%";
-
 }
 .card:hover::before {
   left: 0%;
@@ -1107,7 +1104,7 @@ margin-left: 78px;
 .mainn {
   display: flex;
   margin-left: 200px;
-  margin-top: 50px
+  margin-top: 50px;
 }
 @media only screen and (max-width: 900px) {
   .mainn {
@@ -1207,7 +1204,7 @@ margin-left: 78px;
     font-family: AstroSpace;
     src: url(/fonts/AstroSpace.ttf);
   } */
-.bodyyy {
+/* .bodyyy {
   margin: 0;
   padding: 0;
   font-family: "Montserrat", sans-serif;
@@ -1333,7 +1330,7 @@ div#envelope {
   border: 2px solid gray;
   border-radius: 10px;
   /* margin-bottom: 300px; */
-}
+  /* }
 .formm {
   width: 70%;
   margin: 4% 15%;
@@ -1350,7 +1347,7 @@ div#envelope {
 }
 
 /* Makes responsive fields. Sets size and field alignment.*/
-.innput[type="text"] {
+  /* .innput[type="text"] {
   margin-bottom: 20px;
   margin-top: 10px;
   width: 100%;
@@ -1388,8 +1385,8 @@ textarea:focus {
 div#envelope {
   width: 80%;
   margin: 10px 30% 10px 11%;
-}
-
+} */
+  /* 
 label {
   font-size: 18px;
 }
@@ -1418,16 +1415,11 @@ label {
 div#envelope {
   width: 80%;
   margin: 10px 30% 10px 11%;
-}
+} */
 
+  /* Admin Dashboard  */
 
-/* Admin Dashboard  */
-
-:root {
-  --main-colorr: #6c03f5;
-  --color-darkk: #1D2231;
-  --text-greyy: #8290A2;
-}
+  /*
 
 .padding{
   padding: 0;
@@ -1599,14 +1591,12 @@ margin-top: 1rem;
   padding: 2rem;
   /* border: 1px solid black; */
 }
-.admincard-single h1{
+.admincard-single h1 {
   color: #000;
 }
-.admincard-single .h11{
-  font-size: 3rem ;
-color: var(--main-colorr);
-
-
+.admincard-single .h11 {
+  font-size: 3rem;
+  color: var(--main-colorr);
 }
 .admincard-single div:first-child {
   color: var(--text-greyy);
@@ -1616,45 +1606,43 @@ color: var(--main-colorr);
   background: linear-gradient(135deg, var(--main-colorr), #fff);
 }
 
-.admincard-single:last-child span  {
+.admincard-single:last-child span {
   color: #fff;
 }
-.admincard-single:last-child h1{
+.admincard-single:last-child h1 {
   color: #fff;
 }
 
-.recent-grid{
+.recent-grid {
   margin-top: 3.5rem;
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: 70% auto;
 }
-.admincard{
+.admincard {
   background: #fff;
   border-radius: 5px;
 }
 
 .admincard-header,
-.admincard-body{
+.admincard-body {
   padding: 1rem;
 }
 
-.admincard-header{
+.admincard-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #f0f0f0;
-
 }
-.admincard-header button{
+.admincard-header button {
   background: var(--main-colorr);
   border-radius: 10px;
   color: #fff;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   border: 1px solid var(--main-colorr);
-  padding: .5rem 1rem ;
+  padding: 0.5rem 1rem;
 }
-
 
 /* 
 table{
@@ -1674,7 +1662,7 @@ thead td {
  td {
   padding: .5rem 0rem;
   /* font-size: .9rem; */
-  /* color: #000;
+/* color: #000;
 }
 td .status{
   display: inline-block;
@@ -1699,40 +1687,36 @@ tr td:last-child {
   width: 100%;
   overflow-x:auto ;
 
-} */ */
-
-.admincustomer{
+} */
+*/ .admincustomer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .5rem  1rem;
+  padding: 0.5rem 1rem;
 }
-.adminInfo{
+.adminInfo {
   display: flex;
   align-items: center;
-
 }
 
 .adminInfo img {
   border-radius: 50%;
   margin-right: 1rem;
 }
-.adminInfo h4{
-
-font-weight: 700;
-color: #444;
+.adminInfo h4 {
+  font-weight: 700;
+  color: #444;
 }
 .adminInfo small {
-font-weight: 600;
-color: var(--text-greyy)
+  font-weight: 600;
+  color: var(--text-greyy);
 }
 
-.admincontact span{
+.admincontact span {
   font-size: 1.9rem;
   display: inline-block;
-  margin-left: .5rem;
-  color: var(--main-colorr)
-
+  margin-left: 0.5rem;
+  color: var(--main-colorr);
 }
 /* All Hospitals Table */
 
@@ -1744,13 +1728,14 @@ Table {
   width: 100%;
   border: none;
 }
-Th, td {
+Th,
+td {
   text-align: center;
   padding: 16px;
 }
 
 Tr:nth-child(even) {
-  background-color: #f2f2f2
+  background-color: #f2f2f2;
 }
 
 .center {

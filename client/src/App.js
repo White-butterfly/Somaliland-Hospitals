@@ -1,5 +1,6 @@
 import "./App.css";
-//import Footer from "./home/Footer";
+import "./index.css";
+import Footer from "./home/Footer";
 import HeaderUser from "./home/HeaderUser";
 import Section1 from "./home/section1";
 import Section2 from "./home/Section2";
@@ -24,10 +25,9 @@ import "react-toastify/dist/ReactToastify.css";
 import "./index.css";
 
 import Departments from "./components/Admin/Hospitals/Departments";
-//import Line1 from "./components/Line1";
+import Line1 from "./components/Line1";
 import Admin from "./components/Admin/Admin";
 import NotFound from "./components/Admin/NotFound";
-//import ReadUser from "./components/Admin/Users/ReadUser";
 import Homee from "./components/Admin/Homee";
 import Appoinments from "./components/Admin/Appoinments/OverviewAppoinments";
 import TodayTAppoinments from "./components/Admin/Appoinments/TodayTAppoinments";
@@ -55,153 +55,263 @@ function App() {
   };
 
   const [hospitals, sethospitals] = useState([]);
-  const [loading, setLoading] = useState(true);
-  // const [users, setUsers] = useState([]);
-
-  // const handleSettingUsers = (user) => {
-  //   setUsers(user);
-  // };
   const handeleSettingHospitals = (hospital) => {
     sethospitals(hospital);
   };
   useEffect(() => {
-    // axios
-    //   .get("http://localhost:8000/users/", users)
-    //   .then((res) => {
-    //     setUsers(res.data.data);
-    //     setLoading(false);
-    //   })
-    //   .catch((e) => console.log(e.responce));
-
     axios
       .get(`http://localhost:8000/api/hospital`, hospitals)
       .then((res) => sethospitals(res.data.data))
       .catch((error) => console.log(error));
   }, []);
 
-    
-      return (
- <>
-   {user.role === "admin" ? (
-      <BrowserRouter>
-      <Homee />
-      <Switch>
-        <Route path="/404">
-          {" "}
-          <NotFound />{" "}
-        </Route> 
-        <Route path="/Admin">
-          <Admin />
+  // if (user.role === "admin") {
+  //   console.log(user.role);
+  //   return;
+  // <BrowserRouter>
+  //   <Homee />
+  //   <Switch>
+  //     <Route path="/404">
+  //       {" "}
+  //       <NotFound />{" "}
+  //     </Route>
+  //     <Route path="/Admin">
+  //       <Admin />
 
+  //       <Homee />
+  //     </Route>
+  //     <Route path="/Homee">
+  //       <Homee />{" "}
+  //     </Route>
+  //     <Route path="/Appoinments">
+  //       <Appoinments />{" "}
+  //     </Route>
+  //     <Route path="/TodayTAppoinments/">
+  //       <TodayTAppoinments />
+  //     </Route>
+  //     <Route path="/yesterdayTotalAppoinments">
+  //       <YesterdayTAppoinments />
+  //     </Route>
+  //     <Route path="/total Appoinments">
+  //       <TodayTAppoinments />
+  //     </Route>
+  //     <Route path="/TotalRegisteredPatient">
+  //       <TotalRegisteredPatient />
+  //     </Route>
+  //     <Route path="/Departments/:id">
+  //       <Departments />
+  //     </Route>
+  //     <Route path="/Doctors/:id">
+  //       <Doctors />
+  //     </Route>
+  //     <Route path="/AddHospital">
+  //       <AddHospital />
+  //     </Route>
+  //     <Route path="/AddDepartment">
+  //       <AddDepartment />
+  //     </Route>
+  //     <Route path="/overview">
+  //       <Overview />
+  //     </Route>
+  //     <Route path="/Login">
+  //       <Login />
+  //     </Route>
+  //     <Route path="/Doctor">
+  //       <Doctor />
+  //     </Route>
+  //     <Route path="/Appoinment">
+  //       <Appoinment />
+  //     </Route>
+  //     <Route path="/Record">
+  //       <Record />
+  //     </Route>
+  //     <Route path="/AllHospitals">
+  //       <AllHospitals />
+  //     </Route>
+  //     <Route path="/AllDoctors">
+  //       <AllDoctors />
+  //     </Route>
+  //     <Route path="/AdminDashboard">
+  //       <AdminDashboard />
+  //     </Route>
+  //     <Route path="/Line1/:id">
+  //       <Line1 />
+  //     </Route>
+  //   </Switch>
+  // </BrowserRouter>;
+  // } else {
+  //   return (
+  // <BrowserRouter>
+  //   <HeaderUser />
+  //   <Switch>
+  //     <Route path="/home">
+  //       <Section1 />
+  //       <Section4 />
+  //       <Section5 />
+  //       <Section2 />
+  //       <Section6 />
+  //     </Route>
+  //     <Route path="/Hospitals">
+  //       {" "}
+  //       <Hospitals />
+  //     </Route>
+  //     <Route path="/Department/:id">
+  //       <Departments />
+  //     </Route>
+  //     <Route path="/Doctors/:id">
+  //       <Doctors />
+  //     </Route>
+  //     <Route path="/Bolgs">
+  //       <Doctors />
+  //     </Route>
+  //     <Route path="/Appiontment">
+  //       {" "}
+  //       <Appiontment />{" "}
+  //     </Route>
+  //     <Route path="/DepartmentCards">
+  //       <DepartmentCards />
+  //     </Route>
+  //     <Route path="/Contact">
+  //       <Section6 />
+  //     </Route>
+  //     <Route path="/Blogs">
+  //       {" "}
+  //       <Blogs />
+  //     </Route>
+  //     <Route path="/Login">
+  //       <LoginBody />
+  //     </Route>
+  //     <Route path="/Register">
+  //       <Register />
+  //     </Route>
+  //   </Switch>
+  // </BrowserRouter>
+  //   );
+  // }
+
+  return (
+    <>
+      {user.role === "admin" ? (
+        <BrowserRouter>
           <Homee />
-        </Route>
-        <Route path="/Homee">
-          <Homee />{" "}
-        </Route>
-        <Route path="/Appoinments">
-          <Appoinments />{" "}
-        </Route>
-        <Route path="/TodayTAppoinments/">
-          <TodayTAppoinments />
-        </Route>
-        <Route path="/yesterdayTotalAppoinments">
-          <YesterdayTAppoinments />
-        </Route>
-        <Route path="/total Appoinments">
-          <TodayTAppoinments />
-        </Route>
-        <Route path="/TotalRegisteredPatient">
-          <TotalRegisteredPatient />
-        </Route>
-        <Route path="/Departments/:id">
-          <Departments />
-        </Route>
-        <Route path="/Doctors/:id">
-          <Doctors />
-        </Route>
-        <Route path="/AddHospital">
-          <AddHospital />
-        </Route>
-        <Route path="/AddDepartment">
-          <AddDepartment />
-        </Route>
-        <Route path="/overview">
-          <Overview />
-        </Route>
-        <Route path="/Login">
-          <Login />
-        </Route>
-        <Route path="/Doctor">
-          <Doctor />
-        </Route>
-        <Route path="/Appoinment">
-          <Appoinment />
-        </Route>
-        <Route path="/Record">
-          <Record />
-        </Route>
-        <Route path="/AllHospitals">
-          <AllHospitals />
-        </Route>
-        <Route path="/AllDoctors">
-          <AllDoctors />
-        </Route>
-        <Route path="/AdminDashboard">
-          <AdminDashboard />
-        </Route>
-        <Route path="/Line1/:id">
-          <Line1 />
-        </Route>
-      </Switch>
-    </BrowserRouter>
-     
-   ) : ( <BrowserRouter>
-    <HeaderUser />
-    <Switch>
-      <Route path="/home">
-        <Section1 />
-        <Section4 />
-        <Section5 />
-        <Section2 />
-        <Section6 />
-      </Route>
-      <Route path="/Hospitals">
-        {" "}
-        <Hospitals />
-      </Route>
-      <Route path="/Department/:id">
-        <Departments />
-      </Route>
-      <Route path="/Doctors/:id">
-        <Doctors />
-      </Route>
-      <Route path="/Bolgs">
-        <Doctors />
-      </Route>
-      <Route path="/Appiontment">
-        {" "}
-        <Appiontment />{" "}
-      </Route>
-      <Route path="/DepartmentCards">
-        <DepartmentCards />
-      </Route>
-      <Route path="/Contact">
-        <Section6 />
-      </Route>
-      <Route path="/Blogs">
-        {" "}
-        <Blogs />
-      </Route>
-      <Route path="/Login">
-        <LoginBody />
-      </Route>
-      <Route path="/Register">
-        <Register />
-      </Route>
-    </Switch> 
-  </BrowserRouter>) }
- </>
-)
+          <Switch>
+            <Route path="/404">
+              {" "}
+              <NotFound />{" "}
+            </Route>
+            <Route path="/Admin">
+              <Admin />
+
+              <Homee />
+            </Route>
+            <Route path="/Homee">
+              <Homee />{" "}
+            </Route>
+            <Route path="/Appoinments">
+              <Appoinments />{" "}
+            </Route>
+            <Route path="/TodayTAppoinments/">
+              <TodayTAppoinments />
+            </Route>
+            <Route path="/yesterdayTotalAppoinments">
+              <YesterdayTAppoinments />
+            </Route>
+            <Route path="/total Appoinments">
+              <TodayTAppoinments />
+            </Route>
+            <Route path="/TotalRegisteredPatient">
+              <TotalRegisteredPatient />
+            </Route>
+            <Route path="/Departments/:id">
+              <Departments />
+            </Route>
+            <Route path="/Doctors/:id">
+              <Doctors />
+            </Route>
+            <Route path="/AddHospital">
+              <AddHospital />
+            </Route>
+            <Route path="/AddDepartment">
+              <AddDepartment />
+            </Route>
+            <Route path="/overview">
+              <Overview />
+            </Route>
+            <Route path="/Login">
+              <Login />
+            </Route>
+            <Route path="/Doctor">
+              <Doctor />
+            </Route>
+            <Route path="/Appoinment">
+              <Appoinment />
+            </Route>
+            <Route path="/Record">
+              <Record />
+            </Route>
+            <Route path="/AllHospitals">
+              <AllHospitals />
+            </Route>
+            <Route path="/AllDoctors">
+              <AllDoctors />
+            </Route>
+            <Route path="/AdminDashboard">
+              <AdminDashboard />
+            </Route>
+            <Route path="/Line1/:id">
+              <Line1 />
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      ) : (
+        <BrowserRouter>
+          <HeaderUser />
+          <Switch>
+            <Route path="/home">
+              <Section1 />
+              <Section4 />
+              <Section5 />
+              <Section2 />
+              <Section6 />
+            </Route>
+            <Route path="/Hospitals">
+              {" "}
+              <Hospitals />
+            </Route>
+            <Route path="/Department/:id">
+              <Departments />
+            </Route>
+            <Route path="/Doctors/:id">
+              <Doctors />
+            </Route>
+            <Route path="/Bolgs">
+              <Doctors />
+            </Route>
+            <Route path="/Appiontment">
+              {" "}
+              <Appiontment />{" "}
+            </Route>
+            <Route path="/DepartmentCards">
+              <DepartmentCards />
+            </Route>
+            <Route path="/Contact">
+              <Section6 />
+            </Route>
+            <Route path="/Blogs">
+              {" "}
+              <Blogs />
+            </Route>
+            <Route path="/Login">
+              <LoginBody />
+            </Route>
+            <Route path="/Register">
+              <Register />
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      )}
+    </>
+  );
 }
 
 export default App;
