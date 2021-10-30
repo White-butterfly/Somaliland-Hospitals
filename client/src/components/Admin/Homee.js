@@ -32,7 +32,7 @@ const Homee = () => {
               </li>
 
               <li>
-                <Link to={"/AllDepartments"}>
+                <Link to={"/AllDepartment"}>
                   <a href="">
                     <span className="las la-clipboard-list"></span>
                     <span>All Departments</span>

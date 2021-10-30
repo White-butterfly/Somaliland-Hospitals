@@ -1,6 +1,7 @@
 import React from "react";
-import { motion } from "framer-motion";
 import CountUp from "react-countup";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 import {
   FaUser,
@@ -10,6 +11,24 @@ import {
 } from "react-icons/fa";
 
 function Section4() {
+  const [hospital, sethospital] = useState([]);
+  const [department, setdepartment] = useState([]);
+  const [doctor, setdoctor] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8000/api/hospital`)
+      .then((res) => sethospital(res.data.data));
+
+    axios
+      .get(`http://localhost:8000/api/Department`)
+      .then((res) => setdepartment(res.data.data));
+
+    axios
+      .get(`http://localhost:8000/api/doctor`)
+      .then((res) => console.log(res));
+  }, []);
+
   return (
     <div>
       {/* <!-- counter section starts  --> */}
@@ -23,7 +42,7 @@ function Section4() {
               />
               <CountUp
                 start={0}
-                end={120}
+                end={hospital.length}
                 duration={2.75}
                 separator=" "
                 decimals={0}
@@ -33,9 +52,30 @@ function Section4() {
                 onEnd={() => console.log("Ended! 👏")}
                 onStart={() => console.log("Started! 💨")}
               >
-                <span>120+</span>
+                <span>+</span>
               </CountUp>
               <h3>Hospitals</h3>
+            </div>
+
+            <div class="box" data-aos="fade-up">
+              <FaProcedures
+                style={{ color: "blue", width: "50px", height: "30px" }}
+              />{" "}
+              <CountUp
+                start={0}
+                end={department.length}
+                duration={2.75}
+                separator=" "
+                decimals={0}
+                decimal=","
+                prefix=" "
+                suffix=" +"
+                onEnd={() => console.log("Ended! 👏")}
+                onStart={() => console.log("Started! 💨")}
+              >
+                <span>+</span>
+              </CountUp>
+              <h3>Departments</h3>
             </div>
 
             <div class="box" data-aos="fade-up">
@@ -44,7 +84,7 @@ function Section4() {
               />
               <CountUp
                 start={0}
-                end={500}
+                end={doctor.length}
                 duration={2.75}
                 separator=" "
                 decimals={0}
@@ -54,7 +94,7 @@ function Section4() {
                 onEnd={() => console.log("Ended! 👏")}
                 onStart={() => console.log("Started! 💨")}
               >
-                <span>500+</span>
+                <span>+</span>
               </CountUp>
               <h3>Doctors</h3>
             </div>
@@ -78,27 +118,6 @@ function Section4() {
                 <span>1200+</span>
               </CountUp>
               <h3>happy patients</h3>
-            </div>
-
-            <div class="box" data-aos="fade-up">
-              <FaProcedures
-                style={{ color: "blue", width: "50px", height: "30px" }}
-              />{" "}
-              <CountUp
-                start={0}
-                end={130}
-                duration={2.75}
-                separator=" "
-                decimals={0}
-                decimal=","
-                prefix=" "
-                suffix=" +"
-                onEnd={() => console.log("Ended! 👏")}
-                onStart={() => console.log("Started! 💨")}
-              >
-                <span>130+</span>
-              </CountUp>
-              <h3>Departments</h3>
             </div>
           </div>
         </div>
