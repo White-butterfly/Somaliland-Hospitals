@@ -15,7 +15,7 @@ const hospitalRouter = require("./routes/hospitalRoutes");
 const userRouter = require("./routes/userRoutes");
 
 const departmentRouter = require("./routes/departmentRoutes");
-const appoinmentRouter = require("./routes/appoinmentRoutes");
+const appoinmentRouter = require("./routes/appoinmentRoutes"); 
 const doctorRouter= require('./routes/doctorRoute');
 const blogRouter= require('./routes/blogRoutes');
 

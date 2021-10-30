@@ -16,7 +16,7 @@ const AllHospitals = () => {
 
      .catch((e)=> console.log(e.response))
     },[]);
-
+ 
     function delHospital(id){
         axios
         .delete(`http://localhost:8000/api/hospital/${id}`)

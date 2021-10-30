@@ -10,15 +10,6 @@ const AdminDashboard = () => {
         <label for="nav-toggle"> <span className="las la-bars"></span> </label>
                     Dashboard
                </h2>
-
-               {/* <div className="adminsearch-wrapper">
-                   <span className="las la-search"></span>
-                   <input type="search"
-                   placeholder= "Search here" />
-               </div> */}
-            
-              
-
             </div>
             <div className="mmain">
                 <div className="admincards">
