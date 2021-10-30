@@ -1,64 +1,97 @@
-
-
-export default Homee;
 // import React from 'react'
-import {Link} from "react-router-dom"
-import React from 'react'
+import { Link } from "react-router-dom";
+import React from "react";
 
 const Homee = () => {
-    return (
-        <div>
-            <div className="padding">
-            <input type="checkbox" id='nav-toggle'  />
+  return (
+    <div>
+      <div className="padding">
+        <input type="checkbox" id="nav-toggle" />
         <div className="adminsidebar">
-            <div className="adminsidebar-brand">
-               <h2><span className= "lab la-accusoft"></span>Somaliland-Hospitals</h2>
-            </div>
-            <div className="adminsidebar-menu">
-                <ul>
-                    <li>
-                    <Link to = {'/AdminDashboard'}><span className= "las la-igloo"></span>
-                       <span>Dashboard</span></Link>
-                    </li>
+          <div className="adminsidebar-brand">
+            <h2>
+              <span className="lab la-accusoft"></span>Somaliland-Hospitals
+            </h2>
+          </div>
+          <div className="adminsidebar-menu">
+            <ul>
+              <li>
+                <Link to={"/AdminDashboard"}>
+                  <span className="las la-igloo"></span>
+                  <span>Dashboard</span>
+                </Link>
+              </li>
 
-                    <li>
-                    <Link to = {'/AllHospitals'} ><a href=""><span className= "las la-users"></span>
-                    <span>All Hospitals</span></a> </Link>
-                    </li>
+              <li>
+                <Link to={"/AllHospitals"}>
+                  <a href="">
+                    <span className="las la-users"></span>
+                    <span>All Hospitals</span>
+                  </a>{" "}
+                </Link>
+              </li>
 
-                    <li>
-                       <Link to = {'/AllDepartments'} ><a href=""><span className= "las la-clipboard-list"></span>
-                        <span>All Departments</span></a></Link>
-                    </li>
-                    <li>
-                       <Link to = {'/AllDoctors'}> <a href=""><span className= "las la-shopping-bag"></span>
-                        <span>All Doctors</span></a></Link>
-                    </li>
-                    <li>
-                     <Link to = {'/TodayTAppoinments'} ><a href=""><span className= "las la-receipt"></span>
-                        <span>All Appoinments</span></a></Link>
-                    </li>
-                    <li>
-                      <Link to = {'/AddHospital'} > <a href=""><span className= "las la-user-circle"></span>
-                        <span>Add Hospital</span></a></Link>
-                    </li>
-                    <li>
-                        <Link to = {'/Adddepartment'}><a href=""><span className= "las la-clipboard-list"></span>
-                        <span>Add Department </span></a></Link>
-                    </li>
-                    <li>
-                        <Link to = {'/Appoinment'}><a href=""><span className= "las la-clipboard-list"></span>
-                        <span>Add Appoinment</span></a></Link>
-                    </li>
-                </ul>
-            </div>
-            
-        <label for="nav-toggle"> <span className="las la-bars"></span> </label>
-        </div>
+              <li>
+                <Link to={"/AllDepartment"}>
+                  <a href="">
+                    <span className="las la-clipboard-list"></span>
+                    <span>All Departments</span>
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link to={"/AllDoctors"}>
+                  {" "}
+                  <a href="">
+                    <span className="las la-shopping-bag"></span>
+                    <span>All Doctors</span>
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link to={"/TodayTAppoinments"}>
+                  <a href="">
+                    <span className="las la-receipt"></span>
+                    <span>All Appoinments</span>
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link to={"/AddHospital"}>
+                  {" "}
+                  <a href="">
+                    <span className="las la-user-circle"></span>
+                    <span>Add Hospital</span>
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link to={"/Adddepartment"}>
+                  <a href="">
+                    <span className="las la-clipboard-list"></span>
+                    <span>Add Department </span>
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link to={"/Appoinment"}>
+                  <a href="">
+                    <span className="las la-clipboard-list"></span>
+                    <span>Add Appoinment</span>
+                  </a>
+                </Link>
+              </li>
+            </ul>
+          </div>
 
+          <label for="nav-toggle">
+            {" "}
+            <span className="las la-bars"></span>{" "}
+          </label>
         </div>
-        </div>
-    );
+      </div>
+    </div>
+  );
 };
 
- export default Homee;
+export default Homee;

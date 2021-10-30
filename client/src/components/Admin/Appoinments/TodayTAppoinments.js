@@ -12,8 +12,10 @@ const TodayTAppoinments = () => {
 
     useEffect(()=> {
         axios
-        .get(`http://localhost:8000/api/appoinment/${id}`)
-        .then((res)=> setAppoinment(res.data.data))
+        .get(`http://localhost:8000/api/appoinment/`)
+        .then((res)=> {setAppoinment(res.data.data)
+            console.log(res.data.data) 
+        } )
 
      .catch((e)=> console.log( Appoinment,"uuuuuu",e.response))
         
@@ -41,17 +43,14 @@ const TodayTAppoinments = () => {
 	<Tbody style={{marginLeft: "345px"}}>
 	 <Tr>
      <Td >{Appoinments.firstName}</Td>
-            <Td>{Appoinments.firstName}</Td> 
-            <Td>{Appoinments.firstName}</Td>
-            <Td>{Appoinments.firstName}</Td>  
+ <Td>{Appoinments.department.hospital.name}</Td>
+         <Td>{Appoinments.department.name}</Td>
+        <Td>{Appoinments.department.doctor.name}</Td> 
 
             <Link to= {`/Line1/${Appoinments._id}`} > <Td>See More</Td></Link>
             </Tr>
 	</Tbody>
-/* 			
- <Td>{Appoinments.department.hospital}</Td>
-         <Td>{Appoinments.department.name}</Td>
-        <Td>{Appoinments.department.doctor.name}</Td> */
+	
 
 	
 		))}
