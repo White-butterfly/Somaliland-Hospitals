@@ -26,14 +26,10 @@ const HeaderUser = () => {
               <Link to="/Contact">Contact</Link>
             </li>
             <li>
-              <Link to="/Doctor">Doctors</Link>
-            </li>
-
-            <li>
-              <Link to="/Homee">Admin</Link>
+              <Link to="/about">About us</Link>
             </li>
           </ul>
-          
+
           <div className="log-reg">
             <h2>
               <Link to="/Login" className="h2">

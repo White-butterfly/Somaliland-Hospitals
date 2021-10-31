@@ -1,10 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
 function Register() {
+  const history = useHistory();
   const [user, setUser] = useState({
     username: "",
     email: "",
@@ -14,7 +15,10 @@ function Register() {
     //code
     axios
       .post("http://localhost:8000/api/user", user)
-      .then((res) => toast.success("User created successfully"))
+      .then(
+        (res) => toast.success("User created successfully"),
+        history.push("/Login")
+      )
       .catch((e) => console.log(e));
   }
   return (

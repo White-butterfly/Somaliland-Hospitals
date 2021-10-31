@@ -10,7 +10,7 @@ function Section5() {
   const NextArrow = ({ onClick }) => {
     return (
       <div className="arrow next" onClick={onClick}>
-        <MdKeyboardArrowRight /> 
+        <MdKeyboardArrowRight />
       </div>
     );
   };
@@ -203,7 +203,7 @@ function Section5() {
             </div>
           </div>
         </Slider>
-        <Link to="/Hospitals">
+        <Link to="/HospitalsUser">
           <button className="slider-btn">hospital search</button>
         </Link>
       </div>

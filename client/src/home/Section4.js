@@ -26,7 +26,7 @@ function Section4() {
 
     axios
       .get(`http://localhost:8000/api/doctor`)
-      .then((res) => console.log(res));
+      .then((res) => setdoctor(res.data.data));
   }, []);
 
   return (

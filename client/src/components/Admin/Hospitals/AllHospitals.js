@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import EditHospital from "./EditHospital";
 
 const AllHospitals = () => {
   const [id, setId] = useState("");
@@ -49,7 +50,10 @@ const AllHospitals = () => {
                 <td>{hospital.address.region}</td>
                 <td>
                   <span class="action_btn">
-                    <a href="#">Edit</a>
+                    <Link to={`/EditHospital/${hospital._id}`}>
+                      {" "}
+                      <a href="#">Edit</a>
+                    </Link>
                     <a href="#" onClick={() => delHospital(hospital._id)}>
                       Remove
                     </a>

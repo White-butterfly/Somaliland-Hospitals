@@ -18,7 +18,6 @@ function HospitalsUser() {
       <div className="hospital">
         <div className="hos-head">
           <h1>Best Hospitals in Somaliland </h1>
-          <h1>{hospital.length}</h1>
         </div>
         <div className="flex search">
           <input
@@ -67,7 +66,7 @@ function HospitalsUser() {
                     <MdStar />
                   </div>
                   <Link
-                    to={`DepartmentsUser/${value._id}`}
+                    to={`DepartmentUser/${value._id}`}
                     className="blog-post_cta"
                   >
                     Read more

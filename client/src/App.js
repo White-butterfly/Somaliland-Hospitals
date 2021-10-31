@@ -9,7 +9,7 @@ import Section4 from "./home/Section4";
 import LoginBody from "./Login/LoginBody";
 import Register from "./Login/Register";
 import HospitalsUser from "./Hospitals/HospitalsUser";
-//import DepartmentsUser from "./Hospitals/DepartmentsUser";
+import DepartmentUser from "./Hospitals/DepartmentUser";
 import DoctorsUser from "./Hospitals/DoctorsUser";
 import Appiontment from "./Hospitals/Appiontment";
 import DepartmentCards from "./Hospitals/DepartmentCards";
@@ -46,6 +46,7 @@ import AllHospitals from "./components/Admin/Hospitals/AllHospitals";
 import AllDoctors from "./components/Admin/Hospitals/AllDoctors";
 import AdminDashboard from "./components/Admin/AdminDashboard";
 import AllDepartment from "./components/Admin/Hospitals/AllDepartment";
+import EditHospital from "./components/Admin/Hospitals/EditHospital";
 
 function App() {
   const user = {
@@ -100,12 +101,11 @@ function App() {
             <Route path="/TotalRegisteredPatient">
               <TotalRegisteredPatient />
             </Route>
-            {/* <Route path="/Departments/:id">
-              <Departments />
-            </Route> */}
-            {/* <Route path="/Doctors/:id">
-              <Doctors />
-            </Route> */}
+
+            <Route path="/EditHospital/:id">
+              <EditHospital />
+            </Route>
+
             <Route path="/AddHospital">
               <AddHospital />
             </Route>
@@ -143,6 +143,19 @@ function App() {
               <Line1 />
             </Route>
           </Switch>
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
+          {/* Same as */}
+          <ToastContainer />
         </BrowserRouter>
       ) : (
         <BrowserRouter>
@@ -159,9 +172,9 @@ function App() {
               {" "}
               <HospitalsUser />
             </Route>
-            {/* <Route path="/DepartmentsUser/:id">
-              <DepartmentsUser />
-            </Route> */}
+            <Route path="/DepartmentUser/:id">
+              <DepartmentUser />
+            </Route>
             <Route path="/DoctorsUser/:id">
               <DoctorsUser />
             </Route>
@@ -176,6 +189,9 @@ function App() {
             <Route path="/Contact">
               <Section6 />
             </Route>
+            <Route path="/about">
+              <Section2 />
+            </Route>
             <Route path="/Blogs">
               {" "}
               <Blogs />
@@ -188,6 +204,19 @@ function App() {
             </Route>
           </Switch>
           <Footer />
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
+          {/* Same as */}
+          <ToastContainer />
         </BrowserRouter>
       )}
     </>

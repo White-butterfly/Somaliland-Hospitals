@@ -24,10 +24,11 @@ function DepartmentCards() {
       {department.map((department) => (
         <div>
           <h1 className="hos-head"> Department of {department.name}</h1>
-          <DoctorsUser />
+
           <div className="flex boxes"></div>
         </div>
       ))}
+      <DoctorsUser />
     </>
   );
 }

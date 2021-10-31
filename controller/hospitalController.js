@@ -29,7 +29,8 @@ exports.createHospital = async (req, res) => {
 };
 exports.updateHospital = async (req, res) => {
   try {
-    const hospitalss = await hospitalModel.findByIdAndUpdate(
+    console.log(req.body);
+    const hospitalss = await hospitalModel.findOneAndUpdate(
       req.params.id,
       req.body
     );

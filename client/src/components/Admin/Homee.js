@@ -16,7 +16,7 @@ const Homee = () => {
           <div className="adminsidebar-menu">
             <ul>
               <li>
-                <Link to={"/AdminDashboard"}>
+                <Link to={"/AdminDashboard"} className="active">
                   <span className="las la-igloo"></span>
                   <span>Dashboard</span>
                 </Link>

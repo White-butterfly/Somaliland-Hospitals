@@ -8,6 +8,7 @@ require("./server");
 const app = express();
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(cors());
 
 //routes
@@ -20,11 +21,11 @@ const doctorRouter = require("./routes/doctorRoute");
 const contactRouter = require("./routes/contactRoutes");
 const blogRouter = require("./routes/blogRoutes");
 
-//middle ware 
+//middle ware
 app.use("/api/hospital", hospitalRouter);
-app.use("/api/user", userRouter); 
+app.use("/api/user", userRouter);
 app.use("/api/Department", departmentRouter);
-app.use('/api/doctor', doctorRouter);
+app.use("/api/doctor", doctorRouter);
 app.use("/api/appoinment", appoinmentRouter);
 app.use("/api/review", reviewRouter);
 app.use("/api/blog", blogRouter);
