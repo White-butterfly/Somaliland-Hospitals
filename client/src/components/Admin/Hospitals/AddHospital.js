@@ -7,27 +7,39 @@ const AddHospital = () => {
         name: "",
         logo: "",
         image: "",
+        describtion: "",
         address: { 
             city: "",
-            region: "",
-        } 
+            region: "", 
+        },
+            geolocation: {
+              lat: '',
+              long: '',
+            }
+         
     });
       const onChange = e => {
           let data= { ...Addhospital };
           let name= e.target.name;
           let val = e.target.value;
-          if (name == "name" || name == "logo" || name == "image"){
+          // let vali = e.target.file[];
+          if (name == "name" || name == "logo" || name == "image" || name == "describtion"){
               data = { ...data, [name]: val };
-          }else if (name == 'region' || name == 'city'){
+          }else if (name == 'region' || name == 'city' ){
               data = {
                   ...data,
                   address: {
                     ...data.address,
                       [name]: val
-}
-
-};
-}
+}};}
+else if (name == 'lat' || name == 'long') {
+      data = {
+        ...data,
+        geolocation: {
+          ...data.geolocation,
+            [name]: val
+          }} };
+          
 console.log("on change ",onChange);
       setAddhospital(data);
 };
@@ -41,76 +53,149 @@ console.log("on change ",onChange);
       };
     return (
         <div>
-            <div className="add">
-            <h1>Register a new Hospital</h1>
+               <div className="boddy">
+        <div id="envelope">
+        <form  className="formm" >
+            <div className="headder">
+              <h2>Register a new Hospital</h2>
             </div>
-            <div className="container">
-              <form action="#">
-                  <div className="hospital-details">
-                      <div className="input-box">
-                          <span className="details"> Hospital Name</span>
+            <br/>
+            <br/>
+            <label>Hospital Name</label>
+          <input
+            type="text"
+            className="form-control"
+          
+            name = "name"
+            required
+            value= {Addhospital.name}
+            onChange={onChange}
+          />
+      
 
-                          <input 
-                          type="text" 
-                          placeholder="Enter hospital name" 
-                          name = "name"
-                          required
-                          value= {Addhospital.name}
-                          onChange={onChange}/>
-                      </div>
+      <label>Hospital logo</label>
+          <input
+            type="text"
+            className="form-control"
+         
+            required
+            name= "logo"
+            value= {Addhospital.logo}
+            onChange= {onChange}
+          />
+     
 
-                      <div className="input-box">
-                          <span className="details"> Hospital logo</span>
+     <label>Hospital image</label>
+          <input
+            type="text"
+            className="form-control"
+          
+            required
+           value= {Addhospital.image}
+           name= "image"
+           onChange= {onChange}
+          />
 
-                          <input type="text" 
-                          placeholder="Enter hospital Logo" 
-                          required
-                          name= "logo"
-                          value= {Addhospital.logo}
-                          onChange= {onChange}/>
-                      </div>
+<label>Hospital Description </label>
+          <input
+            type="text"
+            className="form-control"
+        
+            required
+           value= {Addhospital.describtion}
+           name= "describtion"
+           onChange= {onChange}
+          />
+    
 
-                      <div className="input-box">
-                          <span className="details"> Hospital Image</span>
-                          <input type="text" 
-                          placeholder="Enter hospital Image" 
-                          required
-                          value= {Addhospital.image}
-                          name= "image"
-                          onChange= {onChange}/>
-                      </div>
+    <label>Hospital City </label>
+          <input
+            type="text"
+            className="form-control"
+       
+            required
+            name= "city"
+            value= {Addhospital.address.city}
+            onChange= {onChange}
+          />
+   
 
-                      <div className="input-box">
-                          <span className="details">  City</span>
-                          <input type="text" 
-                          placeholder="Enter the city" 
-                          required
-                          name= "city"
-                          value= {Addhospital.address.city}
-                          onChange= {onChange}/>
-                      </div>
+        <label>Hospital Region</label>
+          <input
+            type="text"
+            className="form-control"
+         
+            required
+            name= "region"
+            value= {Addhospital.address.region}
+            onChange= {onChange}
+          />
+             <label>Hospital Lat</label>
+          <input
+            type="text"
+            className="form-control"
+           
+            required
+            name= "lat"
+            value= {Addhospital.geolocation.lat}
+            onChange= {onChange}
+          />
 
-                      <div className="input-box">
-                          <span className="details"> Region</span>
-                          <input type="text" 
-                          placeholder="Enter the region" 
-                          required
-                          name= "region"
-                          value= {Addhospital.address.region}
-                          onChange= {onChange}/>
-                      </div>
+<label>Hospital Long</label>
+          <input
+            type="text"
+            className="form-control"
+         
+            required
+            name= "long"
+            value= {Addhospital.geolocation.long}
+            onChange= {onChange}
+          />
+        
+{/* 
+        <div className="form-group">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Enter the Name of the Department"
+            required
+            name= "city"
+            value= {Addhospital.address.city}
+            onChange= {onChange}
+          />
+        </div>
 
-                    
-                  </div>
-                 <button className= "button" onClick={register}>Register</button>
-              </form>
-            </div>
+        <div className="form-group">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Enter the Name of the Department"
+            required
+            name= "city"
+            value= {Addhospital.address.city}
+            onChange= {onChange}
+          />
+        </div>
+     */}
+
+<br/>
+<br/>
+      
+          <button  onClick={register}> Register  </button>
+       
+      </form>
+
+
+
+      
+       
 
 
 
 
             
-          
+          </div>
+          </div>
         </div>
     )
 }

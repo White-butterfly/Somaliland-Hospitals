@@ -60,7 +60,7 @@ function Appiontment() {
               </label>
             </div>
 
-            <div className="button">
+            <div className="button"> 
               <input type="button" value="submit" />
             </div>
           </div>

@@ -9,8 +9,9 @@ const AllDoctors = () => {
   useEffect(() => {
     axios
       .get(`http://localhost:8000/api/doctor`)
-      .then((res) => setAlldoctors(res.data.data))
-
+      .then((res) => {setAlldoctors(res.data.data)
+        console.log(res) 
+      })
       .catch((e) => console.log(e.response));
   }, []);
 

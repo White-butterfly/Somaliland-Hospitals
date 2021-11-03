@@ -20,7 +20,7 @@ const TodayTAppoinments = () => {
      .catch((e)=> console.log( Appoinment,"uuuuuu",e.response))
         
     },[]);
-
+ 
     function delDoctor(id){
         axios
         .delete(`http://localhost:8000/api/Appoinment/${id}`)
@@ -43,9 +43,9 @@ const TodayTAppoinments = () => {
 	<Tbody style={{marginLeft: "345px"}}>
 	 <Tr>
      <Td >{Appoinments.firstName}</Td>
- <Td>{Appoinments.department.hospital.name}</Td>
+ {/* <Td>{Appoinments.department.hospital.name}</Td>
          <Td>{Appoinments.department.name}</Td>
-        <Td>{Appoinments.department.doctor.name}</Td> 
+        <Td>{Appoinments.department.doctor.name}</Td>  */}
 
             <Link to= {`/Line1/${Appoinments._id}`} > <Td>See More</Td></Link>
             </Tr>

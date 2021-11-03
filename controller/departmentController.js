@@ -3,9 +3,9 @@ const Hospital = require("../model/hospitalModel");
 
 exports.createDepartment = async (req, res) => {
   try {
-    // const hospital = await Hospital.findOne({name:req.body.hospital})
-    // req.body.hospital = hospital._id
-
+     const hospital = await Hospital.findOne({name:req.body.hospital})
+    req.body.hospital = hospital._id
+    
     const createDepartment = await department.create(req.body);
 
     res.status(200).json({
@@ -34,7 +34,7 @@ exports.getDepartments = async (req, res) => {
 };
 
 exports.getDepartment = async (req, res) => {
-  try {
+  try { 
     const dep = await department
       .find({ hospital: req.params.id })
       .populate("hospital");
@@ -48,3 +48,17 @@ exports.getDepartment = async (req, res) => {
     });
   }
 };
+
+exports.deleteDepartment= async(req,res)=>{
+  try{
+     await department.findByIdAndDelete(req.params.id);
+      res.status(200).json({
+          message: 'Department  deleted',
+      })
+  }catch(e){
+      res.status(400).json({
+          message:e.message 
+      });
+  }}
+
+

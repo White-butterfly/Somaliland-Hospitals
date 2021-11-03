@@ -12,6 +12,6 @@ router
  .route('/:id') 
  .get(doctorController.getDoctorById)
  .post(doctorController.updateDoctor)
- .delete(doctorController.deleteDoc)
+ .delete(doctorController.deleteDoc) 
 
  module.exports= router; 

@@ -5,7 +5,7 @@ const doctorSchema= mongoose.Schema({
         type: String,
         required: true,
     },
-    expirence: {
+    expirence: { 
         type: String,
         required: true,
     },
@@ -25,7 +25,7 @@ const doctorSchema= mongoose.Schema({
     hospital: {
         type: mongoose.Schema.Types.ObjectId, 
         ref: "hospital",
-      },
+      }, 
 
       department: {
         type: mongoose.Schema.Types.ObjectId,

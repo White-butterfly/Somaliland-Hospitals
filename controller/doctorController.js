@@ -5,11 +5,11 @@ const Department= require('../model/departmentModel');
 exports.createDoctor = async (req,res)=> {
     try{
 
-// const hospital = await Hospital.findOne({name:req.body.hospital})  
-// req.body.hospital = hospital._id 
+const hospital = await Hospital.findOne({name:req.body.hospital})  
+req.body.hospital = hospital._id 
 
-// const department= await Department.findOne({name:req.body.department})
-// req.body.department= department._id
+const department= await Department.findOne({name:req.body.department})
+req.body.department= department._id
 
 const createDoctor = await doctor.create(req.body);
 
@@ -28,11 +28,12 @@ res.status(200).json({
 exports.getDoctor= async (req,res)=>{
     try{
         const doctorsss = await doctor.find({})
-        .populate({
-            path:  'department',	 populate: { path:  'hospital',  model: 'hospital' }
-          })
-
-
+        
+          .find({ hospital: req.params.id , department: req.params.id})
+          
+          .populate("hospital")
+          .populate("department")
+ 
 res.status(200).json({ 
     message: "found a doctor",
     data: doctorsss,
@@ -64,7 +65,7 @@ exports.updateDoctor= async(req,res)=>{
             })
         }catch(e){
             res.status(400).json({
-                message:e.message
+                message:e.message 
             });
         }}
 
