@@ -1,22 +1,21 @@
 const mongoose = require("mongoose");
-const blogSchema= mongoose.Schema({
+const blogSchema = mongoose.Schema({
+  title: {
+    type: String,
+  },
 
-title: {
-    type : String,
-},
+  description: {
+    type: String,
+  },
+  image: {
+    type: { data: Buffer, contentType: String },
+  },
 
-description: {
-    type : String,
-
-},
-
-hospital: {
-    type: mongoose.Schema.Types.ObjectId, 
+  hospital: {
+    type: mongoose.Schema.Types.ObjectId,
     ref: "hospital",
-},
-
+  },
 });
 
-
-const blogModel = mongoose.model("blog", blogSchema );
+const blogModel = mongoose.model("blog", blogSchema);
 module.exports = blogModel;

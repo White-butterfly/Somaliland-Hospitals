@@ -38,44 +38,45 @@ function DoctorsUser() {
   const [doctor, setdoctor] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:8000/api/doctor/${id}`)
-      .then((res) => console.log(res));
+    axios.get(`http://localhost:8000/api/doctor/${id}`).then((res) => {
+      console.log(res);
+      setdoctor(res.data.data);
+    });
   });
   return (
     <>
       <div className="doctor-silder">
-        <Slider {...settings}>
-          {doctor.map((doctor) => (
-            <div className="containerrr-card ">
-              <div className="boxx user">
-                <div className="iconn">😊</div>
-                <div className="contentt">
-                  <p>nama</p>
+        {/* <Slider {...settings}> */}
+        {doctor.map((doctor) => (
+          <div className="containerrr-card ">
+            <div className="boxx user">
+              <div className="iconn">😊</div>
+              <div className="contentt">
+                <p>{doctor.docName}</p>
 
-                  <div className="aa">
-                    <div className="bb">
-                      <div className="cc">
-                        {/* <Link to = {`/Doctors/${department._id}`}><button className="aaa">Read More</button></Link> */}
-                        <br />
-                        Name:mmmmm
-                        <br />
-                        experience: jjjjjjjjjjjjjjjj
-                        <br />
-                        Language:aaaaaaaaaaaaaaaaa
-                        <br />
-                        Email: sssssssssssssssssssssssss
-                        <br />
-                        Hours: aaaaa
-                        <br />
-                      </div>
+                <div className="aa">
+                  <div className="bb">
+                    <div className="cc">
+                      {/* <Link to = {`/Doctors/${department._id}`}><button className="aaa">Read More</button></Link> */}
+                      <br />
+                      Name:{doctor.email}
+                      <br />
+                      experience: jjjjjjjjjjjjjjjj
+                      <br />
+                      Language:aaaaaaaaaaaaaaaaa
+                      <br />
+                      Email: sssssssssssssssssssssssss
+                      <br />
+                      Hours: aaaaa
+                      <br />
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          ))}
-        </Slider>
+          </div>
+        ))}
+        {/* </Slider> */}
       </div>
     </>
   );

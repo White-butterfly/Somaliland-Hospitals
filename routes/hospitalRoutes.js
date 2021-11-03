@@ -4,9 +4,16 @@ const multer = require("multer");
 const path = require("path");
 
 const router = express.Router();
+<<<<<<< HEAD
+const verifyToken = require("../middleware/auth");
+const multer = require("multer");
+const path = require("path");
+
+=======
 
 
 //const verifyToken = require("../middleware/auth");
+>>>>>>> 73ec41c9d261165f9b28cbf1b47d480eb6bd1ff0
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "./images");
@@ -16,6 +23,13 @@ const storage = multer.diskStorage({
     cb(
       null,
       file.fieldname + "-" + uniqueSuffix + path.extname(file.originalname)
+<<<<<<< HEAD
+    );
+  },
+});
+
+const upload = multer({ storage: storage });
+=======
     );},});
     
 
@@ -33,6 +47,7 @@ const storage = multer.diskStorage({
 // });
 
 var upload = multer({storage: storage})
+>>>>>>> 73ec41c9d261165f9b28cbf1b47d480eb6bd1ff0
 
 router
   .route("/")
@@ -42,7 +57,7 @@ router
 router
   .route("/:id")
   .get(hospitalController.getHospitall)
-  .put(hospitalController.updateHospital)
+  .put(upload.single("images"), hospitalController.updateHospital)
   .delete(hospitalController.deleteHospital);
 
 

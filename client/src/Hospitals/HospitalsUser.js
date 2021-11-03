@@ -1,13 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { MdStar } from "react-icons/md";
 
 function HospitalsUser() {
+  const history = useHistory();
   const [hospital, sethospital] = useState([]);
   const [search, setsearch] = useState("");
   useEffect(() => {
+    if (localStorage.getItem("user") === null) {
+      history.push("/Login");
+    }
     axios
       .get(`http://localhost:8000/api/hospital`)
       .then((res) => sethospital(res.data.data));
@@ -18,7 +22,6 @@ function HospitalsUser() {
       <div className="hospital">
         <div className="hos-head">
           <h1>Best Hospitals in Somaliland </h1>
-          <h1>{hospital.length}</h1>
         </div>
         <div className="flex search">
           <input
@@ -67,7 +70,7 @@ function HospitalsUser() {
                     <MdStar />
                   </div>
                   <Link
-                    to={`DepartmentsUser/${value._id}`}
+                    to={`DepartmentUser/${value._id}`}
                     className="blog-post_cta"
                   >
                     Read more

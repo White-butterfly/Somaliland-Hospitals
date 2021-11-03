@@ -14,20 +14,22 @@ function DepartmentCards() {
   const [info, setinfo] = useState(false);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:8000/api/Department/${id}`)
-      .then((res) => setdepartment(res.data.data));
-  });
+    axios.get(`http://localhost:8000/api/Department/${id}`).then((res) => {
+      console.log(res);
+      setdepartment(res.data.data);
+    });
+  }, []);
   return (
     <>
       <h1 className="dept-head">Welcome our Departments</h1>
       {department.map((department) => (
         <div>
           <h1 className="hos-head"> Department of {department.name}</h1>
-          <DoctorsUser />
+
           <div className="flex boxes"></div>
         </div>
       ))}
+      <DoctorsUser />
     </>
   );
 }

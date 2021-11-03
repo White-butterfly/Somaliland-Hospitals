@@ -15,7 +15,6 @@ exports.saveUser = async (req, res) => {
       username: req.body.username,
       email: req.body.email,
       password: hashPassword,
-      role: req.body.role,
     });
 
     const token = jwt.sign(

@@ -2,16 +2,16 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-const AllDoctors = () => {
-  const [id, setId] = useState("");
+const MyDoctors = () => {
+  //const [id, setId] = useState("");
+  const id = "617f1c2059fae044a0883111";
   const [Alldoctors, setAlldoctors] = useState([]);
 
   useEffect(() => {
     axios
       .get(`http://localhost:8000/api/doctor`)
-      .then((res) => {setAlldoctors(res.data.data)
-        console.log("doctors ",res) 
-      })
+      .then((res) => setAlldoctors(res.data.data))
+
       .catch((e) => console.log(e.response));
   }, []);
 
@@ -67,4 +67,4 @@ const AllDoctors = () => {
   );
 };
 
-export default AllDoctors;
+export default MyDoctors;

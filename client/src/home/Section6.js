@@ -26,7 +26,7 @@ function Section6() {
       })
 
       .then((res) => toast.success("Thanks for the contact"))
-      .catch((e) => toast.error(e));
+      .catch((e) => toast.error(e.response.data.message));
   }
   return (
     <div className="NEW-CONTACT">
