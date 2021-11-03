@@ -29,7 +29,7 @@ exports.getDoctor= async (req,res)=>{
     try{
         const doctorsss = await doctor.find({})
         
-          .find({ hospital: req.params.id , department: req.params.id})
+          .find({})
           
           .populate("hospital")
           .populate("department")
@@ -43,7 +43,7 @@ res.status(400).json({
     message:e.message
 })
 }}; 
-
+ 
 exports.updateDoctor= async(req,res)=>{
     try{
         const updateDoc= await doctor.findByIdAndUpdate(req.params.id, req.body);

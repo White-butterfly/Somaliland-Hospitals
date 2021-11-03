@@ -22,10 +22,21 @@ const AddHospital = () => {
           let data= { ...Addhospital };
           let name= e.target.name;
           let val = e.target.value;
-          // let vali = e.target.file[];
-          if (name == "name" || name == "logo" || name == "image" || name == "describtion"){
+          if (e.target.files !== null){
+            let vali =  e.target.files[0];
+          }
+        
+         
+
+          if (name == "name" || name == "describtion" || name == "logo" || name == "image"){
               data = { ...data, [name]: val };
-          }else if (name == 'region' || name == 'city' ){
+          }
+//           } else if (name == "logo" || name == "image"){
+// data = {...data, [name]: val };
+//           }
+          
+          
+          else if (name == 'region' || name == 'city' ){
               data = {
                   ...data,
                   address: {
@@ -75,7 +86,7 @@ console.log("on change ",onChange);
 
       <label>Hospital logo</label>
           <input
-            type="text"
+            type="file"
             className="form-control"
          
             required
@@ -87,7 +98,7 @@ console.log("on change ",onChange);
 
      <label>Hospital image</label>
           <input
-            type="text"
+            type="file"
             className="form-control"
           
             required

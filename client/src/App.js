@@ -60,7 +60,7 @@ function App() {
     axios
       .get(`http://localhost:8000/api/hospital`, hospitals)
       .then((res) => sethospitals(res.data.data))
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error)); 
 
     setcurrentUser(JSON.parse(localStorage.getItem("user")));
   }, []);
@@ -71,9 +71,9 @@ function App() {
         <BrowserRouter>
           <Homee />
           <Switch> 
-            <Route path="/Homee">
+            {/* <Route path="/Homee">
               <Homee />{" "}
-            </Route>
+            </Route> */}
             <Route path="/Appoinments">
               <Appoinments />{" "}
             </Route>

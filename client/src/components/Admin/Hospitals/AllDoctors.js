@@ -10,7 +10,7 @@ const AllDoctors = () => {
     axios
       .get(`http://localhost:8000/api/doctor`)
       .then((res) => {setAlldoctors(res.data.data)
-        console.log(res) 
+        console.log("doctors ",res) 
       })
       .catch((e) => console.log(e.response));
   }, []);
