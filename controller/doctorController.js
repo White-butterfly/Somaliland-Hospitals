@@ -29,7 +29,7 @@ exports.getDoctor= async (req,res)=>{
     try{
         const doctorsss = await doctor.find({})
         
-          .find({})
+          .find({}) 
           
           .populate("hospital")
           .populate("department")

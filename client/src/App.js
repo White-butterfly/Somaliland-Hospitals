@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "./App.css";
+ import "./App.css";
 import "./index.css";
 
 import Footer from "./home/Footer";
@@ -71,9 +71,7 @@ function App() {
         <BrowserRouter>
           <Homee />
           <Switch> 
-            {/* <Route path="/Homee">
-              <Homee />{" "}
-            </Route> */}
+         
             <Route path="/Appoinments">
               <Appoinments />{" "}
             </Route>

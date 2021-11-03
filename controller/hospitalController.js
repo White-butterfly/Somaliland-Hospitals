@@ -4,7 +4,7 @@ exports.getHospital = async (req, res) => {
     const hospitals = await hospitalModel.find({});
 
     res.status(200).json({
-      message: "all hospitals",
+      message: "all hospitals", 
       data: hospitals,
     });
   } catch (e) {
