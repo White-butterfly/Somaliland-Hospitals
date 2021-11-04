@@ -8,6 +8,7 @@ const AdminDashboard = () => {
   const [department, setdepartment] = useState([]);
   const [doctor, setdoctor] = useState([]);
 
+<<<<<<< HEAD
   useEffect(() => {
     axios
       .get(`http://localhost:8000/api/hospital`)
@@ -58,6 +59,11 @@ const AdminDashboard = () => {
               <div className="h11">
                 <span className="las la-clipboard-list"></span>
               </div>
+=======
+        <label for="nav-toggle"> <span className="las la-bars"></span> </label>
+                    Dashboard
+               </h2>
+>>>>>>> 73ec41c9d261165f9b28cbf1b47d480eb6bd1ff0
             </div>
 
             <div className="admincard-single">

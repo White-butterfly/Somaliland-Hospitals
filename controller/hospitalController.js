@@ -16,6 +16,7 @@ exports.getHospital = async (req, res) => {
 
 exports.createHospital = async (req, res) => {
   try {
+    req.body.image = req.file.filename;
     const createHospital = await hospitalModel.create(req.body);
     res.status(200).json({
       message: "hospital created",
@@ -29,11 +30,16 @@ exports.createHospital = async (req, res) => {
 };
 exports.updateHospital = async (req, res) => {
   try {
+<<<<<<< HEAD
     console.log(req.body.data);
     const hospitalss = await hospitalModel.findByIdAndUpdate(
       req.params.id,
       JSON.parse(req.body.data)
     );
+=======
+    const hospitalss = await hospitalModel.findByIdAndUpdate(req.params.id, req.body);
+    
+>>>>>>> 73ec41c9d261165f9b28cbf1b47d480eb6bd1ff0
     res.status(200).json({
       message: "Hospital updated",
       data: hospitalss,

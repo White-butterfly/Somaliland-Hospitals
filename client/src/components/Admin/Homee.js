@@ -66,21 +66,22 @@ const Homee = () => {
                 </Link>
               </li>
               <li>
-                <Link to={"/Adddepartment"}>
+                <Link to={"/AddDepartment"}>
                   <a href="">
                     <span className="las la-clipboard-list"></span>
                     <span>Add Department </span>
                   </a>
                 </Link>
               </li>
-              <li>
-                <Link to={"/Appoinment"}>
+
+               <li> <Link to={"/AddDoctor"}>
                   <a href="">
                     <span className="las la-clipboard-list"></span>
-                    <span>Add Appoinment</span>
+                    <span>Add Doctor</span>
                   </a>
-                </Link>
-              </li>
+                </Link> </li>
+
+          
             </ul>
           </div>
 

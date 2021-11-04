@@ -15,7 +15,7 @@ const AllDepartment = () => {
       .catch((e) => console.log(e.response));
   }, []);
 
-  function delHospital(id) {
+  function delDepartment(id) {
     axios
       .delete(`http://localhost:8000/api/department/${id}`)
       .then((res) => console.log(res));
@@ -27,8 +27,9 @@ const AllDepartment = () => {
         <table>
           <thead>
             <tr>
-              <th>Id</th>
+              <th>Id</th> 
               <th>dep-Name</th>
+              <th>Hospital-Name</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -38,13 +39,20 @@ const AllDepartment = () => {
                 <td>01</td>
 
                 <td>{department.name}</td>
+              
+                <td>{department.hospital}</td>
                 <td>
                   <span class="action_btn">
+<<<<<<< HEAD
                     <Link to={`/EditDepartment/${department._id}`}>
                       {" "}
                       <a href="#">Edit</a>
                     </Link>
                     <a href="#" onClick={() => delHospital(department._id)}>
+=======
+                    <a href="#">Edit</a>
+                    <a href="#" onClick={() =>delDepartment(department._id)}>
+>>>>>>> 73ec41c9d261165f9b28cbf1b47d480eb6bd1ff0
                       Remove
                     </a>
                   </span>

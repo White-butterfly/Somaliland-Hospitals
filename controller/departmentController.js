@@ -3,9 +3,9 @@ const Hospital = require("../model/hospitalModel");
 
 exports.createDepartment = async (req, res) => {
   try {
-    // const hospital = await Hospital.findOne({name:req.body.hospital})
-    // req.body.hospital = hospital._id
-
+     const hospital = await Hospital.findOne({name:req.body.hospital})
+    req.body.hospital = hospital._id
+    
     const createDepartment = await department.create(req.body);
 
     res.status(200).json({
@@ -34,7 +34,7 @@ exports.getDepartments = async (req, res) => {
 };
 
 exports.getDepartment = async (req, res) => {
-  try {
+  try { 
     const dep = await department
       .findById({ hospital: req.params.id })
       .populate("hospital");
@@ -48,6 +48,7 @@ exports.getDepartment = async (req, res) => {
     });
   }
 };
+<<<<<<< HEAD
 // exports.getoneDepert = async (req, res) => {
 //   try {
 //     const dep = await department.findById(req.params.id, req.body);
@@ -77,3 +78,19 @@ exports.updateDepartment = async (req, res) => {
     });
   }
 };
+=======
+
+exports.deleteDepartment= async(req,res)=>{
+  try{
+     await department.findByIdAndDelete(req.params.id);
+      res.status(200).json({
+          message: 'Department  deleted',
+      })
+  }catch(e){
+      res.status(400).json({
+          message:e.message 
+      });
+  }}
+
+
+>>>>>>> 73ec41c9d261165f9b28cbf1b47d480eb6bd1ff0

@@ -12,9 +12,9 @@ const Appoinment = () => {
     const [syptoms ,setsyptoms ]= useState("");
     const [city ,setcity ]= useState("");
     const [region, setregion ]= useState("");
-    
-    const [hospitall, setHospitall]= useState("");
-    const [departmentt, setDepartmentt]= useState("");
+
+    const [hospitall, setHospitall] = useState("");
+    const [departmentt, setdepartmentt] = useState("");
     const [doctorr, setdoctorr]=useState("");
     const [department, setdepartment]= useState([]);
     const [hospitals,sethospitals] = useState([]);
@@ -26,7 +26,7 @@ const Appoinment = () => {
     useEffect(()=> {
     
 axios
-.get(`http://localhost:8000/api/Department/${id}`)
+.get(`http://localhost:8000/api/Appoinment/${id}`)
 .then((res)=> setAddAppoinment(res.data.data));
         axios
         .get(`http://localhost:8000/api/Department/`, department)
@@ -51,7 +51,7 @@ axios
         firstName: "",
         middleName: "",
         lastName: "", 
-        city: "",
+        city: "", 
         region: "",
 
         hospital: hospitall,
@@ -64,115 +64,105 @@ axios
 
     return ( 
         <div>
-            <div className="add">
-            <h1>Great to see you !</h1>
+         <div className="boddy" style= {{marginLeft: "340px", width: "700px" , height: "200px"}}>
+        <div id="envelope">
+          <form  className="formm"  onSubmit={AddAppoinments}> 
+            <div className="headder">
+              <h2>Great to see you </h2>
             </div>
-            <div className="container">
-            <form onSubmit={AddAppoinments}>
-              
-                  <div className="hospital-details">
+            <label>First Name</label>
 
-                      <div className="input-box">
-                          <span className="details"> First Name</span>
+            <input 
+            className="innput" 
+            placeholder=""
+            onChange= {(e)=> setfirstName(e.target.value)}
+            name="firstName"
+            required
+            type="text" 
+            width="100px;" />
 
-                          <input 
-                          type="text" 
-                          placeholder="Enter your first name" 
-                          name = "firstName"
-                          required
-                         
-                          onChange={(e)=>setfirstName(e.target.value)}
-                          />
-                      </div>
+            <label>Middle Name</label>
+            <input 
+            className="innput" 
+            placeholder="Enter expirence of the doctor"
+            onChange= {(e)=> setmiddleName(e.target.value)}
+            name="middleName"
+            required
+            type="text" />
 
-                      <div className="input-box">
-                          <span className="details"> Middle Name</span>
+            <label>Last Name</label>
+            <input name="contact" 
+            className="innput" 
+            placeholder="Enter the Hours"
+            onChange= {(e)=> setlastName(e.target.value)}
+            name="lastName"
+            required
+            type="text" />
 
-                          <input type="text" 
-                          placeholder="Enter your middle Name" 
-                          required
-                          name= "middleName"
-                         
-                           onChange={(e)=>setmiddleName(e.target.value)}
-                          />
-                      </div>
+            <label> City </label>
+            <input name="website" 
+            className="innput" 
+            placeholder="Enter the Email"
+            onChange= {(e)=>setcity(e.target.value)}
+            name="city"
+            required
+            type="text" />
 
-                      <div className="input-box">
-                          <span className="details"> Last Name</span>
-                          <input type="text" 
-                          placeholder="Enter Your Last name " 
-                          required
-                          
-                          name= "lastName"
-                           onChange={(e)=>setlastName(e.target.value)}
-                          />
-                      </div>
- 
-                      {/* Hospital map */}
-                      <select
-                      className= "selectt"
-                       onChange={(e)=>{setHospitall(e.target.value)}}>
-  <option>Choose Hospital</option>
-    {hospitals.map((hospital)=>
+<label>Region</label>
+            <input name="website" 
+            className="innput" 
+            placeholder="Enter the Email"
+            onChange= {(e)=>setregion(e.target.value)}
+            name="region"
+            required
+            type="text" />
+
+           
+            <br />
+            <br />
+
+            <label>Hospital</label>
+            <select onChange={(e)=>{setHospitall(e.target.value)}}
+            className="w3-select w3-border" name="option">
+              <option value="" disabled selected> Choose a Hospital</option>
+              {hospitals.map((hospital)=>
     <option  value={hospital.name}>{hospital.name}</option>
     )}
-    </select>
-{/* Department map */}
+            </select>
 
-<select 
-className= "selectt" 
-onChange={(e)=>{setDepartmentt(e.target.value)}}>
-                      <option>Choose Depart</option>
-                          {department.map((departments)=>
-                              <option  value= {departments.name}> {departments.name}</option>
-                          )}
-  </select>
+            <br />
+            <br />
 
-  {/* doctor map */}
-  
-<select 
-className= "selectt" 
-onChange={(e)=>{setdoctorr(e.target.value)}}>
-                      <option>Choose Doctor</option>
-                          {doctor.map((doctors)=>
-                              <option value= {doctors.docName}> {doctors.docName}</option>
-                          )}
-  </select>
-
-                      <div className="input-box">
-                          <span className="details"> City</span>
-                          <input type="text" 
-                          placeholder="Choose City " 
-                          required
-                          
-                          name= "city"
-                           onChange={(e)=>setcity(e.target.value)}
-                          />
-                      </div>
-
-
-                      <div className="input-box">
-                          <span className="details"> Region</span>
-                          <input type="text" 
-                          placeholder="Choose Region" 
-                          required
-                          name= "region"
-                         
-                          onChange={(e)=>setregion(e.target.value)}
-                          />
-                      </div>
-
-                  </div>
-
-                  <div className="form-group">
-                  <button type="submit" className="btn btn-primary">
-            Submit
-          </button>
+            <label>Department</label>
+            <select onChange={(e)=>{setdepartmentt(e.target.value)}}
+            className="w3-select w3-border" name="option">
+              <option value="" disabled selected>  Choose a Department{" "} </option>
+              {department.map((departments)=>
+               <option  value={departments.name}>{departments.name}</option>
+              )}
+            </select>
+<br/>
+<br/>
+    <label>Doctor</label>
+            <select onChange={(e)=>{setdoctorr(e.target.value)}}
+            className="w3-select w3-border" name="option">
+              <option value="" disabled selected>  Choose a Doctor{" "} </option>
+              {doctor.map((doctors)=>
+               <option  value={doctors.name}>{doctors.name}</option>
+              )}
+            </select>
+            <br/>
+<br/>
+            <input id="submit" type="submit" value="Submit" />
+          </form>
         </div>
-                 {/* <button className= "button" >Appoinment</button> */}
-              </form>
-                
-            </div>
+      </div>
+
+
+
+
+
+
             </div>
         
     )
