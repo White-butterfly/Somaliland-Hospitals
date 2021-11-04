@@ -1,5 +1,6 @@
 import "./App.css";
 import "./index.css";
+import "./page.css";
 import Footer from "./home/Footer";
 import HeaderUser from "./home/HeaderUser";
 import Section1 from "./home/section1";
@@ -47,13 +48,21 @@ import AllDoctors from "./components/Admin/Hospitals/AllDoctors";
 import AdminDashboard from "./components/Admin/AdminDashboard";
 import AllDepartment from "./components/Admin/Hospitals/AllDepartment";
 import EditHospital from "./components/Admin/Hospitals/EditHospital";
+import EditDepartment from "./components/Admin/Hospitals/EditDepartment";
+import EditDoctor from "./components/Admin/Hospitals/EditDoctor";
+import { useHistory } from "react-router-dom";
+
+import Menu from "./Hospital Dashboard/Menu";
+import HospitalDashboard from "./Hospital Dashboard/HospitalDashboard";
+import AddBlog from "./Hospital Dashboard/AddBlog";
+import MyDepartments from "./Hospital Dashboard/MyDepartments";
+import MyDoctors from "./Hospital Dashboard/MyDoctors";
+import MyAppointments from "./Hospital Dashboard/MyAppointments";
+import MyReviews from "./Hospital Dashboard/MyReviews";
+
+import ProtectedRoute from "./ProtectedRoutes";
 
 function App() {
-  const user = {
-    firstname: "nemo",
-    role: "admin",
-  };
-
   const [hospitals, sethospitals] = useState([]);
   const [currentUser, setcurrentUser] = useState([]);
   const handeleSettingHospitals = (hospital) => {
@@ -65,160 +74,139 @@ function App() {
       .then((res) => sethospitals(res.data.data))
       .catch((error) => console.log(error));
 
-    setcurrentUser(JSON.parse(localStorage.getItem("user")));
+    setcurrentUser(JSON.parse(localStorage.getItem("admin")));
   }, []);
 
   return (
     <>
-      {user.role === "admin" ? (
-        <BrowserRouter>
-          <Homee />
-          <Switch>
-            <Route path="/404">
-              {" "}
-              <NotFound />{" "}
-            </Route>
-            <Route path="/Admin">
-              <Admin />
-
+      <BrowserRouter>
+        {localStorage.getItem("user") !== null && (
+          <>
+            {JSON.parse(localStorage.getItem("user")).role === "user" && (
+              <HeaderUser />
+            )}
+            {JSON.parse(localStorage.getItem("user")).role === "admin" && (
               <Homee />
-            </Route>
-            <Route path="/Homee">
-              <Homee />{" "}
-            </Route>
-            <Route path="/Appoinments">
-              <Appoinments />{" "}
-            </Route>
-            <Route path="/TodayTAppoinments/">
-              <TodayTAppoinments />
-            </Route>
-            <Route path="/yesterdayTotalAppoinments">
-              <YesterdayTAppoinments />
-            </Route>
-            <Route path="/total Appoinments">
-              <TodayTAppoinments />
-            </Route>
-            <Route path="/TotalRegisteredPatient">
-              <TotalRegisteredPatient />
-            </Route>
+            )}
+            {JSON.parse(localStorage.getItem("user")).role === "hospital" && (
+              <Menu />
+            )}
+          </>
+        )}
 
-            <Route path="/EditHospital/:id">
-              <EditHospital />
-            </Route>
+        <Switch>
+          <Route exact path="/EditHospital/:id">
+            <EditHospital />
+          </Route>
+          <Route exact path="/EditDepartment/:id">
+            <EditDepartment />
+          </Route>
+          <Route exact path="/EditDoctor/:id">
+            <EditDoctor />
+          </Route>
+          <Route exact path="/AddHospital">
+            <AddHospital />
+          </Route>
+          <Route exact path="/AddDepartment">
+            <AddDepartment />
+          </Route>
+          <Route exact path="/AllHospitals">
+            <AllHospitals />
+          </Route>
+          <Route exact path="/AllDepartment">
+            <AllDepartment />
+          </Route>
+          <Route exact path="/AllDoctors">
+            <AllDoctors />
+          </Route>
+          <Route exact path="/AdminDashboard">
+            <AdminDashboard />
+          </Route>
 
-            <Route path="/AddHospital">
-              <AddHospital />
-            </Route>
-            <Route path="/AddDepartment">
-              <AddDepartment />
-            </Route>
-            <Route path="/overview">
-              <Overview />
-            </Route>
-            <Route path="/Login">
-              <Login />
-            </Route>
-            {/* <Route path="/Doctor">
-              <Doctor />
-            </Route> */}
-            <Route path="/Appoinment">
-              <Appoinment />
-            </Route>
-            <Route path="/Record">
-              <Record />
-            </Route>
-            <Route path="/AllHospitals">
-              <AllHospitals />
-            </Route>
-            <Route path="/AllDepartment">
-              <AllDepartment />
-            </Route>
-            <Route path="/AllDoctors">
-              <AllDoctors />
-            </Route>
-            <Route path="/AdminDashboard">
-              <AdminDashboard />
-            </Route>
-            <Route path="/Line1/:id">
-              <Line1 />
-            </Route>
-          </Switch>
-          <ToastContainer
-            position="top-right"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-          />
-          {/* Same as */}
-          <ToastContainer />
-        </BrowserRouter>
-      ) : (
-        <BrowserRouter>
-          <HeaderUser />
-          <Switch>
-            <Route path="/home">
-              <Section1 />
-              <Section4 />
-              <Section5 />
-              <Section2 />
-              <Section6 />
-            </Route>
-            <Route path="/HospitalsUser">
-              {" "}
-              <HospitalsUser />
-            </Route>
-            <Route path="/DepartmentUser/:id">
-              <DepartmentUser />
-            </Route>
-            <Route path="/DoctorsUser/:id">
-              <DoctorsUser />
-            </Route>
+          {/* // route hospital dashboard */}
 
-            <Route path="/Appiontment">
-              {" "}
-              <Appiontment />{" "}
-            </Route>
-            <Route path="/DepartmentCards">
-              <DepartmentCards />
-            </Route>
-            <Route path="/Contact">
-              <Section6 />
-            </Route>
-            <Route path="/about">
-              <Section2 />
-            </Route>
-            <Route path="/Blogs">
-              {" "}
-              <Blogs />
-            </Route>
-            <Route path="/Login">
-              <LoginBody />
-            </Route>
-            <Route path="/Register">
-              <Register />
-            </Route>
-          </Switch>
-          <Footer />
-          <ToastContainer
-            position="top-right"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-          />
-          {/* Same as */}
-          <ToastContainer />
-        </BrowserRouter>
-      )}
+          <Route path="/HospitalDashboard">
+            <HospitalDashboard />
+          </Route>
+          <Route path="/AddBlog">
+            <AddBlog />
+          </Route>
+          <Route path="/MyDepartments">
+            <MyDepartments />
+          </Route>
+          <Route path="/MyDoctors">
+            <MyDoctors />
+          </Route>
+          <Route path="/MyAppointments">
+            <MyAppointments />
+          </Route>
+          <Route path="/MyReviews">
+            <MyReviews />
+          </Route>
+          {/* user routes */}
+          <Route path="/home" exact>
+            <Section1 />
+            <Section4 />
+            <Section5 />
+            <Section2 />
+            <Section6 />
+          </Route>
+          <Route path="/HospitalsUser">
+            {" "}
+            <HospitalsUser />
+          </Route>
+          <Route path="/DepartmentUser/:id">
+            <DepartmentUser />
+          </Route>
+          <Route path="/DoctorsUser/:id">
+            <DoctorsUser />
+          </Route>
+          <Route path="/Appiontment">
+            {" "}
+            <Appiontment />{" "}
+          </Route>
+          <Route path="/DepartmentCards">
+            <DepartmentCards />
+          </Route>
+          <Route path="/Contact">
+            <Section6 />
+          </Route>
+          <Route path="/about">
+            <Section2 />
+          </Route>
+          <Route path="/Blogs">
+            {" "}
+            <Blogs />
+          </Route>
+          <Route path="/Login">
+            <LoginBody />
+          </Route>
+          <Route path="/Register">
+            <Register />
+          </Route>
+        </Switch>
+        {localStorage.getItem("user") !== null && (
+          <>
+            {JSON.parse(localStorage.getItem("user")).role === "user" && (
+              <Footer />
+            )}
+          </>
+        )}
+
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
+        {/* Same as */}
+        <ToastContainer />
+      </BrowserRouter>
     </>
   );
 }

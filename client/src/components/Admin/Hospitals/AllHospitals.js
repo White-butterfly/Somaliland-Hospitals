@@ -6,10 +6,11 @@ import EditHospital from "./EditHospital";
 const AllHospitals = () => {
   const [id, setId] = useState("");
   const [AllHospitals, setAllHospitals] = useState([]);
+  const [search, setsearch] = useState("");
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/hospital/${id}`)
+      .get(`http://localhost:8000/api/hospital`)
       .then((res) => setAllHospitals(res.data.data))
 
       .catch((e) => console.log(e.response));
@@ -23,6 +24,13 @@ const AllHospitals = () => {
   return (
     <>
       <div className="tbl-heading">All Hospitals in Somaliland</div>
+      <input
+        className="input-hos"
+        type="text"
+        placeholder="searching city"
+        onChange={(e) => setsearch(e.target.value)}
+        style={{ marginLeft: "900px", width: "350px" }}
+      />
       <div class="table_responsive">
         <table>
           <thead>
@@ -35,7 +43,15 @@ const AllHospitals = () => {
               <th>Action</th>
             </tr>
           </thead>
-          {AllHospitals.map((hospital) => (
+          {AllHospitals.filter((val) => {
+            if (search === "") {
+              return val;
+            } else if (
+              val.address.city.toLowerCase().includes(search.toLowerCase())
+            ) {
+              return val;
+            }
+          }).map((hospital) => (
             <tbody>
               <tr>
                 <td>01</td>

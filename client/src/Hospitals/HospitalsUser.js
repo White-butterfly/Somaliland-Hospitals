@@ -1,13 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { MdStar } from "react-icons/md";
 
 function HospitalsUser() {
+  const history = useHistory();
   const [hospital, sethospital] = useState([]);
   const [search, setsearch] = useState("");
   useEffect(() => {
+    if (localStorage.getItem("user") === null) {
+      history.push("/Login");
+    }
     axios
       .get(`http://localhost:8000/api/hospital`)
       .then((res) => sethospital(res.data.data));

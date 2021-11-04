@@ -29,10 +29,10 @@ exports.createHospital = async (req, res) => {
 };
 exports.updateHospital = async (req, res) => {
   try {
-    console.log(req.body);
-    const hospitalss = await hospitalModel.findOneAndUpdate(
+    console.log(req.body.data);
+    const hospitalss = await hospitalModel.findByIdAndUpdate(
       req.params.id,
-      req.body
+      JSON.parse(req.body.data)
     );
     res.status(200).json({
       message: "Hospital updated",

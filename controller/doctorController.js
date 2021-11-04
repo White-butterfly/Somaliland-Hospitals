@@ -71,7 +71,7 @@ exports.deleteDoc = async (req, res) => {
 exports.getDoctorById = async (req, res) => {
   try {
     const Doci = await appoinment
-      .find({ hospital: req.params.id })
+      .findById({ hospital: req.params.id }, req.params.id, req.body)
       .populate("hospital");
 
     res.status(200).json({

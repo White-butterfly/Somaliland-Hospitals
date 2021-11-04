@@ -21,9 +21,17 @@ function LoginBody() {
         localStorage.setItem("user", JSON.stringify(res.data.user));
         localStorage.setItem("token", JSON.stringify(res.data.token));
         toast.success("User Logged In");
-        history.push("/Home");
+        if (res.data.user.role === "user") {
+          history.push("/Home");
+        } else {
+          history.push("/homee");
+        }
       })
       .catch((e) => toast.error(e.response.data.message));
+  }
+
+  function logout() {
+    return localStorage.removeItem("user");
   }
   return (
     <div className="login-body">
@@ -83,6 +91,17 @@ function LoginBody() {
               <i className="fa fa-instagram"></i>
               <i className="fa fa-twitter"></i>
             </div>
+
+            <button
+              onClick={() => logout()}
+              style={{
+                marginLeft: "70%",
+                padding: "6px",
+                borderRadius: "10px",
+              }}
+            >
+              LogOut
+            </button>
           </div>
         </form>
       </div>

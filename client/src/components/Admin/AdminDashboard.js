@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Homee from "./Homee";
 
 const AdminDashboard = () => {
   const [hospital, sethospital] = useState([]);
@@ -126,20 +127,25 @@ const AdminDashboard = () => {
                     See All <span className="las la-arrow-right"></span>{" "}
                   </button>
                 </div>
-                <div className="admincard-body flex">
+                <div className="admincard-body ">
                   <div className="admincustomer">
                     <div className="adminInfo">
                       <img src="doc1.jfif" width="40px" height="40px" alt="" />
                       <div>
                         <h4>Dr.Faiza </h4>
-                        <small>Expert</small>
+                        <small>
+                          Suppose you have a Charactermodel that contains 5
+                        </small>
                       </div>
-                    </div>
-                    <div className="admincontact">
-                      <div>
-                        <span className="las la-user-circle"></span>
-                        <span className="las la-comment"></span>
-                        <span className="las la-phone"></span>
+                      <div
+                        className="admincontact"
+                        style={{ display: "flex", marginLeft: "80px" }}
+                      >
+                        <div>
+                          <span className="las la-user-circle"></span>
+                          <span className="las la-comment"></span>
+                          <span className="las la-phone"></span>
+                        </div>
                       </div>
                     </div>
                   </div>

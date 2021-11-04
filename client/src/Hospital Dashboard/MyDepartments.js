@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const AllDepartment = () => {
-  const [id, setId] = useState("");
+const MyDepartments = () => {
+  const id = "617f1c2059fae044a0883111";
   const [Alldepartment, setAlldepartment] = useState([]);
 
   useEffect(() => {
@@ -58,4 +58,4 @@ const AllDepartment = () => {
   );
 };
 
-export default AllDepartment;
+export default MyDepartments;

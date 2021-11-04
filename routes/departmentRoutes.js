@@ -8,6 +8,10 @@ router
   .get(departmentController.getDepartments)
   .post(departmentController.createDepartment);
 
-router.route("/:id").get(departmentController.getDepartment);
+router
+  .route("/:id")
+  .get(departmentController.getDepartment)
+  //.get(departmentController.getoneDepert)
+  .put(departmentController.updateDepartment);
 
 module.exports = router;
