@@ -33,58 +33,74 @@ function EditDoctor() {
 
   return (
     <>
-      <div className="edit-hospital">
-        <form className="hospital-form" enctype="multipart/form-data">
-          <h2 className="edit-heading">Edit Doctor</h2>
-          <input
-            type="text"
-            className="edit-input"
-            placeholder="hospital Name"
-            value={doctor.docName}
-            onChange={(e) => setdoctor({ ...doctor, docName: e.target.value })}
-          />
-          <br />
-          <input
-            type="text"
-            className="edit-input"
-            placeholder="date"
-            value={doctor.expirence}
-            onChange={(e) =>
-              setdoctor({ ...doctor, expirence: e.target.value })
-            }
-          />
-          <br />
-          <input
-            type="text"
-            className="edit-input"
-            placeholder="city"
-            value={doctor.language}
-            onChange={(e) => setdoctor({ ...doctor, language: e.target.value })}
-          />
-          <br />
-          <input
-            type="text"
-            className="edit-input"
-            placeholder="region"
-            value={doctor.email}
-            onChange={(e) => setdoctor({ ...doctor, email: e.target.value })}
-          />
-          <br />
-
-          <input
-            type="number"
-            name="logo"
-            value={doctor.hours}
-            className="edit-input"
-            onChange={(e) => {
-              setdoctor({ ...doctor, hours: e.target.value });
-            }}
-          />
-          <br />
-          <button className="edit-input-btn" onClick={(e) => updateDoctor(e)}>
-            Edit hospital
-          </button>
-        </form>
+      <div
+        className="boddy"
+        style={{
+          width: "700px",
+          alignItems: "center",
+          marginLeft: "340px",
+          marginTop: "100px",
+        }}
+      >
+        <div id="envelope">
+          <form>
+            <div className="headder">
+              <h2>Edit Doctor</h2>
+            </div>
+            <br />
+            <br />
+            <div className="form-group">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Doctor Name"
+                value={doctor.docName}
+                onChange={(e) =>
+                  setdoctor({ ...doctor, docName: e.target.value })
+                }
+              />
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Expirence"
+                value={doctor.expirence}
+                onChange={(e) =>
+                  setdoctor({ ...doctor, expirence: e.target.value })
+                }
+              />
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Language"
+                value={doctor.language}
+                onChange={(e) =>
+                  setdoctor({ ...doctor, language: e.target.value })
+                }
+              />
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Email"
+                value={doctor.email}
+                onChange={(e) =>
+                  setdoctor({ ...doctor, email: e.target.value })
+                }
+              />
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Hours"
+                value={doctor.hours}
+                onChange={(e) => {
+                  setdoctor({ ...doctor, hours: e.target.value });
+                }}
+              />
+            </div>
+            <button className="edit-input-btn" onClick={(e) => updateDoctor(e)}>
+              Edit hospital
+            </button>
+          </form>
+        </div>
       </div>
       )
     </>

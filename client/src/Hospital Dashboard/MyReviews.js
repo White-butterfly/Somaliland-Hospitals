@@ -14,6 +14,11 @@ function MyReviews() {
       .then((res) => setreview(res.data.reviews));
   });
 
+  function delReview(id) {
+    axios
+      .delete(`http://localhost:8000/api/review/${id}`)
+      .then((res) => console.log(res));
+  }
   return (
     <div className="testimonials">
       {/* HEADING */}
@@ -71,6 +76,12 @@ function MyReviews() {
               <p>{review.review}</p>
             </div>
           </div>
+          <button
+            className="btn btn-primary"
+            onClick={() => delReview(review._id)}
+          >
+            delete
+          </button>
         </div>
       ))}
     </div>

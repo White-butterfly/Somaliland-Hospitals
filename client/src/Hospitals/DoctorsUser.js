@@ -46,37 +46,37 @@ function DoctorsUser() {
   return (
     <>
       <div className="doctor-silder">
-        {/* <Slider {...settings}> */}
-        {doctor.map((doctor) => (
-          <div className="containerrr-card ">
-            <div className="boxx user">
-              <div className="iconn">😊</div>
-              <div className="contentt">
-                <p>{doctor.docName}</p>
+        <Slider {...settings}>
+          {doctor.map((doctor) => (
+            <div className="containerrr-card ">
+              <div className="boxx user">
+                <div className="iconn">😊</div>
+                <div className="contentt">
+                  <p>{doctor.docName}</p>
 
-                <div className="aa">
-                  <div className="bb">
-                    <div className="cc">
-                      {/* <Link to = {`/Doctors/${department._id}`}><button className="aaa">Read More</button></Link> */}
-                      <br />
-                      Name:{doctor.email}
-                      <br />
-                      experience: jjjjjjjjjjjjjjjj
-                      <br />
-                      Language:aaaaaaaaaaaaaaaaa
-                      <br />
-                      Email: sssssssssssssssssssssssss
-                      <br />
-                      Hours: aaaaa
-                      <br />
+                  <div className="aa">
+                    <div className="bb">
+                      <div className="cc">
+                        {/* <Link to = {`/Doctors/${department._id}`}><button className="aaa">Read More</button></Link> */}
+                        <br />
+                        Name:{doctor.docName}
+                        <br />
+                        experience: {doctor.experince}
+                        <br />
+                        Language: {doctor.language}
+                        <br />
+                        Email: {doctor.email}
+                        <br />
+                        Hours: {doctor.hours}
+                        <br />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
-        {/* </Slider> */}
+          ))}
+        </Slider>
       </div>
     </>
   );

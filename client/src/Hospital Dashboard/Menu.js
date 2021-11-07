@@ -1,9 +1,10 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 function Menu() {
+  const history = useHistory();
   function logout() {
     return localStorage.removeItem("user");
   }

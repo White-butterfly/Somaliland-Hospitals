@@ -155,17 +155,16 @@ function App() {
             {" "}
             <HospitalsUser />
           </Route>
-          <Route path="/DepartmentUser/:id">
+          <Route path="/DepartmentUser">
             <DepartmentUser />
           </Route>
           <Route path="/DoctorsUser/:id">
             <DoctorsUser />
           </Route>
-          <Route path="/Appiontment">
-            {" "}
-            <Appiontment />{" "}
+          <Route path="/Appoinment">
+            <Appoinment />
           </Route>
-          <Route path="/DepartmentCards">
+          <Route path="/DepartmentCards/:id">
             <DepartmentCards />
           </Route>
           <Route path="/Contact">

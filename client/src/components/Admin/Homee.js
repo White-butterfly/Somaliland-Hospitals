@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import React from "react";
 
 const Homee = () => {
+  function logout() {
+    return localStorage.removeItem("user");
+  }
   return (
     <div>
       <div className="padding">
@@ -74,14 +77,25 @@ const Homee = () => {
                 </Link>
               </li>
 
-               <li> <Link to={"/AddDoctor"}>
+              <li>
+                {" "}
+                <Link to={"/AddDoctor"}>
                   <a href="">
                     <span className="las la-clipboard-list"></span>
                     <span>Add Doctor</span>
                   </a>
-                </Link> </li>
-
-          
+                </Link>{" "}
+              </li>
+              <button
+                onClick={() => logout()}
+                style={{
+                  marginLeft: "70%",
+                  padding: "6px",
+                  borderRadius: "10px",
+                }}
+              >
+                LogOut
+              </button>
             </ul>
           </div>
 

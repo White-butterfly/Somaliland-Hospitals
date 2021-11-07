@@ -2,7 +2,6 @@ const blog = require("./../model/blogModel");
 
 exports.createBlog = async (req, res) => {
   try {
-    req.body.image = req.file.filename;
     const createBlog = await blog.create(req.body);
     res.status(200).json({
       message: "Blog created ",

@@ -1,35 +1,33 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-
-import { MdStar } from "react-icons/md";
 import DoctorsUser from "./DoctorsUser";
 
 function DepartmentCards() {
   const { id } = useParams();
   const [department, setdepartment] = useState([]);
-  const [selected, setSelected] = useState();
-  const [info, setinfo] = useState(false);
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/api/Department/${id}`).then((res) => {
-      console.log(res);
-      setdepartment(res.data.data);
-    });
+    axios
+      .get(`http://localhost:8000/api/Department/${id}`)
+      .then((res) => {
+        setdepartment(res.data.data);
+        console.log(res.data.data);
+      })
+      .catch((e) => console.log("department", department, e.response));
   }, []);
   return (
     <>
       <h1 className="dept-head">Welcome our Departments</h1>
-      {department.map((department) => (
+      {department.map((value) => (
         <div>
-          <h1 className="hos-head"> Department of {department.name}</h1>
+          <h1 className="hos-head"> Department of {value.name}</h1>
+          <DoctorsUser />
 
           <div className="flex boxes"></div>
         </div>
       ))}
-      <DoctorsUser />
     </>
   );
 }

@@ -9,11 +9,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 
-<<<<<<< HEAD
 .dash-cards {
-=======
-HEAD .dash-cards {
->>>>>>> 73ec41c9d261165f9b28cbf1b47d480eb6bd1ff0
   display: grid;
   grid-template-columns: repeat(3, 250px);
   grid-column-gap: 5rem;
@@ -128,13 +124,10 @@ main {
 .card:hover {
   box-shadow: 0 8px 16px 0 #0867c5;
 }
-<<<<<<< HEAD
 
 /* img {
     border-radius: 5px 5px 0 0;
   } */
-=======
->>>>>>> 73ec41c9d261165f9b28cbf1b47d480eb6bd1ff0
 .not-found {
   position: fixed;
   top: 0;

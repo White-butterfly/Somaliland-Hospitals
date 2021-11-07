@@ -31,6 +31,21 @@ exports.saveUser = async (req, res) => {
   }
 };
 
+exports.getUsers = async (req, res) => {
+  try {
+    const users = await User.find({});
+
+    res.status(200).json({
+      message: "found users",
+      data: users,
+    });
+  } catch (e) {
+    res.status(400).json({
+      message: e.message,
+    });
+  }
+};
+
 //LOGIN USER
 
 exports.loginUser = async (req, res) => {
