@@ -5,9 +5,9 @@ exports.createDepartment = async (req, res) => {
   try {
      const hospital = await Hospital.findOne({name:req.body.hospital})
     req.body.hospital = hospital._id
-    
+     
     const createDepartment = await department.create(req.body);
-
+ 
     res.status(200).json({
       message: "created a department ",
       data: createDepartment,
@@ -48,7 +48,6 @@ exports.getDepartment = async (req, res) => {
     });
   }
 };
-<<<<<<< HEAD
 // exports.getoneDepert = async (req, res) => {
 //   try {
 //     const dep = await department.findById(req.params.id, req.body);
@@ -74,14 +73,13 @@ exports.updateDepartment = async (req, res) => {
     });
   } catch (e) {
     res.status(400).json({
-      message: e.message,
+      message: e.message, 
     });
   }
 };
-=======
-
+ 
 exports.deleteDepartment= async(req,res)=>{
-  try{
+  try{ 
      await department.findByIdAndDelete(req.params.id);
       res.status(200).json({
           message: 'Department  deleted',
@@ -93,4 +91,3 @@ exports.deleteDepartment= async(req,res)=>{
   }}
 
 
->>>>>>> 73ec41c9d261165f9b28cbf1b47d480eb6bd1ff0

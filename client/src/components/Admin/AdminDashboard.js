@@ -2,13 +2,24 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Homee from "./Homee";
-
+import { Link } from "react-router-dom";
 const AdminDashboard = () => {
+  const [id, setId] = useState("");
   const [hospital, sethospital] = useState([]);
   const [department, setdepartment] = useState([]);
   const [doctor, setdoctor] = useState([]);
+  const [contact,setcontact]= useState([]);
+
 
   useEffect(() => {
+
+    axios
+    .get(`http://localhost:8000/api/contact`)
+    .then((res) => {setcontact(res.data.data)
+      console.log("Contact ",res) 
+    })
+    .catch((e) => console.log(e.response));
+
     axios
       .get(`http://localhost:8000/api/hospital`)
       .then((res) => sethospital(res.data.data));
@@ -21,6 +32,13 @@ const AdminDashboard = () => {
       .get(`http://localhost:8000/api/doctor`)
       .then((res) => setdoctor(res.data.data));
   }, []);
+
+  function delContact(id) {
+    axios
+      .delete(`http://localhost:8000/api/contact/${id}`)
+      .then((res) => console.log(res));
+  }
+
   return (
     <div>
       <div className="adminmain-content">
@@ -29,15 +47,11 @@ const AdminDashboard = () => {
             <label for="nav-toggle">
               {" "}
               <span className="las la-bars"></span>{" "}
-            </label>
+            </label> 
             Dashboard
           </h2>
 
-          {/* <div className="adminsearch-wrapper">
-                   <span className="las la-search"></span>
-                   <input type="search"
-                   placeholder= "Search here" />
-               </div> */}
+      
         </div>
         <div className="mmain">
           <div className="admincards">
@@ -83,7 +97,7 @@ const AdminDashboard = () => {
             <div className="adminprojects">
               <div className="admincard">
                 <div className="admincard-header">
-                  <h2>Recent Appoinments</h2>
+                  <h2>Contacted People</h2>
 
                   <button>
                     See All <span className="las la-arrow-right"></span>{" "}
@@ -95,60 +109,24 @@ const AdminDashboard = () => {
                   <table width="100%">
                     <thead>
                       <tr>
-                        <td>Patient Names</td>
-                        <td>Hospitals</td>
-                        <td>Department</td>
-                        <td>Doctors</td>
-                        <td>status</td>
+                        <td>User Name</td>
+                        <td>Message</td>
+                        <td>Action</td>
                       </tr>
                     </thead>
+                    {contact.map((contacts)=>(
                     <tbody>
                       <tr>
-                        <td>mohamed </td>
-                        <td>haldoor hospital</td>
-                        <td>X-Ray</td>
-                        <td>dr: ciise jama</td>
-
+                        <td>{contacts. userName} </td>
+                        <td>{contacts.message}</td>
                         <td>
-                          <span className="status purple"> Pending</span>
+                         <a href="#"  onClick={() => delContact(contacts._id)} >Remove
+                         </a>
                         </td>
                       </tr>
                     </tbody>
+                    ))}
                   </table>
-                </div>
-              </div>
-            </div>
-            <div className="admincustomers">
-              <div className="admincard">
-                <div className="admincard-header">
-                  <h3>contact message</h3>
-
-                  <button>
-                    See All <span className="las la-arrow-right"></span>{" "}
-                  </button>
-                </div>
-                <div className="admincard-body ">
-                  <div className="admincustomer">
-                    <div className="adminInfo">
-                      <img src="doc1.jfif" width="40px" height="40px" alt="" />
-                      <div>
-                        <h4>Dr.Faiza </h4>
-                        <small>
-                          Suppose you have a Charactermodel that contains 5
-                        </small>
-                      </div>
-                      <div
-                        className="admincontact"
-                        style={{ display: "flex", marginLeft: "80px" }}
-                      >
-                        <div>
-                          <span className="las la-user-circle"></span>
-                          <span className="las la-comment"></span>
-                          <span className="las la-phone"></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

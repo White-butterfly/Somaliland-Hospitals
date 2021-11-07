@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const AllDepartment = () => {
   const [id, setId] = useState("");
   const [Alldepartment, setAlldepartment] = useState([]);
+  const [search, setsearch] = useState("");
 
   useEffect(() => {
     axios
@@ -23,36 +24,48 @@ const AllDepartment = () => {
   return (
     <div>
       <div className="tbl-heading">All Departments in Hospitals</div>
+
+      <div className="adminsearch-wrapper" style={{width: '40rem', marginLeft: '540px', marginTop: '10px', color: 'black'}}>
+                   <span className="las la-search"></span>
+                   <input type="search"
+                   placeholder= "Search here" 
+                   onChange={(e) => setsearch(e.target.value)}/>
+            
+</div>
+
       <div class="table_responsive">
         <table>
           <thead>
             <tr>
               <th>Id</th> 
               <th>dep-Name</th>
-              <th>Hospital-Name</th>
+            
               <th>Action</th>
             </tr>
           </thead>
-          {Alldepartment.map((department) => (
+          {Alldepartment.filter((val) => {
+            if (search === "") {
+              return val;
+            } else if (
+              val.name.toLowerCase().includes(search.toLowerCase())
+            ) {
+              return val;
+            }
+          })
+          
+          
+          .map((department) => (
             <tbody>
               <tr>
-                <td>01</td>
+                <td>{department._id}</td>
 
                 <td>{department.name}</td>
               
-                <td>{department.hospital}</td>
                 <td>
-                  <span class="action_btn">
-<<<<<<< HEAD
-                    <Link to={`/EditDepartment/${department._id}`}>
-                      {" "}
-                      <a href="#">Edit</a>
-                    </Link>
-                    <a href="#" onClick={() => delHospital(department._id)}>
-=======
-                    <a href="#">Edit</a>
+                  <span className="action_btn">
+                    <Link to={`/EditDepartment/${department._id}`}> Edit </Link>
+                   
                     <a href="#" onClick={() =>delDepartment(department._id)}>
->>>>>>> 73ec41c9d261165f9b28cbf1b47d480eb6bd1ff0
                       Remove
                     </a>
                   </span>

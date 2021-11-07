@@ -35,6 +35,7 @@ import YesterdayTAppoinments from "./components/Admin/Appoinments/YesterdayTAppo
 import TotalAppoinments from "./components/Admin/Appoinments/TotalAppoinments";
 import TotalRegisteredPatient from "./components/Admin/Appoinments/TotalRegisteredPatient";
 import Hospitals from "./components/Admin/Hospitals/Hospitals";
+import AddDoctor from "./components/Doctors/AddDoctor";
 
 import AddHospital from "./components/Admin/Hospitals/AddHospital";
 import AddDepartment from "./components/Admin/Hospitals/AddDepartment";
@@ -122,6 +123,9 @@ function App() {
           <Route exact path="/AdminDashboard">
             <AdminDashboard />
           </Route>
+          <Route exact path = '/AddDoctor'>
+            <AddDoctor/>
+            </Route>
 
           {/* // route hospital dashboard */}
 
@@ -161,9 +165,9 @@ function App() {
           <Route path="/DoctorsUser/:id">
             <DoctorsUser />
           </Route>
-          <Route path="/Appiontment">
+          <Route path="/Appoinment">
             {" "}
-            <Appiontment />{" "}
+            <Appoinment />{" "}
           </Route>
           <Route path="/DepartmentCards">
             <DepartmentCards />

@@ -10,14 +10,43 @@ exports.createContact = async (req, res) => {
       message: e.message,
     });
   }
+}; 
+
+
+exports.getcontact = async (req, res) => {
+  try {
+    const contactss = await Contact.find({});
+    res.status(200).json({
+      message: "found a contact",
+      data: contactss, 
+    });
+  } catch (e) {
+    res.status(400).json({
+      message: e.message,
+    });
+  }
 };
 
-exports.contacts = async (req, res) => {
+exports.deleteCon = async (req, res) => {
   try {
-    const contact = await Contact.find({ hospital: req.params.id }).populate(
-      "hospital"
-    );
-    res.status(200).json({ contact });
+    await Contact.findByIdAndDelete(req.params.id);
+    res.status(200).json({
+      message: "Contact  deleted",
+    });
+  } catch (e) {
+    res.status(400).json({
+      message: e.message,
+    });
+  }
+};
+
+exports.getContactt = async (req, res) => {
+  try {
+    const contsctsss = await Contact.findById(req.params.id);
+    res.status(200).json({
+      message: "you search and it is here",
+      data: contactsss,
+    });
   } catch (e) {
     res.status(400).json({
       message: e.message,

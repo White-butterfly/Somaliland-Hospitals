@@ -24,51 +24,48 @@ const AllHospitals = () => {
   return (
     <>
       <div className="tbl-heading">All Hospitals in Somaliland</div>
-      <input
-        className="input-hos"
-        type="text"
-        placeholder="searching city"
-        onChange={(e) => setsearch(e.target.value)}
-        style={{ marginLeft: "900px", width: "350px" }}
-      />
+    
+         <div className="adminsearch-wrapper" style={{width: '40rem', marginLeft: '540px', marginTop: '10px'}}>
+                   <span className="las la-search"></span>
+                   <input type="search"
+                   placeholder= "Search here" 
+                   onChange={(e) => setsearch(e.target.value)}/>
+            
+</div>
+
       <div class="table_responsive">
         <table>
           <thead>
             <tr>
-              <th>Id</th>
-              <th>Logo</th>
+             
+              <th>Date</th>
               <th> Hospital-Name</th>
               <th>City</th>
               <th>Region</th>
               <th>Action</th>
             </tr>
           </thead>
+
           {AllHospitals.filter((val) => {
             if (search === "") {
               return val;
             } else if (
-              val.address.city.toLowerCase().includes(search.toLowerCase())
+              val.name.toLowerCase().includes(search.toLowerCase())
             ) {
               return val;
             }
           }).map((hospital) => (
             <tbody>
               <tr>
-                <td>01</td>
-                <td>
-                  <img
-                    src="https://assets.codepen.io/2147066/internal/avatars/users/default.png?fit=crop&format=auto&height=100&version=1608664176&width=100"
-                    alt=""
-                  />
-                </td>
+              
+                <td>{hospital.date}</td>
                 <td>{hospital.name}</td>
                 <td>{hospital.address.city}</td>
                 <td>{hospital.address.region}</td>
                 <td>
                   <span class="action_btn">
                     <Link to={`/EditHospital/${hospital._id}`}>
-                      {" "}
-                      <a href="#">Edit</a>
+                  Edit
                     </Link>
                     <a href="#" onClick={() => delHospital(hospital._id)}>
                       Remove

@@ -22,9 +22,9 @@ function LoginBody() {
         localStorage.setItem("token", JSON.stringify(res.data.token));
         toast.success("User Logged In");
         if (res.data.user.role === "user") {
-          history.push("/Home");
+          history.push("/home");
         } else {
-          history.push("/homee");
+          history.push("/Homee");
         }
       })
       .catch((e) => toast.error(e.response.data.message));

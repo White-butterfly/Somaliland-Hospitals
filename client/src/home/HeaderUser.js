@@ -39,10 +39,7 @@ const HeaderUser = () => {
 
           </ul>
 
-<<<<<<< HEAD
-=======
           
->>>>>>> 73ec41c9d261165f9b28cbf1b47d480eb6bd1ff0
           <div className="log-reg">
             <h2>
               <Link to="/Login" className="h2">

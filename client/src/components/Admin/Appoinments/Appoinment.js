@@ -64,7 +64,7 @@ axios
 
     return ( 
         <div>
-         <div className="boddy" style= {{marginLeft: "340px", width: "700px" , height: "200px"}}>
+         <div className="boddy" style= {{marginLeft: "340px", width: "700px" , height: "200px", marginBottom: "900px"}}>
         <div id="envelope">
           <form  className="formm"  onSubmit={AddAppoinments}> 
             <div className="headder">

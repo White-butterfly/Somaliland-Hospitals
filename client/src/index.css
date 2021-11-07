@@ -9,7 +9,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 
-
 .dash-cards {
   display: grid;
   grid-template-columns: repeat(3, 250px);
@@ -1264,6 +1263,7 @@ li a.contact:hover {
 .boddy {
   margin: 0;
   padding: 0;
+  /* margin-bottom: 900px; */
   font-family: "Roboto Slab", serif;
 }
 div#envelope {
@@ -1806,3 +1806,5 @@ table > tbody > tr:hover {
   margin-left: 120px;
   padding: 10px;
 }
+
+/* FILTER Area */

@@ -14,7 +14,7 @@ const AddDoctor = () => {
   const [departmentt, setdepartmentt] = useState("");
   const [hospitals, sethospitals] = useState([]);
   const [department, setdepartment] = useState([]);
-  const [doctor, setdoctor] = useState([]);
+  const [doctor, setdoctor] = useState([]); 
   useEffect(() => {
     axios
       .get(`http://localhost:8000/api/department/`, department)

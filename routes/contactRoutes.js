@@ -5,7 +5,15 @@ const Router = express.Router();
 const contactController = require("../controller/contactController");
 const verifyToken = require("../middleware/auth");
 
-Router.route("/").post(verifyToken, contactController.createContact);
+Router.route("/")
 
-Router.route("/:id").get(contactController.contacts);
+.post(verifyToken, contactController.createContact)
+.get(contactController.getcontact)
+
+Router.route("/:id")
+.get(contactController.getContactt)
+.delete(contactController.deleteCon)
+
+
+
 module.exports = Router;
