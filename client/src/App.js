@@ -147,7 +147,7 @@ function App() {
           <Route path="/home" exact>
             <Section1 />
             <Section4 />
-            <Section5 />
+            {/* <Section5 /> */}
             <Section2 />
             <Section6 />
           </Route>
