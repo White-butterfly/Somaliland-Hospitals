@@ -25,7 +25,7 @@ exports.getDepartments = async (req, res) => {
     res.status(200).json({
       message: "found a department",
       data: departmentss,
-    });
+    }); 
   } catch (e) {
     res.status(400).json({
       message: e.message,
