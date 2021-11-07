@@ -125,7 +125,7 @@ axios
             <select onChange={(e)=>{setHospitall(e.target.value)}}
             className="w3-select w3-border" name="option">
               <option value="" disabled selected> Choose a Hospital</option>
-              {hospitals.map((hospital)=>
+              {hospitals.map((hospital)=> 
     <option  value={hospital.name}>{hospital.name}</option>
     )}
             </select>
