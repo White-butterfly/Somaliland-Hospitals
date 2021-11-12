@@ -7,7 +7,7 @@ import { MdStar } from "react-icons/md";
 function HospitalsUser() {
   const history = useHistory();
   const [hospital, sethospital] = useState([]);
-  const [search, setsearch] = useState("");
+  const [search, setsearch] = useState(""); 
   useEffect(() => {
     if (localStorage.getItem("user") === null) {
       history.push("/Login");

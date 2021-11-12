@@ -1,17 +1,10 @@
 const mongoose = require("mongoose");
+
+// const autoIncrement= require('mongoose-auto-increment');
 const hosShema = mongoose.Schema({
   name: {
     type: String,
     required:true,
-  },
-  logo: {
-    type: String,
-    required: true,
-  },
-  image: {
-    type: String,
-    required:true,
-
   },
   date: {
     type: Date,
@@ -25,12 +18,16 @@ const hosShema = mongoose.Schema({
     city: String,
     region: String,
   },
-
-  geolocation: {
-    long: Number,
-    lat: Number,
-  },
-
 });
+
+// hosShema.pre("save", async function (next){
+     
+// });
+
+// autoIncrement.initialize(mongoose.connection);
+// hosShema.plugin(autoIncrement.plugin, 'hospital');
+
+
+
 const hospitals = mongoose.model("hospital", hosShema);
 module.exports = hospitals;

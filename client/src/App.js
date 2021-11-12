@@ -51,7 +51,7 @@ import EditHospital from "./components/Admin/Hospitals/EditHospital";
 import EditDepartment from "./components/Admin/Hospitals/EditDepartment";
 import EditDoctor from "./components/Admin/Hospitals/EditDoctor";
 import { useHistory } from "react-router-dom";
-
+import AddDoctor from "./components/Doctors/AddDoctor";
 import Menu from "./Hospital Dashboard/Menu";
 import HospitalDashboard from "./Hospital Dashboard/HospitalDashboard";
 import AddBlog from "./Hospital Dashboard/AddBlog";
@@ -122,6 +122,9 @@ function App() {
           <Route exact path="/AdminDashboard">
             <AdminDashboard />
           </Route>
+          <Route exact path="/AddDoctor">
+            <AddDoctor />
+          </Route>
 
           {/* // route hospital dashboard */}
 
@@ -155,7 +158,7 @@ function App() {
             {" "}
             <HospitalsUser />
           </Route>
-          <Route path="/DepartmentUser">
+          <Route path="/DepartmentUser/:id">
             <DepartmentUser />
           </Route>
           <Route path="/DoctorsUser/:id">

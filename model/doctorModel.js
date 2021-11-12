@@ -1,4 +1,6 @@
 const mongoose= require('mongoose');
+
+
 const doctorSchema= mongoose.Schema({
 
     docName:{
@@ -6,7 +8,7 @@ const doctorSchema= mongoose.Schema({
         required: true,
     },
     expirence: { 
-        type: String,
+        type: Number,
         required: true,
     },
     language: {
@@ -19,7 +21,7 @@ const doctorSchema= mongoose.Schema({
     },
 
     hours: {
-        type: String,
+        type: Number,
         required: true,
     },
     hospital: {
@@ -30,8 +32,8 @@ const doctorSchema= mongoose.Schema({
       department: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "department",
-    },
-});
+    },});
 
-const doctorModel = mongoose.model ('doctor', doctorSchema);
+    const doctorModel = mongoose.model('doctor', doctorSchema);
+    
     module.exports= doctorModel;

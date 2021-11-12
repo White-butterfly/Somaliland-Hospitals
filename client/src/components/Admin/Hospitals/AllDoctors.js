@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
 const AllDoctors = () => {
   const [id, setId] = useState("");
   const [Alldoctors, setAlldoctors] = useState([]);
-
+  const [search, setsearch] = useState("");
   useEffect(() => {
     axios
       .get(`http://localhost:8000/api/doctor`)
@@ -24,6 +23,14 @@ const AllDoctors = () => {
   return (
     <div>
       <div className="tbl-heading">All Doctors in Somaliland</div>
+       
+      <div className="adminsearch-wrapper" style={{width: '40rem', marginLeft: '540px', marginTop: '10px'}}>
+                   <span className="las la-search"></span>
+                   <input type="search"
+                   placeholder= "Search here" 
+                   onChange={(e) => setsearch(e.target.value)}/>
+            
+</div>
       <div class="table_responsive">
         <table>
           <thead>
@@ -37,11 +44,21 @@ const AllDoctors = () => {
               <th>Action</th>
             </tr>
           </thead>
-          {Alldoctors.map((doctor) => (
+
+          {Alldoctors.filter((val) => {
+            if (search === "") {
+              return val;
+            } else if (
+              val.docName.toLowerCase().includes(search.toLowerCase())
+            ) {
+              return val;
+            }
+          })
+          .map((doctor) => (
             <tbody>
               <tr>
                 <td>01</td>
-
+ 
                 <td>{doctor.docName}</td>
                 <td>{doctor.expirence}</td>
                 <td>{doctor.language}</td>
@@ -50,8 +67,7 @@ const AllDoctors = () => {
                 <td>
                   <span class="action_btn">
                     <Link to={`/EditDoctor/${doctor._id}`}>
-                      {" "}
-                      <a href="#">Edit</a>
+                   Edit
                     </Link>
                     <a href="#" onClick={() => delHospital(doctor._id)}>
                       Remove
@@ -63,6 +79,8 @@ const AllDoctors = () => {
           ))}
         </table>
       </div>
+      
+      
     </div>
   );
 };

@@ -36,7 +36,7 @@ exports.getDepartments = async (req, res) => {
 exports.getDepartment = async (req, res) => {
   try {
     const dep = await department
-      .findById({ hospital: req.params.id })
+      .find({ hospital: req.params.id })
       .populate("hospital");
     res.status(200).json({
       message: "found",

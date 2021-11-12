@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { FaRegSmileBeam, FaProcedures, FaBuilding } from "react-icons/fa";
 
 function HospitalDashboard() {
   const [appiontment, setappiontment] = useState([]);
@@ -57,20 +58,33 @@ function HospitalDashboard() {
                 <div className="box-topic">Departments</div>
                 <div className="number">{department.length}</div>
               </div>
-              <i className="bx bx-cart-alt cart"></i>
+              <i
+                class="fa fa-bed"
+                style={{ fontSize: "40px" }}
+                aria-hidden="true"
+              ></i>
             </div>
             <div className="box">
               <div className="right-side">
                 <div className="box-topic"> Doctors</div>
                 <div className="number">{doctor.length}</div>
               </div>
+              <i
+                class="fa fa-user-md"
+                style={{ fontSize: "40px" }}
+                aria-hidden="true"
+              ></i>
             </div>
             <div className="box">
               <div className="right-side">
                 <div className="box-topic"> Appoinments</div>
                 <div className="number">{appiontment.length}</div>
               </div>
-              <i className="bx bx-cart cart three"></i>
+              <i
+                class="fa fa-book"
+                style={{ fontSize: "40px" }}
+                aria-hidden="true"
+              ></i>
             </div>
             {/* <div className="box">
               <div className="right-side">

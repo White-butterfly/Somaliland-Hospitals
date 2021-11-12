@@ -9,11 +9,10 @@ router
   .post(departmentController.createDepartment);
 
 router
-
   .route("/:id")
   .get(departmentController.getDepartment)
-  .delete(departmentController.deleteDepartment)
-  .put(departmentController.updateDepartment);
-//.get(departmentController.getoneDepert);
+  //.get(departmentController.getoneDepert)
+  .put(departmentController.updateDepartment)
+  .delete(departmentController.deleteDepartment);
 
 module.exports = router;

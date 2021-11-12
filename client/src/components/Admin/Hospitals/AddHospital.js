@@ -5,37 +5,23 @@ import { useParams,} from "react-router-dom";
 const AddHospital = () => {
     const [Addhospital, setAddhospital] = useState({ 
         name: "",
-        logo: "",
-        image: "",
         describtion: "",
+        date: "",
         address: { 
             city: "",
-            region: "", 
+            region: "",  
         },
-            geolocation: {
-              lat: '',
-              long: '',
-            }
-         
+     
     });
       const onChange = e => {
           let data= { ...Addhospital };
           let name= e.target.name;
           let val = e.target.value;
-          if (e.target.files !== null){
-            let vali =  e.target.files[0];
-          }
-        
-         
-
-          if (name == "name" || name == "describtion" || name == "logo" || name == "image"){
+   
+          if (name == "name" || name == "describtion" || name == "date"){
               data = { ...data, [name]: val };
           }
-//           } else if (name == "logo" || name == "image"){
-// data = {...data, [name]: val };
-//           }
-          
-          
+      
           else if (name == 'region' || name == 'city' ){
               data = {
                   ...data,
@@ -43,13 +29,7 @@ const AddHospital = () => {
                     ...data.address,
                       [name]: val
 }};}
-else if (name == 'lat' || name == 'long') {
-      data = {
-        ...data,
-        geolocation: {
-          ...data.geolocation,
-            [name]: val
-          }} };
+
           
 console.log("on change ",onChange);
       setAddhospital(data);
@@ -64,7 +44,7 @@ console.log("on change ",onChange);
       };
     return (
         <div>
-               <div className="boddy">
+               <div className="boddy" style= {{marginLeft: "340px", width: "700px" , height: "300px"}}>
         <div id="envelope">
         <form  className="formm" >
             <div className="headder">
@@ -82,31 +62,7 @@ console.log("on change ",onChange);
             value= {Addhospital.name}
             onChange={onChange}
           />
-      
-
-      <label>Hospital logo</label>
-          <input
-            type="file"
-            className="form-control"
-         
-            required
-            name= "logo"
-            value= {Addhospital.logo}
-            onChange= {onChange}
-          />
-     
-
-     <label>Hospital image</label>
-          <input
-            type="file"
-            className="form-control"
-          
-            required
-           value= {Addhospital.image}
-           name= "image"
-           onChange= {onChange}
-          />
-
+    
 <label>Hospital Description </label>
           <input
             type="text"
@@ -141,53 +97,17 @@ console.log("on change ",onChange);
             value= {Addhospital.address.region}
             onChange= {onChange}
           />
-             <label>Hospital Lat</label>
+   <label>Add a Date</label>
           <input
-            type="text"
-            className="form-control"
-           
-            required
-            name= "lat"
-            value= {Addhospital.geolocation.lat}
-            onChange= {onChange}
-          />
-
-<label>Hospital Long</label>
-          <input
-            type="text"
+            type="date"
             className="form-control"
          
             required
-            name= "long"
-            value= {Addhospital.geolocation.long}
+            name= "date"
+            value= {Addhospital.date}
             onChange= {onChange}
           />
-        
-{/* 
-        <div className="form-group">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Enter the Name of the Department"
-            required
-            name= "city"
-            value= {Addhospital.address.city}
-            onChange= {onChange}
-          />
-        </div>
 
-        <div className="form-group">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Enter the Name of the Department"
-            required
-            name= "city"
-            value= {Addhospital.address.city}
-            onChange= {onChange}
-          />
-        </div>
-     */}
 
 <br/>
 <br/>

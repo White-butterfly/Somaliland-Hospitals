@@ -12,7 +12,7 @@ function Menu() {
     <div>
       <div className="sidebar-dashboard">
         <div className="logo-details">
-          <i className="bx bxl-c-plus-plus"></i>
+          <i class="fa fa-hospital-o" aria-hidden="true"></i>
           <span className="logo_name">Haldoor</span>
         </div>
         <ul className="nav-links">
@@ -28,7 +28,7 @@ function Menu() {
             <Link to={"/MyDepartments"}>
               {" "}
               <a href="#">
-                <i className="bx bx-box"></i>
+                <i class="fa fa-bed" aria-hidden="true"></i>
                 <span className="links_name">Departments</span>
               </a>
             </Link>
@@ -37,7 +37,7 @@ function Menu() {
             <Link to={"/MyDoctors"}>
               {" "}
               <a href="#">
-                <i className="bx bx-list-ul"></i>
+                <i class="fa fa-user-md" aria-hidden="true"></i>
                 <span className="links_name">Doctors</span>
               </a>
             </Link>
@@ -55,7 +55,7 @@ function Menu() {
             <Link to={"/MyReviews"}>
               {" "}
               <a href="#">
-                <i className="bx bx-coin-stack"></i>
+                <i class="fa fa-comment-o" aria-hidden="true"></i>
                 <span className="links_name">Reviews</span>
               </a>
             </Link>
@@ -64,7 +64,7 @@ function Menu() {
             <Link to={"/MyAppointments"}>
               {" "}
               <a href="#">
-                <i className="bx bx-book-alt"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
                 <span className="links_name">Appoinments</span>
               </a>
             </Link>

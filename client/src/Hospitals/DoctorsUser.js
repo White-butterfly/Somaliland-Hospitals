@@ -39,44 +39,41 @@ function DoctorsUser() {
 
   useEffect(() => {
     axios.get(`http://localhost:8000/api/doctor/${id}`).then((res) => {
-      console.log(res);
+      console.log(res.data.data);
       setdoctor(res.data.data);
     });
   });
   return (
     <>
       <div className="doctor-silder">
-        <Slider {...settings}>
-          {doctor.map((doctor) => (
-            <div className="containerrr-card ">
-              <div className="boxx user">
-                <div className="iconn">😊</div>
-                <div className="contentt">
-                  <p>{doctor.docName}</p>
-
-                  <div className="aa">
-                    <div className="bb">
-                      <div className="cc">
-                        {/* <Link to = {`/Doctors/${department._id}`}><button className="aaa">Read More</button></Link> */}
-                        <br />
-                        Name:{doctor.docName}
-                        <br />
-                        experience: {doctor.experince}
-                        <br />
-                        Language: {doctor.language}
-                        <br />
-                        Email: {doctor.email}
-                        <br />
-                        Hours: {doctor.hours}
-                        <br />
-                      </div>
+        {/* <Slider {...settings}> */}
+        {doctor.map((doctorr) => (
+          <div className="containerrr-card ">
+            <div className="boxx user">
+              <div className="iconn">😊</div>
+              <div className="contentt">
+                <div className="aa">
+                  <div className="bb">
+                    <div className="cc">
+                      <br />
+                      Name:{doctorr.docName}
+                      <br />
+                      experience: {doctorr.experince}
+                      <br />
+                      Language: {doctorr.language}
+                      <br />
+                      Email: {doctorr.email}
+                      <br />
+                      Hours: {doctorr.hours}
+                      <br />
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          ))}
-        </Slider>
+          </div>
+        ))}
+        {/* </Slider> */}
       </div>
     </>
   );

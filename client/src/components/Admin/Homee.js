@@ -17,13 +17,23 @@ const Homee = () => {
             </h2>
           </div>
           <div className="adminsidebar-menu">
-            <ul>
+            <ul
+              style={{
+                padding: "2rem",
+                width: "100%",
+                marginBottom: "1.7rem",
+                paddingLeft: "rem",
+                fontSize: "15px",
+                padding: "0px",
+              }}
+            >
               <li>
                 <Link to={"/AdminDashboard"} className="active">
                   <span className="las la-igloo"></span>
                   <span>Dashboard</span>
                 </Link>
               </li>
+              <br />
 
               <li>
                 <Link to={"/AllHospitals"}>
@@ -33,6 +43,7 @@ const Homee = () => {
                   </a>{" "}
                 </Link>
               </li>
+              <br />
 
               <li>
                 <Link to={"/AllDepartment"}>
@@ -42,6 +53,9 @@ const Homee = () => {
                   </a>
                 </Link>
               </li>
+
+              <br />
+
               <li>
                 <Link to={"/AllDoctors"}>
                   {" "}
@@ -51,14 +65,9 @@ const Homee = () => {
                   </a>
                 </Link>
               </li>
-              <li>
-                <Link to={"/TodayTAppoinments"}>
-                  <a href="">
-                    <span className="las la-receipt"></span>
-                    <span>All Appoinments</span>
-                  </a>
-                </Link>
-              </li>
+
+              <br />
+
               <li>
                 <Link to={"/AddHospital"}>
                   {" "}
@@ -68,6 +77,9 @@ const Homee = () => {
                   </a>
                 </Link>
               </li>
+
+              <br />
+
               <li>
                 <Link to={"/AddDepartment"}>
                   <a href="">
@@ -76,6 +88,7 @@ const Homee = () => {
                   </a>
                 </Link>
               </li>
+              <br />
 
               <li>
                 {" "}

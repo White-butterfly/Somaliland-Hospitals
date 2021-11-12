@@ -1263,6 +1263,7 @@ li a.contact:hover {
 .boddy {
   margin: 0;
   padding: 0;
+  /* margin-bottom: 900px; */
   font-family: "Roboto Slab", serif;
 }
 div#envelope {
@@ -1805,3 +1806,5 @@ table > tbody > tr:hover {
   margin-left: 120px;
   padding: 10px;
 }
+
+/* FILTER Area */

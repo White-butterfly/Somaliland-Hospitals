@@ -57,7 +57,6 @@ const Appoinment = () => {
 
   return (
     <div>
-    <h5>test</h5>
       <div
         className="boddy"
         style={{

@@ -16,7 +16,6 @@ exports.getHospital = async (req, res) => {
 
 exports.createHospital = async (req, res) => {
   try {
-    req.body.image = req.file.filename;
     const createHospital = await hospitalModel.create(req.body);
     res.status(200).json({
       message: "hospital created",
