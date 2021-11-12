@@ -30,71 +30,50 @@ function Blogs() {
           </div>
 
           {Blog.map((Blogs) => (
-            <div
-              className="cardd mb-3"
-              style={{
-                color: "#000",
-                border: "1px solid #000",
-                height: "250px",
-                borderRadius: "none",
-                marginRight: "600px",
-              }}
-            >
-              <div className="row g-0">
-                <div className="col-md-4">
-                  <img
-                    style={{
-                      height: "137%",
-                    }}
-                    src="https://th.bing.com/th/id/OIP.1unrluQ9xXvbCcSKjJwkvwHaEp?w=262&h=180&c=7&r=0&o=5&pid=1.7"
-                    class="img-fluid rounded-start "
-                    alt=""
-                  />
-                </div>
-                <div className="col-md-8">
-                  <div className="card-body">
-                    <h2 className="card-title">{Blogs.title}</h2>
-                    <h2>{Blogs.hospital.name}</h2>
-                    <p className="card-text">{Blogs.description}</p>
-                    <p className="card-text">
-                      <small className="text-muted">
-                        Last updated 3 mins ago
-                      </small>
-                    </p>
+            <>
+              <div
+                className="cardd mb-3"
+                style={{
+                  color: "#000",
+                  border: "1px solid #000",
+                  height: "250px",
+                  borderRadius: "none",
+                  marginRight: "600px",
+                }}
+              >
+                <div className="row g-0">
+                  <div className="col-md-4">
+                    <img
+                      style={{
+                        height: "250px",
+                      }}
+                      src="https://th.bing.com/th/id/OIP.1unrluQ9xXvbCcSKjJwkvwHaEp?w=262&h=180&c=7&r=0&o=5&pid=1.7"
+                      class="img-fluid rounded-start "
+                      alt=""
+                    />
+                  </div>
+                  <div className="col-md-8">
+                    <div>
+                      <h1
+                        style={{
+                          marginLeft: "100px",
+                          marginTop: "14px",
+                          color: "blue",
+                        }}
+                      >
+                        Hospital name
+                      </h1>
+                    </div>
+                    <div className="card-body">
+                      <h2 className="card-title">{Blogs.title}</h2>
+
+                      <p className="card-text">{Blogs.description}</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </>
           ))}
-
-          {/*             
-
-          
-          <div className="post" style={{background: '#Fed8b1'}}>
-            <img
-              src="https://th.bing.com/th/id/OIP.1unrluQ9xXvbCcSKjJwkvwHaEp?w=262&h=180&c=7&r=0&o=5&pid=1.7"
-              className="post-image"
-            />
-            <div className="post-preview">
-              <h1>
-                <a href="#">{Blogs.title}</a>
-              </h1>
-              <h2>{Blogs.hospital}</h2>
-             
-              <i className="far fa-user">hargeisa</i>
-              &nbsp;
-              <i className="far calender">jun 12,2021</i>
-              <p className="preview-text">
-                {Blogs.description}
-              </p>
-              <a href="#" className="bbtn read-more">
-                read more
-              </a>
-            </div>
-          </div>
-
-   
-   */}
         </div>
 
         <div className="sidebar">

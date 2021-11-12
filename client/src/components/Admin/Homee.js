@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import React from "react";
 
 const Homee = () => {
+  function logout() {
+    return localStorage.removeItem("user");
+  }
   return (
     <div>
       <div className="padding">
@@ -14,19 +17,23 @@ const Homee = () => {
             </h2>
           </div>
           <div className="adminsidebar-menu">
-            <ul  style= {{padding: '2rem',   width: '100%',
-  marginBottom: '1.7rem',
-  paddingLeft: 'rem',
-  fontSize: '15px',
-  padding: '0px'}}>
+            <ul
+              style={{
+                padding: "2rem",
+                width: "100%",
+                marginBottom: "1.7rem",
+                paddingLeft: "rem",
+                fontSize: "15px",
+                padding: "0px",
+              }}
+            >
               <li>
                 <Link to={"/AdminDashboard"} className="active">
                   <span className="las la-igloo"></span>
                   <span>Dashboard</span>
                 </Link>
               </li>
-<br/>
-
+              <br />
 
               <li>
                 <Link to={"/AllHospitals"}>
@@ -36,7 +43,7 @@ const Homee = () => {
                   </a>{" "}
                 </Link>
               </li>
-<br/>
+              <br />
 
               <li>
                 <Link to={"/AllDepartment"}>
@@ -46,9 +53,9 @@ const Homee = () => {
                   </a>
                 </Link>
               </li>
-          
-    <br/>
-             
+
+              <br />
+
               <li>
                 <Link to={"/AllDoctors"}>
                   {" "}
@@ -59,7 +66,7 @@ const Homee = () => {
                 </Link>
               </li>
 
-              <br/>
+              <br />
 
               <li>
                 <Link to={"/AddHospital"}>
@@ -71,7 +78,7 @@ const Homee = () => {
                 </Link>
               </li>
 
-              <br/>
+              <br />
 
               <li>
                 <Link to={"/AddDepartment"}>
@@ -81,17 +88,27 @@ const Homee = () => {
                   </a>
                 </Link>
               </li>
-<br/>
+              <br />
 
-               <li> <Link to={"/AddDoctor"}>
+              <li>
+                {" "}
+                <Link to={"/AddDoctor"}>
                   <a href="">
                     <span className="las la-clipboard-list"></span>
-                    <span>Add Doctor</span> 
+                    <span>Add Doctor</span>
                   </a>
-                </Link> </li>
-
-                <br/>
-
+                </Link>{" "}
+              </li>
+              <button
+                onClick={() => logout()}
+                style={{
+                  marginLeft: "70%",
+                  padding: "6px",
+                  borderRadius: "10px",
+                }}
+              >
+                LogOut
+              </button>
             </ul>
           </div>
 

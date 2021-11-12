@@ -1,6 +1,5 @@
 const express = require("express");
 const hospitalController = require("../controller/hospitalController");
-// const multer = require("multer");
 const path = require("path");
 const router = express.Router();
 
@@ -12,10 +11,7 @@ router
 router
   .route("/:id")
   .get(hospitalController.getHospitall)
-  .put( hospitalController.updateHospital)
+  .put(hospitalController.updateHospital)
   .delete(hospitalController.deleteHospital);
-
-
-
 
 module.exports = router;

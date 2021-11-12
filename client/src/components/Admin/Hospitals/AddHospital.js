@@ -1,8 +1,11 @@
 import React from 'react'
+
 import axios from 'axios';
 import { useState} from 'react';
-import { useParams,} from "react-router-dom";
+import { useParams, useHistory} from "react-router-dom";
+import { toast } from "react-toastify";
 const AddHospital = () => {
+  const history = useHistory();
     const [Addhospital, setAddhospital] = useState({ 
         name: "",
         describtion: "",
@@ -40,7 +43,11 @@ console.log("on change ",onChange);
         console.log(JSON.stringify("Added a hospital",Addhospital));
         axios
         .post(`http://localhost:8000/api/hospital`,Addhospital)
-        .then((res)=> console.log(res)).catch((e)=> console.log(e.response))
+        .then(
+          (res) => toast.success("Hospital created successfully"),
+          history.push("/AllHospitals")
+        )
+        .catch((e) => console.log(e));
       };
     return (
         <div>

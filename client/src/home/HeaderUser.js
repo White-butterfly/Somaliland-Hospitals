@@ -23,7 +23,6 @@ const HeaderUser = () => {
               <Link to="/Blogs">Blogs</Link>
             </li>
             <li>
-
               <Link to="/Appoinment">Appoinment</Link>
             </li>
 
@@ -33,13 +32,8 @@ const HeaderUser = () => {
             <li>
               <Link to="/about">About us</Link>
             </li>
-          
-
-
-
           </ul>
 
-          
           <div className="log-reg">
             <h2>
               <Link to="/Login" className="h2">

@@ -7,7 +7,6 @@ function AddBlog() {
   const { id } = useParams();
   const [title, settitle] = useState("");
   const [description, setdescription] = useState("");
-  const [image, setimage] = useState("");
 
   function saveBlog() {
     //code
@@ -15,37 +14,57 @@ function AddBlog() {
       .post(`http://localhost:8000/api/blog`, {
         title,
         description,
-        image,
       })
 
-      .then((res) => toast.success("Thanks for the blog"))
+      .then((res) => {
+        console.log(res);
+        toast.success("Thanks for the blog");
+      })
       .catch((e) => toast.error(e.message.response));
   }
   return (
-    <div style={{ marginLeft: "500px" }}>
-      <h1>ADD BLOGS</h1>
-      <input
-        type="text"
-        placeholder="title"
-        onChange={(e) => settitle(e.target.value)}
-      />
-      <br />
-      <br />
-      <input
-        type="text"
-        placeholder="describtion"
-        onChange={(e) => setdescription(e.target.value)}
-      />
-      <br />
-      <br />
-      <input
-        type="file"
-        placeholder="image"
-        onChange={(e) => setimage(e.target.files[0])}
-      />
-      <br />
-      <br />
-      <button onClick={() => saveBlog()}>post</button>
+    <div
+      className="boddy"
+      style={{
+        width: "700px",
+        alignItems: "center",
+        marginLeft: "340px",
+      }}
+    >
+      <div id="envelope">
+        <form>
+          <div className="headder">
+            <h2>Add Blog</h2>
+          </div>
+          <br />
+          <br />
+          <div className="form-group">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="title"
+              onChange={(e) => settitle(e.target.value)}
+            />
+            <br />
+            <input
+              type="text"
+              className="form-control"
+              placeholder="describtion"
+              onChange={(e) => setdescription(e.target.value)}
+            />
+          </div>
+          <br />
+          <br />
+
+          <button
+            type="submit"
+            className="btn btn-primary"
+            onClick={() => saveBlog()}
+          >
+            Post
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

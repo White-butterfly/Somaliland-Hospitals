@@ -7,13 +7,11 @@ const verifyToken = require("../middleware/auth");
 
 Router.route("/")
 
-.post(verifyToken, contactController.createContact)
-.get(contactController.getcontact)
+  .post(verifyToken, contactController.createContact)
+  .get(contactController.getcontact);
 
 Router.route("/:id")
-.get(contactController.getContactt)
-.delete(contactController.deleteCon)
-
-
+  .get(contactController.getContactt)
+  .delete(contactController.deleteCon);
 
 module.exports = Router;

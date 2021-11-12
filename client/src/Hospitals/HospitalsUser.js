@@ -30,6 +30,7 @@ function HospitalsUser() {
             placeholder="searching city"
             onChange={(e) => setsearch(e.target.value)}
           />
+
           {/* <button className="search-btn">search</button> */}
         </div>
 
@@ -51,17 +52,13 @@ function HospitalsUser() {
                 </div>
                 <div className="blog-post_info">
                   <div className="blog-post_date">
-                    <span>october 25 2021</span>
+                    <span>{value.date}</span>
                   </div>
                   <h1 className="blog-post_title">{value.name}</h1>
 
                   <h5>{value.address.city}</h5>
 
-                  <p className="blog-post_text">
-                    ullstack React Book. This Google Map React component library
-                    was built alongside the blog post How to Write a Google Maps
-                    React Component
-                  </p>
+                  <p className="blog-post_text">{value.describtion}</p>
                   <div className="stars">
                     <MdStar style={{ color: "yellow" }} />
                     <MdStar style={{ color: "yellow" }} />

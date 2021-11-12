@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
 const blogSchema = mongoose.Schema({
+  hospitalName: {
+    type: String,
+  },
   title: {
     type: String,
   },

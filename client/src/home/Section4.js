@@ -14,6 +14,7 @@ function Section4() {
   const [hospital, sethospital] = useState([]);
   const [department, setdepartment] = useState([]);
   const [doctor, setdoctor] = useState([]);
+  const [user, setuser] = useState([]);
 
   useEffect(() => {
     axios
@@ -27,6 +28,10 @@ function Section4() {
     axios
       .get(`http://localhost:8000/api/doctor`)
       .then((res) => setdoctor(res.data.data));
+
+    axios
+      .get(`http://localhost:8000/api/user`)
+      .then((res) => setuser(res.data.data));
   }, []);
 
   return (
@@ -105,7 +110,7 @@ function Section4() {
               />{" "}
               <CountUp
                 start={0}
-                end={1200}
+                end={user.length}
                 duration={2.75}
                 separator=" "
                 decimals={0}
@@ -115,7 +120,7 @@ function Section4() {
                 onEnd={() => console.log("Ended! 👏")}
                 onStart={() => console.log("Started! 💨")}
               >
-                <span>1200+</span>
+                <span>+</span>
               </CountUp>
               <h3>happy patients</h3>
             </div>

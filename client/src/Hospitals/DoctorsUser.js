@@ -39,7 +39,7 @@ function DoctorsUser() {
 
   useEffect(() => {
     axios.get(`http://localhost:8000/api/doctor/${id}`).then((res) => {
-      console.log(res);
+      console.log(res.data.data);
       setdoctor(res.data.data);
     });
   });
@@ -47,27 +47,24 @@ function DoctorsUser() {
     <>
       <div className="doctor-silder">
         {/* <Slider {...settings}> */}
-        {doctor.map((doctor) => (
+        {doctor.map((doctorr) => (
           <div className="containerrr-card ">
             <div className="boxx user">
               <div className="iconn">😊</div>
               <div className="contentt">
-                <p>{doctor.docName}</p>
-
                 <div className="aa">
                   <div className="bb">
                     <div className="cc">
-                      {/* <Link to = {`/Doctors/${department._id}`}><button className="aaa">Read More</button></Link> */}
                       <br />
-                      Name:{doctor.email}
+                      Name:{doctorr.docName}
                       <br />
-                      experience: jjjjjjjjjjjjjjjj
+                      experience: {doctorr.experince}
                       <br />
-                      Language:aaaaaaaaaaaaaaaaa
+                      Language: {doctorr.language}
                       <br />
-                      Email: sssssssssssssssssssssssss
+                      Email: {doctorr.email}
                       <br />
-                      Hours: aaaaa
+                      Hours: {doctorr.hours}
                       <br />
                     </div>
                   </div>

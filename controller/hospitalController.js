@@ -4,7 +4,7 @@ exports.getHospital = async (req, res) => {
     const hospitals = await hospitalModel.find({});
 
     res.status(200).json({
-      message: "all hospitals", 
+      message: "all hospitals",
       data: hospitals,
     });
   } catch (e) {
@@ -16,7 +16,6 @@ exports.getHospital = async (req, res) => {
 
 exports.createHospital = async (req, res) => {
   try {
-  
     const createHospital = await hospitalModel.create(req.body);
     res.status(200).json({
       message: "hospital created",
@@ -35,7 +34,7 @@ exports.updateHospital = async (req, res) => {
       req.params.id,
       JSON.parse(req.body.data)
     );
-    
+
     res.status(200).json({
       message: "Hospital updated",
       data: hospitalss,
@@ -66,7 +65,7 @@ exports.getHospitall = async (req, res) => {
       message: "you search and it is here",
       data: hospitalsss,
     });
-  } catch (e) {
+  } catch (e) { 
     res.status(400).json({
       message: e.message,
     });

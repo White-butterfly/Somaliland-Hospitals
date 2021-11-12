@@ -1,5 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from "react";
+import { Link ,} from "react-router-dom";
+import { toast } from "react-toastify";
 import axios from "axios";
 
 const Contactt = () => {
@@ -30,12 +32,12 @@ useEffect(() => {
           <table>
             <thead>
               <tr>
-                <th>Id</th>
+            
                 <th>user Name</th>
                 <th>phone</th>
                 <th>Email</th>
                 <th>Message</th>
-                <th>Action</th>
+              
               </tr>
             </thead>
   
@@ -51,21 +53,14 @@ useEffect(() => {
             .map((contacts) => (
               <tbody>
                 <tr>
-                  <td>01</td>
+              
    
                   <td>{contacts.userName}</td>
                   <td>{contacts.phone}</td>
                   <td>{contacts.email}</td>
                  
-                  <td> <textarea cols="7" rows="2">{contacts.message}</textarea></td>
-                
-                     
-                      <td>
-                    <span class="action_btn">
-                 
-                     
-                    </span>
-                  </td>
+                  <td> {contacts.message}</td>
+        
                 </tr>
               </tbody>
             ))}

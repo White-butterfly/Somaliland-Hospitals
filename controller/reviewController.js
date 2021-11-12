@@ -24,3 +24,16 @@ exports.reviews = async (req, res) => {
     });
   }
 };
+
+exports.deleteReview = async (req, res) => {
+  try {
+    await Review.findByIdAndDelete(req.params.id);
+    res.status(200).json({
+      message: "review deleted",
+    });
+  } catch (e) {
+    res.status(400).json({
+      message: e.message,
+    });
+  }
+};

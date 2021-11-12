@@ -2,8 +2,10 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Homee from "./Homee";
-import { Link } from "react-router-dom";
+import { Link , useHistory} from "react-router-dom";
+import { toast } from "react-toastify";
 const AdminDashboard = () => {
+  const history = useHistory();
   const [id, setId] = useState("");
   const [hospital, sethospital] = useState([]);
   const [department, setdepartment] = useState([]);
@@ -36,7 +38,12 @@ const AdminDashboard = () => {
   function delContact(id) {
     axios
       .delete(`http://localhost:8000/api/contact/${id}`)
-      .then((res) => console.log(res));
+   
+      .then(() => {
+        toast.success("Contact successfully Removed");
+        history.push("/Contactt/:id");
+      })
+      .catch((e) => toast.error(e.response.data.message));
   }
 
   return (
@@ -117,13 +124,18 @@ const AdminDashboard = () => {
                         <td>{contacts. userName} </td>
                         <td>{contacts.message}</td>
                         <td>
-                         <a href="#"  onClick={() => delContact(contacts._id)} >Remove
-                         </a>
-                        </td>
                         <td>
-                        <button style= {{color: "black"}}>
-                  <Link to={`/Contactt/${contacts._id}`} style={{color: "white"}}>See All <span className="las la-arrow-right" ></span>{" "}</Link>
-                  </button>
+                  <span class="action_btn">
+                    <Link to={`/Contactt/${contacts._id}`} >
+                    See All 
+                    </Link>
+                         <a href="#"  onClick={() => delContact(contacts._id)} >Remove
+                    </a>
+                  </span>
+                </td>
+                       
+                 
+          
                   </td>
                       </tr>
                     </tbody>
