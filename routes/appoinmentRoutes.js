@@ -5,12 +5,11 @@ const router = express.Router();
 router
   .route("/")
   .get(appoinmentController.getAppoinment)
-  .post(appoinmentController.createAppoinment);
+  .post(appoinmentController.createAppoinment)
 
 router
   .route("/:id")
-  .get(appoinmentController.getAppoinmentById)
-  .post(appoinmentController.updateAppoinment)
-  .delete(appoinmentController.deleteApp);
+   //.get(appoinmentController.getAppoinmentById)
+  .delete(appoinmentController.deleteApp)
 
 module.exports = router;

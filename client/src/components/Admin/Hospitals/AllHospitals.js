@@ -33,21 +33,23 @@ const AllHospitals = () => {
   return (
     <>
       <div className="tbl-heading">All Hospitals in Somaliland</div>
-    
-         <div className="adminsearch-wrapper" style={{width: '40rem', marginLeft: '540px', marginTop: '10px'}}>
-                   <span className="las la-search"></span>
-                   <input type="search"
-                   placeholder= "Search here" 
-                   onChange={(e) => setsearch(e.target.value)}/>
-            
-</div>
+
+      <div
+        className="adminsearch-wrapper"
+        style={{ width: "40rem", marginLeft: "540px", marginTop: "10px" }}
+      >
+        <span className="las la-search"></span>
+        <input
+          type="search"
+          placeholder="Search here"
+          onChange={(e) => setsearch(e.target.value)}
+        />
+      </div>
 
       <div class="table_responsive">
         <table>
           <thead>
             <tr>
-             
-              <th>Date</th>
               <th> Hospital-Name</th>
               <th>City</th>
               <th>Region</th>
@@ -58,24 +60,18 @@ const AllHospitals = () => {
           {AllHospitals.filter((val) => {
             if (search === "") {
               return val;
-            } else if (
-              val.name.toLowerCase().includes(search.toLowerCase())
-            ) {
+            } else if (val.name.toLowerCase().includes(search.toLowerCase())) {
               return val;
             }
           }).map((hospital) => (
             <tbody>
               <tr>
-              
-                <td>{hospital.date}</td>
                 <td>{hospital.name}</td>
                 <td>{hospital.address.city}</td>
                 <td>{hospital.address.region}</td> 
                 <td>
                   <span class="action_btn">
-                    <Link to={`/EditHospital/${hospital._id}`}>
-                  Edit
-                    </Link>
+                    <Link to={`/EditHospital/${hospital._id}`}>Edit</Link>
                     <a href="#" onClick={() => delHospital(hospital._id)}>
                       Remove
                     </a>

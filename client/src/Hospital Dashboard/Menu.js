@@ -6,7 +6,7 @@ import { Link, useHistory } from "react-router-dom";
 function Menu() {
   const history = useHistory();
   function logout() {
-    return localStorage.removeItem("user");
+    return localStorage.removeItem("user"), history.push("/Login");
   }
   return (
     <div>

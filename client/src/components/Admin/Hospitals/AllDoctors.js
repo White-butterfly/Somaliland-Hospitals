@@ -69,7 +69,7 @@ const AllDoctors = () => {
                 <td>{doctor.docName}</td>
                 <td>{doctor.expirence}</td>
                 <td>{doctor.language}</td>
-                <td>{doctor.email}</td>
+                <td>{doctor.email}</td> 
                 <td>{doctor.hours}</td>
                 <td>
                   <span class="action_btn">

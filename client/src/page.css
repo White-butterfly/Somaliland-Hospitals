@@ -10,7 +10,7 @@
   position: fixed;
   height: 100%;
   width: 240px;
-  background: #0a2558;
+  background: rgb(3, 1, 119);
   transition: all 0.5s ease;
 }
 .sidebar-dashboard.active {
@@ -48,12 +48,18 @@
   align-items: center;
   text-decoration: none;
   transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
 }
 .sidebar-dashboard .nav-links li a.active {
   background: #081d45;
+  height: 35px;
 }
 .sidebar-dashboard .nav-links li a:hover {
   background: #081d45;
+  height: 35px;
 }
 .sidebar-dashboard .nav-links li i {
   min-width: 60px;
@@ -79,6 +85,10 @@
   width: calc(100% - 240px);
   left: 240px;
   transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
 }
 .sidebar-dashboard.active ~ .home-section {
   width: calc(100% - 60px);
@@ -98,6 +108,10 @@
   padding: 0 20px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
 }
 .sidebar-dashboard.active ~ .home-section nav {
   left: 60px;

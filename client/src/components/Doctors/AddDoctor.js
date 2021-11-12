@@ -57,7 +57,7 @@ const AddDoctor = () => {
 
   return (
     <>
-      <div
+      <div 
         className="boddy"
         style={{ marginLeft: "340px", width: "700px", height: "300px" }}
       >
@@ -134,7 +134,7 @@ const AddDoctor = () => {
             >
               <option value="" disabled selected>
                 {" "}
-                Choose a Hospital
+                Choose a Hospital 
               </option>
               {hospitals.map((hospital) => (
                 <option value={hospital.name}>{hospital.name}</option>

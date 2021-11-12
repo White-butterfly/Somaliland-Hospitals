@@ -242,9 +242,10 @@ form .button:hover {
   position: relative;
   width: 350px;
   padding: 40px;
-  background: #fff;
+  background: rgb(255, 255, 255);
   border: 0.5px solid;
-  /* box-shadow: 0 5px 15px rgba(0,0,0,0.1); */
+  /*box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  */
   border-radius: 0.001px;
   margin: 20px;
   box-sizing: border-box;
@@ -282,12 +283,12 @@ form .button:hover {
 }
 
 .containerrr-card .boxx:nth-child(1) .iconn {
-  box-shadow: 0 0 0 #e91e63;
-  background: #e91e63;
+  box-shadow: 0 0 0 #0212f7;
+  background: #2543ec;
 }
 
 .containerrr-card .boxx:nth-child(1):hover .iconn {
-  box-shadow: 0 0 0 400px #ec0851;
+  box-shadow: 0 0 0 400px #043aec;
 }
 
 .containerrr-card .boxx:nth-child(2) .iconn {
@@ -1541,15 +1542,15 @@ div#envelope {
 }
 
 .admincard-single:last-child {
-  background: linear-gradient(135deg, var(--main-colorr), #fff);
+  background: #fff;
 }
 
-.admincard-single:last-child span {
+/* .admincard-single:last-child span {
   color: #fff;
 }
 .admincard-single:last-child h1 {
   color: #fff;
-}
+} */
 
 .recent-grid {
   margin-top: 3.5rem;

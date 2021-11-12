@@ -10,17 +10,16 @@ const AdminDashboard = () => {
   const [hospital, sethospital] = useState([]);
   const [department, setdepartment] = useState([]);
   const [doctor, setdoctor] = useState([]);
-  const [contact,setcontact]= useState([]);
-
+  const [contact, setcontact] = useState([]);
 
   useEffect(() => {
-
     axios
-    .get(`http://localhost:8000/api/contact`)
-    .then((res) => {setcontact(res.data.data)
-      console.log("Contact ",res) 
-    })
-    .catch((e) => console.log(e.response));
+      .get(`http://localhost:8000/api/contact`)
+      .then((res) => {
+        setcontact(res.data.data);
+        console.log("Contact ", res);
+      })
+      .catch((e) => console.log(e.response));
 
     axios
       .get(`http://localhost:8000/api/hospital`)
@@ -54,11 +53,9 @@ const AdminDashboard = () => {
             <label for="nav-toggle">
               {" "}
               <span className="las la-bars"></span>{" "}
-            </label> 
+            </label>
             Dashboard
           </h2>
-
-      
         </div>
         <div className="mmain">
           <div className="admincards">
@@ -68,7 +65,13 @@ const AdminDashboard = () => {
                 <span>Hospitals</span>
               </div>
               <div className="h11">
-                <span className="las la-users"></span>
+                <span>
+                  <i
+                    class="fa fa-hospital-o"
+                    style={{ color: "violet" }}
+                    aria-hidden="true"
+                  ></i>
+                </span>
               </div>
             </div>
             <div className="admincard-single">
@@ -77,7 +80,11 @@ const AdminDashboard = () => {
                 <span>Departments</span>
               </div>
               <div className="h11">
-                <span className="las la-clipboard-list"></span>
+                <i
+                  class="fa fa-bed"
+                  style={{ color: "violet" }}
+                  aria-hidden="true"
+                ></i>
               </div>
             </div>
 
@@ -87,16 +94,28 @@ const AdminDashboard = () => {
                 <span>Doctors</span>
               </div>
               <div className="h11">
-                <span className="las la-shopping-bag"></span>
+                <span>
+                  <i
+                    class="fa fa-user-md"
+                    style={{ color: "violet" }}
+                    aria-hidden="true"
+                  ></i>
+                </span>
               </div>
             </div>
             <div className="admincard-single">
               <div>
-                <h1>$6k</h1>
-                <span>Payments</span>
+                <h1>{contact.length}</h1>
+                <span>Messages</span>
               </div>
               <div className="h11">
-                <span className="lab la-google-wallet"></span>
+                <span>
+                  <i
+                    class="fa fa-commenting-o"
+                    style={{ color: "violet" }}
+                    aria-hidden="true"
+                  ></i>
+                </span>
               </div>
             </div>
           </div>
@@ -133,12 +152,13 @@ const AdminDashboard = () => {
                     </a>
                   </span>
                 </td>
-                       
-                 
           
                   </td>
                       </tr>
                     </tbody>
+           
+                    
+                 
                     ))}
                   </table>
                 </div>

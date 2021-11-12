@@ -7,7 +7,7 @@ import { MdStar } from "react-icons/md";
 function HospitalsUser() {
   const history = useHistory();
   const [hospital, sethospital] = useState([]);
-  const [search, setsearch] = useState(""); 
+  const [search, setsearch] = useState("");
   useEffect(() => {
     if (localStorage.getItem("user") === null) {
       history.push("/Login");
@@ -20,14 +20,30 @@ function HospitalsUser() {
   return (
     <>
       <div className="hospital">
-        <div className="hos-head">
-          <h1>Best Hospitals in Somaliland </h1>
+        <div className="hos-hea">
+          <h1
+            style={{
+              fontSize: "300%",
+              marginLeft: "300px",
+              color: "blue",
+              fontFamily: "Georgia, Times New Roman, Times, serif",
+              marginTop: "20px",
+            }}
+          >
+            Best Hospitals in Somaliland{" "}
+          </h1>
         </div>
-        <div className="flex search">
+        <div
+          className="adminsearch-wrapper"
+          style={{
+            width: "330px",
+            marginLeft: "700px",
+            border: "2px solid",
+          }}
+        >
           <input
-            className="input-hos"
-            type="text"
-            placeholder="searching city"
+            type="search"
+            placeholder="Search here"
             onChange={(e) => setsearch(e.target.value)}
           />
 

@@ -56,7 +56,7 @@ exports.deleteHospital = async (req, res) => {
       message: e.message,
     });
   }
-};
+}; 
 
 exports.getHospitall = async (req, res) => {
   try {

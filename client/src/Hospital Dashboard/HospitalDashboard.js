@@ -28,7 +28,7 @@ function HospitalDashboard() {
 
     axios
       .get(`http://localhost:8000/api/review`)
-      .then((res) => setreview(res.data.data));
+      .then((res) => setreview(res.data.reviews));
 
     axios
       .get(`http://localhost:8000/api/appoinment`)
@@ -60,7 +60,7 @@ function HospitalDashboard() {
               </div>
               <i
                 class="fa fa-bed"
-                style={{ fontSize: "40px" }}
+                style={{ fontSize: "40px", color: "blue" }}
                 aria-hidden="true"
               ></i>
             </div>
@@ -71,7 +71,7 @@ function HospitalDashboard() {
               </div>
               <i
                 class="fa fa-user-md"
-                style={{ fontSize: "40px" }}
+                style={{ fontSize: "40px", color: "blue" }}
                 aria-hidden="true"
               ></i>
             </div>
@@ -82,17 +82,21 @@ function HospitalDashboard() {
               </div>
               <i
                 class="fa fa-book"
-                style={{ fontSize: "40px" }}
+                style={{ fontSize: "40px", color: "blue" }}
                 aria-hidden="true"
               ></i>
             </div>
-            {/* <div className="box">
+            <div className="box">
               <div className="right-side">
                 <div className="box-topic"> Reviews</div>
                 <div className="number">{review.length}</div>
               </div>
-              <i className="bx bxs-cart-download cart four"></i>
-            </div> */}
+              <i
+                class="fa fa-commenting-o"
+                style={{ fontSize: "40px", color: "blue" }}
+                aria-hidden="true"
+              ></i>
+            </div>
           </div>
           <div
             className="tbl-headin"

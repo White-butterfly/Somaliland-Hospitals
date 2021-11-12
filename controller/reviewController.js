@@ -12,6 +12,17 @@ exports.createReview = async (req, res) => {
   }
 };
 
+exports.Allreviews = async (req, res) => {
+  try {
+    const reviews = await Review.find({});
+    res.status(200).json({ reviews });
+  } catch (e) {
+    res.status(400).json({
+      message: e.message,
+    });
+  }
+};
+
 exports.reviews = async (req, res) => {
   try {
     const reviews = await Review.find({ hospital: req.params.id }).populate(

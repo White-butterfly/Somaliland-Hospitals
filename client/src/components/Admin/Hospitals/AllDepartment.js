@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link,  useHistory} from "react-router-dom";
-import EditHospital from "./EditHospital";
+import EditHospital from "./EditHospital"; 
 import { toast } from "react-toastify";
 
 const AllDepartment = () => {
@@ -50,11 +50,13 @@ const AllDepartment = () => {
         />
       </div>
 
-      <div class="table_responsive">
+      <div
+        class="table_responsive"
+        style={{ width: "600px", marginLeft: "500px" }}
+      >
         <table>
           <thead>
             <tr>
-            
               <th>dep-Name</th>
 
               <th>Action</th>
@@ -66,8 +68,7 @@ const AllDepartment = () => {
             } else if (val.name.toLowerCase().includes(search.toLowerCase())) {
               return val;
             }
-          })
-          .map((department) => (
+          }).map((department) => (
             <tbody>
               <tr>
                 <td>{department.name}</td>

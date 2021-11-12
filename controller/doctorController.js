@@ -1,6 +1,6 @@
 const doctor = require("../model/doctorModel");
-const Hospital = require("../model/hospitalModel");
-const Department = require("../model/departmentModel");
+ const Hospital = require("../model/hospitalModel");
+ const Department = require("../model/departmentModel");
 
 exports.createDoctor = async (req, res) => {
   try {
@@ -11,12 +11,12 @@ exports.createDoctor = async (req, res) => {
     req.body.department = department._id;
 
     const createDoctor = await doctor.create(req.body);
-    
+  
     res.status(200).json({
       message: "created a doctor",
       data: createDoctor,
     });
-  } catch (e) {
+  } catch (e) { 
     res.status(400).json({
       message: e.message,
     });
@@ -25,7 +25,7 @@ exports.createDoctor = async (req, res) => {
 
 exports.getDoctors = async (req, res) => {
   try {
-    const doctorsss = await doctor.find({});
+    const doctorsss = await doctor.find(req.params.id);
     res.status(200).json({
       message: "found a doctor",
       data: doctorsss,

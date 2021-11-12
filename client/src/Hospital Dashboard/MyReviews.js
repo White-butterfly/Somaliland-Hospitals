@@ -2,22 +2,29 @@ import React from "react";
 import { MdStar } from "react-icons/md";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams,  useHistory } from "react-router-dom";
 
+import { toast } from "react-toastify";
 function MyReviews() {
+  const history = useHistory();
   var id = "617f1c2059fae044a0883111";
   const [review, setreview] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/review/${id}`)
-      .then((res) => setreview(res.data.reviews));
+      .get(`http://localhost:8000/api/review`)
+      .then((res) => {setreview(res.data.reviews)
+      console.log("Review", res)});
   });
 
   function delReview(id) {
     axios
       .delete(`http://localhost:8000/api/review/${id}`)
-      .then((res) => console.log(res));
+      .then(() => {
+        toast.success("Review successfully deleted");
+        history.push("/MyReviews");
+      })
+      .catch((e) => toast.error(e.response.data.message));
   }
   return (
     <div className="testimonials">

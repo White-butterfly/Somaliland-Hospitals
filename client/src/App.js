@@ -165,9 +165,9 @@ function App() {
           <Route path="/Appoinment">
             <Appoinment />
           </Route>
-          {/* <Route path= "/TodayTAppoinments">
+          <Route path= "/TodayTAppoinments">
 <TodayTAppoinments/>
-          </Route> */}
+          </Route>
           <Route path="/DepartmentCards/:id">
             <DepartmentCards />
           </Route>
