@@ -60,7 +60,7 @@ import MyDepartments from "./Hospital Dashboard/MyDepartments";
 import MyDoctors from "./Hospital Dashboard/MyDoctors";
 import MyAppointments from "./Hospital Dashboard/MyAppointments";
 import MyReviews from "./Hospital Dashboard/MyReviews";
-
+import Contactt from "./components/contacts/Contactt";
 import ProtectedRoute from "./ProtectedRoutes";
 
 function App() {
@@ -126,6 +126,9 @@ function App() {
           <Route exact path = '/AddDoctor'>
             <AddDoctor/>
             </Route>
+            <Route exact path= '/Contactt/:id'>
+              <Contactt/>
+              </Route>
 
           {/* // route hospital dashboard */}
 

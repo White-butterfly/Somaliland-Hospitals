@@ -98,10 +98,7 @@ const AdminDashboard = () => {
               <div className="admincard">
                 <div className="admincard-header">
                   <h2>Contacted People</h2>
-
-                  <button>
-                    See All <span className="las la-arrow-right"></span>{" "}
-                  </button>
+               
                 </div>
               </div>
               <div className="admincard-body">
@@ -123,6 +120,11 @@ const AdminDashboard = () => {
                          <a href="#"  onClick={() => delContact(contacts._id)} >Remove
                          </a>
                         </td>
+                        <td>
+                        <button style= {{color: "black"}}>
+                  <Link to={`/Contactt/${contacts._id}`} style={{color: "white"}}>See All <span className="las la-arrow-right" ></span>{" "}</Link>
+                  </button>
+                  </td>
                       </tr>
                     </tbody>
                     ))}
