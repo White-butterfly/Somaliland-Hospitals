@@ -6,6 +6,7 @@ import DepartmentCards from "./DepartmentCards";
 import Reviews from "./Reviews";
 import ReviewForm from "./ReviewForm";
 import { FaRegTimesCircle } from "react-icons/fa";
+import Section6 from "../home/Section6";
 
 function DepartmentUser() {
   const [addReview, setaddReview] = useState(false);
@@ -14,6 +15,7 @@ function DepartmentUser() {
     <>
       <DepartmentCards />
       <Reviews />
+
       {addReview && review()}
       {addReview ? (
         <FaRegTimesCircle

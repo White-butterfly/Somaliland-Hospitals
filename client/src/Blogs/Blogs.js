@@ -23,7 +23,7 @@ function Blogs() {
             className=""
             style={{ color: "#000", background: "white", fontSize: "80%" }}
           >
-            <h2>Recent Blogs</h2>
+            <h2 style={{ fontSize: "200%" }}>Recent Blogs</h2>
             {/* <button>
               See All <span className="las la-arrow-right"></span>{" "}
             </button> */}
@@ -61,7 +61,7 @@ function Blogs() {
                           color: "blue",
                         }}
                       >
-                        Hospital name
+                        Haldoor Hospital
                       </h1>
                     </div>
                     <div className="card-body">
@@ -77,6 +77,7 @@ function Blogs() {
         </div>
 
         <div className="sidebar">
+          <img src="https://www.seomarket.com.tr/tr/wp-content/uploads/2020/07/google-ads-yonetimi.jpg" />
           <img src="https://www.seomarket.com.tr/tr/wp-content/uploads/2020/07/google-ads-yonetimi.jpg" />
           <img src="https://www.seomarket.com.tr/tr/wp-content/uploads/2020/07/google-ads-yonetimi.jpg" />
         </div>

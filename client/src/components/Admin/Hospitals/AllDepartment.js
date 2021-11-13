@@ -42,11 +42,13 @@ const AllDepartment = () => {
         />
       </div>
 
-      <div class="table_responsive">
+      <div
+        class="table_responsive"
+        style={{ width: "600px", marginLeft: "500px" }}
+      >
         <table>
           <thead>
             <tr>
-              <th>Id</th>
               <th>dep-Name</th>
 
               <th>Action</th>
@@ -58,12 +60,9 @@ const AllDepartment = () => {
             } else if (val.name.toLowerCase().includes(search.toLowerCase())) {
               return val;
             }
-          })
-          .map((department) => (
+          }).map((department) => (
             <tbody>
               <tr>
-                <td>{department._id}</td>
-
                 <td>{department.name}</td>
 
                 <td>

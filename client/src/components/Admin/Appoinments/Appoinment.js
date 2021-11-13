@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const Appoinment = () => {
   const [id, setId] = useState("");
@@ -51,8 +52,8 @@ const Appoinment = () => {
         department: departmentt,
         doctor: doctorr,
       })
-      .then((res) => console.log(res))
-      .catch((e) => console.log(e.response));
+      .then((res) => toast.success("Thanks for the appiontment"))
+      .catch((e) => toast.error(e.response.data.message));
   }
 
   return (
@@ -180,7 +181,7 @@ const Appoinment = () => {
                 Choose a Doctor{" "}
               </option>
               {doctor.map((doctors) => (
-                <option value={doctors.name}>{doctors.name}</option>
+                <option value={doctors.docName}>{doctors.docName}</option>
               ))}
             </select>
             <br />

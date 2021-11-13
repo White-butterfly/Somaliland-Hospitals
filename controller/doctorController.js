@@ -5,11 +5,11 @@ const Department = require("../model/departmentModel");
 exports.createDoctor = async (req, res) => {
   try {
     const createDoctor = await doctor.create(req.body);
-    const hospital = await Hospital.findOne({ name: req.body.hospital });
-    req.body.hospital = hospital._id;
+    // const hospital = await Hospital.findOne({ name: req.body.hospital });
+    // req.body.hospital = hospital._id;
 
-    const department = await Department.findOne({ name: req.body.department });
-    req.body.department = department._id;
+    // const department = await Department.findOne({ name: req.body.department });
+    // req.body.department = department._id;
 
     res.status(200).json({
       message: "created a doctor",
