@@ -64,10 +64,8 @@ function MyAppointments() {
                 <td>{Appoinment.doctor.department.docName}</td> */}
                 <td>
                   <span class="action_btn">
-                    <Link to={`/EditDoctor/${Appoinment._id}`}>
-                      {" "}
-                      <a href="#">Edit</a>
-                    </Link>
+                    <a href="#">Done</a>
+
                     <a href="#" onClick={() => delAppiontment(Appoinment._id)}>
                       Remove
                     </a>

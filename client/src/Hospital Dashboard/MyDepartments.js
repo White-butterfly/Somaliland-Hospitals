@@ -23,11 +23,13 @@ const MyDepartments = () => {
   return (
     <div>
       <div className="tbl-heading">All Departments in Hospitals</div>
-      <div class="table_responsive">
+      <div
+        class="table_responsive"
+        style={{ width: "700px", marginLeft: "500px" }}
+      >
         <table>
           <thead>
             <tr>
-              <th>Id</th>
               <th>dep-Name</th>
               <th>Action</th>
             </tr>
@@ -35,8 +37,6 @@ const MyDepartments = () => {
           {Alldepartment.map((department) => (
             <tbody>
               <tr>
-                <td>01</td>
-
                 <td>{department.name}</td>
                 <td>
                   <span class="action_btn">

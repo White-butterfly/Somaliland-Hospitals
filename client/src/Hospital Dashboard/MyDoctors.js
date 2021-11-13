@@ -28,7 +28,7 @@ const MyDoctors = () => {
         <table>
           <thead>
             <tr>
-              <th>Id</th>
+              <th></th>
               <th>doc-Name</th>
               <th>expirence</th>
               <th>language</th>
@@ -40,7 +40,10 @@ const MyDoctors = () => {
           {Alldoctors.map((doctor) => (
             <tbody>
               <tr>
-                <td>01</td>
+                <td>
+                  {" "}
+                  <i class="fa fa-user-md" aria-hidden="true"></i>
+                </td>
 
                 <td>{doctor.docName}</td>
                 <td>{doctor.expirence}</td>
