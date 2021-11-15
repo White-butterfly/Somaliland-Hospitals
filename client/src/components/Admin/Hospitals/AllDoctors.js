@@ -1,7 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link , useHistory} from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 const AllDoctors = () => {
+  const history = useHistory();
+  
   const [id, setId] = useState("");
   const [Alldoctors, setAlldoctors] = useState([]);
   const [search, setsearch] = useState("");
@@ -17,7 +20,11 @@ const AllDoctors = () => {
   function delHospital(id) {
     axios
       .delete(`http://localhost:8000/api/doctor/${id}`)
-      .then((res) => console.log(res));
+      .then(() => {
+        toast.success("Doctor successfully deleted");
+        history.push("/AllDoctors");
+      })
+      .catch((e) => toast.error(e.response.data.message));
   }
 
   return (
@@ -62,7 +69,7 @@ const AllDoctors = () => {
                 <td>{doctor.docName}</td>
                 <td>{doctor.expirence}</td>
                 <td>{doctor.language}</td>
-                <td>{doctor.email}</td>
+                <td>{doctor.email}</td> 
                 <td>{doctor.hours}</td>
                 <td>
                   <span class="action_btn">

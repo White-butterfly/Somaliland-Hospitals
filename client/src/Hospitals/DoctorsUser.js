@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
 
-function DoctorsUser() {
+function DoctorsUser(department) {
   const NextArrow = ({ onClick }) => {
     return (
       <div className="arrow next" onClick={onClick}>
@@ -39,7 +39,7 @@ function DoctorsUser() {
   const [doctor, setdoctor] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/api/doctor/${id}`).then((res) => {
+    axios.get(`http://localhost:8000/api/doctor`).then((res) => {
       console.log(res.data.data);
       setdoctor(res.data.data);
     });

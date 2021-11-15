@@ -13,6 +13,7 @@
     "express": "^4.17.1",
     "form-data": "^4.0.0",
     "framer-motion": "^4.1.17",
+    "iframe": "^1.0.0",
     "jsonwebtoken": "^8.5.1",
     "localStorage": "^1.0.4",
     "mongoose": "^6.0.5",

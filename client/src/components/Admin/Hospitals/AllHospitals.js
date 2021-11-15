@@ -1,9 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link , useHistory} from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import EditHospital from "./EditHospital";
+import { toast } from "react-toastify";
 
 const AllHospitals = () => {
+  const history = useHistory();
+
   const [id, setId] = useState("");
   const [AllHospitals, setAllHospitals] = useState([]);
   const [search, setsearch] = useState("");
@@ -19,8 +22,14 @@ const AllHospitals = () => {
   function delHospital(id) {
     axios
       .delete(`http://localhost:8000/api/hospital/${id}`)
-      .then((res) => console.log(res));
+      // .then((res) => console.log(res));
+      .then(() => {
+        toast.success("Hospital successfully deleted");
+        history.push("/AllHospitals");
+      })
+      .catch((e) => toast.error(e.response.data.message));
   }
+  
   return (
     <>
       <div className="tbl-heading">All Hospitals in Somaliland</div>
@@ -59,7 +68,7 @@ const AllHospitals = () => {
               <tr>
                 <td>{hospital.name}</td>
                 <td>{hospital.address.city}</td>
-                <td>{hospital.address.region}</td>
+                <td>{hospital.address.region}</td> 
                 <td>
                   <span class="action_btn">
                     <Link to={`/EditHospital/${hospital._id}`}>Edit</Link>

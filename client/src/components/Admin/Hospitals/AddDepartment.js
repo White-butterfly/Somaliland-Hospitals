@@ -1,8 +1,11 @@
 import React from 'react'
 import axios from 'axios';
 import { useState,useEffect} from 'react';
+import { toast } from "react-toastify";
+import { Link, useHistory } from "react-router-dom";
 
 const AddDepartment = () => {
+  const history = useHistory();
  const [id, setId]= useState("")
 const [hospitall, setHospitall]= useState("");
 const [hospitals,sethospitals] = useState([]);
@@ -30,10 +33,12 @@ function saveDepartment(){
       name,
       hospital: hospitall
     })
-    .then((res) => console.log(res))
-    .catch((e) => console.log(e.response));
-
-}
+    .then(
+      (res) => toast.success("Department created successfully"),
+      history.push("/AllDepartment")
+    ) 
+    .catch((e) => console.log(e));
+};
     return (
               <div className="boddy" style={{width: "700px" , alignItems: "center", marginLeft: "340px" , marginTop: "100px"}}>
         <div id="envelope" >
@@ -67,7 +72,7 @@ function saveDepartment(){
     
     </select>
 
-<br/>
+<br/> 
 <br/>
       
           <button type="submit" className="btn btn-primary"> Submit  </button>

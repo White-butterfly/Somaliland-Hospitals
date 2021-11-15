@@ -23,9 +23,6 @@ const Appoinment = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/Appoinment/${id}`)
-      .then((res) => setAddAppoinment(res.data.data));
-    axios
       .get(`http://localhost:8000/api/Department/`, department)
       .then((res) => setdepartment(res.data.data));
 
@@ -37,23 +34,30 @@ const Appoinment = () => {
     axios
       .get(`http://localhost:8000/api/doctor`, doctor)
       .then((res) => Setdoctor(res.data.data));
+
+      axios
+      .get(`http://localhost:8000/api/Appoinment/${id}`)
+      .then((res) => {setAddAppoinment(res.data.data)
+      console.log("Appoinments : ",res.data.data)})
+      .catch((error) => console.log("Appoinments: ",error)); 
   }, []);
 
   function AddAppoinments() {
     axios
       .post("http://localhost:8000/api/appoinment", {
-        firstName: "",
-        middleName: "",
-        lastName: "",
-        city: "",
-        region: "",
+        firstName,
+        middleName,
+        lastName,
+        city,
+        region,
 
         hospital: hospitall,
         department: departmentt,
         doctor: doctorr,
-      })
-      .then((res) => toast.success("Thanks for the appiontment"))
-      .catch((e) => toast.error(e.response.data.message));
+      })    .then(
+        (res) => toast.success("Appoinment created successfully"),
+      ) 
+      .catch((e) => console.log("wax baa jidha",e.response.data.message));
   }
 
   return (

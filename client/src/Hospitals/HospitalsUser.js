@@ -64,24 +64,27 @@ function HospitalsUser() {
             <>
               <div className="blog-post">
                 <div className="blog-post_img">
-                  <img src="https://th.bing.com/th/id/OIP.RkQHODCerr-9V32zam2aDwHaEc?w=300&h=180&c=7&r=0&o=5&pid=1.7" />
+                  <iframe
+                    style={{ height: "100%" }}
+                    src={value.location}
+                  ></iframe>
                 </div>
                 <div className="blog-post_info">
-                  <div className="blog-post_date">
+                  {/* <div className="blog-post_date">
                     <span>{value.date}</span>
-                  </div>
+                  </div> */}
                   <h1 className="blog-post_title">{value.name}</h1>
 
                   <h5>{value.address.city}</h5>
 
                   <p className="blog-post_text">{value.describtion}</p>
-                  <div className="stars">
+                  {/* <div className="stars">
                     <MdStar style={{ color: "yellow" }} />
                     <MdStar style={{ color: "yellow" }} />
                     <MdStar style={{ color: "yellow" }} />
                     <MdStar style={{ color: "yellow" }} />
                     <MdStar />
-                  </div>
+                  </div> */}
                   <Link
                     to={`DepartmentUser/${value._id}`}
                     className="blog-post_cta"

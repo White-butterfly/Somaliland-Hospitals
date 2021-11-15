@@ -1,11 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link, useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function MyAppointments() {
-  const id = "61856e519f8b39af14ea0d06";
+  const history = useHistory();
+  const [id, setId] = useState("");
+
+  // const id = "61856e519f8b39af14ea0d06";
   const [Appoinments, setAppionments] = useState([]);
   const [department, setdepartment] = useState([]);
   const [doctor, setdoctor] = useState([]);
@@ -13,33 +17,30 @@ function MyAppointments() {
   useEffect(() => {
     axios
       .get(`http://localhost:8000/api/appoinment`)
-      .then((res) => setAppionments(res.data.data))
+      .then((res) => {
+        setAppionments(res.data.data);
+        console.log("Appoiments are ", res.data.data);
+      })
       .catch((e) => console.log(e.response));
-
-    // axios
-    //   .get(`http://localhost:8000/api/Department/${id}`)
-    //   .then((res) => setdepartment(res.data.data))
-    //   .catch((e) => console.log(e.response));
-
-    // axios
-    //   .get(`http://localhost:8000/api/doctor/${id}`)
-    //   .then((res) => setdoctor(res.data.data))
-    //   .catch((e) => console.log(e.response));
   }, []);
 
   function delAppiontment(id) {
     axios
-      .delete(`http://localhost:8000/api/appoinment${id}`)
-      .then((res) => console.log(res));
+      .delete(`http://localhost:8000/api/appoinment/${id}`)
+
+      .then(() => {
+        toast.success("Appoinment successfully deleted");
+        history.push("/MyAppoinments");
+      })
+      .catch((e) => toast.error(e.response.data.message));
   }
   return (
     <div>
-      <div className="tbl-heading">Appiontment</div>
+      <div className="tbl-heading">Appoinments</div>
       <div class="table_responsive">
         <table>
           <thead>
             <tr>
-              <th>Id</th>
               <th>firstName</th>
               <th>middleName</th>
               <th>lastName</th>
@@ -53,8 +54,6 @@ function MyAppointments() {
           {Appoinments.map((Appoinment) => (
             <tbody>
               <tr>
-                <td>01</td>
-
                 <td>{Appoinment.firstName}</td>
                 <td>{Appoinment.middleName}</td>
                 <td>{Appoinment.lastName}</td>

@@ -2,8 +2,11 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
+import { useHistory } from "react-router-dom";
 
 const AddDoctor = () => {
+  const history = useHistory();
+
   const [id, setId] = useState("");
   const [name, setName] = useState("");
   const [docName, setdocName] = useState("");
@@ -22,7 +25,7 @@ const AddDoctor = () => {
       .then((res) => setdepartment(res.data.data))
       .catch((error) => console.log(error));
 
-    axios
+    axios 
       .get(`http://localhost:8000/api/hospital`, hospitals)
       .then((res) => sethospitals(res.data.data))
       .catch((error) => console.log(error));
@@ -30,7 +33,7 @@ const AddDoctor = () => {
     axios
       .get(`http://localhost:8000/api/doctor ${id}`)
       .then((res) => setdoctor(res.data.data))
-      .catch((error) => console.log(error));
+      .catch((error) => console.log("Doctors: ",error)); 
   }, []);
 
   function savedoctor() {
@@ -44,17 +47,17 @@ const AddDoctor = () => {
         department: departmentt,
         hospital: hospitall,
       })
+      .then(
+        (res) => toast.success("Doctor created successfully"),
+         history.push("/AllDoctors")
+      ) 
+      .catch((e) => console.log(e));
 
-      .then((res) => {
-        console.log(res);
-        toast.success("saved doctor");
-      })
-      .catch((e) => toast.error(e.message.response));
   }
 
   return (
     <>
-      <div
+      <div 
         className="boddy"
         style={{ marginLeft: "340px", width: "700px", height: "300px" }}
       >
@@ -131,7 +134,7 @@ const AddDoctor = () => {
             >
               <option value="" disabled selected>
                 {" "}
-                Choose a Hospital
+                Choose a Hospital 
               </option>
               {hospitals.map((hospital) => (
                 <option value={hospital.name}>{hospital.name}</option>

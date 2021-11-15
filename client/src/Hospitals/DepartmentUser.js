@@ -6,9 +6,10 @@ import DepartmentCards from "./DepartmentCards";
 import Reviews from "./Reviews";
 import ReviewForm from "./ReviewForm";
 import { FaRegTimesCircle } from "react-icons/fa";
-import Section6 from "../home/Section6";
+import axios from "axios";
 
 function DepartmentUser() {
+  const { id } = useParams();
   const [addReview, setaddReview] = useState(false);
 
   return (

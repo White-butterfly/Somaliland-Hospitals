@@ -1431,16 +1431,12 @@ forM {
   border: 2px solid #fafafa;
   background: none;
   padding: 0.6rem 1.2rem;
-  color: #fff;
+  color: rgb(8, 8, 8);
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 16px;
   letter-spacing: 0.5px;
   border-radius: 25px;
   transition: 0.3s;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  -ms-border-radius: 25px;
-  -o-border-radius: 25px;
 }
 
 .textarea.inpuT {
@@ -1449,29 +1445,33 @@ forM {
   border-radius: 22px;
   resize: none;
   overflow-y: auto;
+  -webkit-border-radius: 22px;
+  -moz-border-radius: 22px;
+  -ms-border-radius: 22px;
+  -o-border-radius: 22px;
 }
 
 .INPUT-CONTAINER label {
   position: absolute;
   top: 50%;
   left: 15px;
-  transform: translateY(-50%);
+  transform: translatey(-240%);
   padding: 0 0.4rem;
   color: #fafafa;
-  font-size: 0.9rem;
+  font-size: 12px;
   font-weight: 400;
   pointer-events: none;
   z-index: 1000;
   transition: 0.5s;
+  -webkit-transform: translatey(-240%);
+  -moz-transform: translatey(-240%);
+  -ms-transform: translatey(-240%);
+  -o-transform: translatey(-240%);
 }
 
 .INPUT-CONTAINER.textarea label {
   top: 1rem;
   transform: translateY(0);
-  -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -o-transform: translateY(0);
 }
 
 .btN {

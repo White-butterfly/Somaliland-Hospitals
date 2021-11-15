@@ -1,12 +1,13 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const MyDepartments = () => {
   const id = "617f1c2059fae044a0883111";
   const [Alldepartment, setAlldepartment] = useState([]);
-
+  const history = useHistory();
   useEffect(() => {
     axios
       .get(`http://localhost:8000/api/department`)
@@ -18,14 +19,19 @@ const MyDepartments = () => {
   function delHospital(id) {
     axios
       .delete(`http://localhost:8000/api/department/${id}`)
-      .then((res) => console.log(res));
+
+      .then(() => {
+        toast.success("Department successfully deleted");
+        history.push("/MyDepartments");
+      })
+      .catch((e) => toast.error(e.response.data.message));
   }
   return (
     <div>
-      <div className="tbl-heading">All Departments in Hospitals</div>
+      <div className="tbl-heading">All Departments in Hospital</div>
       <div
         class="table_responsive"
-        style={{ width: "700px", marginLeft: "500px" }}
+        style={{ width: "700px", marginLeft: "430px" }}
       >
         <table>
           <thead>

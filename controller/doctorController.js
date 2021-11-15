@@ -4,12 +4,13 @@ const Department = require("../model/departmentModel");
 
 exports.createDoctor = async (req, res) => {
   try {
-    const createDoctor = await doctor.create(req.body);
-    // const hospital = await Hospital.findOne({ name: req.body.hospital });
-    // req.body.hospital = hospital._id;
+    const hospital = await Hospital.findOne({ name: req.body.hospital });
+    req.body.hospital = hospital._id;
 
-    // const department = await Department.findOne({ name: req.body.department });
-    // req.body.department = department._id;
+    const department = await Department.findOne({ name: req.body.department });
+    req.body.department = department._id;
+
+    const createDoctor = await doctor.create(req.body);
 
     res.status(200).json({
       message: "created a doctor",
@@ -24,7 +25,7 @@ exports.createDoctor = async (req, res) => {
 
 exports.getDoctors = async (req, res) => {
   try {
-    const doctorsss = await doctor.find({});
+    const doctorsss = await doctor.find(req.params.id);
     res.status(200).json({
       message: "found a doctor",
       data: doctorsss,
@@ -68,7 +69,6 @@ exports.getDoctor = async (req, res) => {
   try {
     const doctorsss = await doctor
       .find({ hospital: req.params.id })
-
       .populate("hospital");
 
     res.status(200).json({

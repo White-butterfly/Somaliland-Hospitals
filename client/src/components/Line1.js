@@ -28,7 +28,7 @@ const Line1 = (props) => {
      <div className= "all">
   
 <div className="cardCenter hello">
-{Appoinment.map((Appoinmentss) =>(
+{Appoinment.map((Appoinmentss) =>( 
 <div className="card text-end" style={{width: "40rem"}}>
   <div className="card-body">
     <h5 className="card-title"> </h5>

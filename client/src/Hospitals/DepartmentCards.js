@@ -1,8 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import DoctorsUser from "./DoctorsUser";
+var iframe = require("iframe");
 
 function DepartmentCards() {
   const { id } = useParams();
@@ -23,7 +24,7 @@ function DepartmentCards() {
       {department.map((value) => (
         <div>
           <h1 className="hos-head"> Department of {value.name}</h1>
-          <DoctorsUser />
+          <DoctorsUser department={value._id} />
 
           <div className="flex boxes"></div>
         </div>

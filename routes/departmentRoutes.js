@@ -5,10 +5,10 @@ const router = express.Router();
 
 router
   .route("/")
-  .get(departmentController.getDepartments)
+  .get(departmentController.getDepartments) 
   .post(departmentController.createDepartment);
 
-router
+router 
   .route("/:id")
   .get(departmentController.getDepartment)
   //.get(departmentController.getoneDepert)
