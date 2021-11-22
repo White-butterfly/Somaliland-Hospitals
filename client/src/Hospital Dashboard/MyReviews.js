@@ -2,19 +2,19 @@ import React from "react";
 import { MdStar } from "react-icons/md";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams,  useHistory } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
 import { toast } from "react-toastify";
 function MyReviews() {
   const history = useHistory();
-  var id = "617f1c2059fae044a0883111";
+  var id = "6191f51925fc20fe991f771f";
   const [review, setreview] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:8000/api/review`)
-      .then((res) => {setreview(res.data.reviews)
-      console.log("Review", res)});
+    axios.get(`http://localhost:8000/api/review/${id}`).then((res) => {
+      setreview(res.data.reviews);
+      console.log("Review", res);
+    });
   });
 
   function delReview(id) {

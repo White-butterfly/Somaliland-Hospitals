@@ -6,7 +6,7 @@ router
   .route("/")
   .get(doctorController.getDoctors)
   .post(doctorController.createDoctor);
- 
+
 router
   .route("/:id")
   // .get(doctorController.getDoctorById)

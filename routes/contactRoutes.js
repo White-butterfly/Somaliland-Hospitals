@@ -3,11 +3,10 @@ const express = require("express");
 const Router = express.Router();
 
 const contactController = require("../controller/contactController");
-const verifyToken = require("../middleware/auth");
 
 Router.route("/")
 
-  .post(verifyToken, contactController.createContact)
+  .post(contactController.createContact)
   .get(contactController.getcontact);
 
 Router.route("/:id")

@@ -13,7 +13,7 @@ function Menu() {
       <div className="sidebar-dashboard">
         <div className="logo-details">
           <i class="fa fa-hospital-o" aria-hidden="true"></i>
-          <span className="logo_name">Haldoor</span>
+          <span className="logo_name">ManHal</span>
         </div>
         <ul className="nav-links">
           <li>

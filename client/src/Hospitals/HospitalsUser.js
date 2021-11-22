@@ -78,13 +78,13 @@ function HospitalsUser() {
                   <h5>{value.address.city}</h5>
 
                   <p className="blog-post_text">{value.describtion}</p>
-                  <div className="stars">
+                  {/* <div className="stars">
                     <MdStar style={{ color: "yellow" }} />
                     <MdStar style={{ color: "yellow" }} />
                     <MdStar style={{ color: "yellow" }} />
                     <MdStar style={{ color: "yellow" }} />
                     <MdStar />
-                  </div>
+                  </div> */}
                   <Link
                     to={`DepartmentUser/${value._id}`}
                     className="blog-post_cta"

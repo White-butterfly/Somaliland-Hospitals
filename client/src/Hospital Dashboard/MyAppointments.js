@@ -7,9 +7,8 @@ import { toast } from "react-toastify";
 
 function MyAppointments() {
   const history = useHistory();
-  const [id, setId] = useState("");
 
-  // const id = "61856e519f8b39af14ea0d06";
+  const id = "6191f51925fc20fe991f771f";
   const [Appoinments, setAppionments] = useState([]);
   const [department, setdepartment] = useState([]);
   const [doctor, setdoctor] = useState([]);
@@ -34,6 +33,7 @@ function MyAppointments() {
       })
       .catch((e) => toast.error(e.response.data.message));
   }
+
   return (
     <div>
       <div className="tbl-heading">Appoinments</div>
@@ -46,8 +46,8 @@ function MyAppointments() {
               <th>lastName</th>
               <th>city</th>
               <th>region</th>
-              {/* <th>department</th>
-              <th>doctor</th> */}
+              <th>department</th>
+              <th>doctor</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -59,12 +59,10 @@ function MyAppointments() {
                 <td>{Appoinment.lastName}</td>
                 <td>{Appoinment.city}</td>
                 <td>{Appoinment.region}</td>
-                {/* <td>{Appoinment.doctor.department.hospital.name}</td>
-                <td>{Appoinment.doctor.department.docName}</td> */}
+                <td>{Appoinment.department.name}</td>
+                <td>{Appoinment.doctor.docName}</td>
                 <td>
                   <span class="action_btn">
-                    <a href="#">Done</a>
-
                     <a href="#" onClick={() => delAppiontment(Appoinment._id)}>
                       Remove
                     </a>

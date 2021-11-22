@@ -26,14 +26,14 @@ function Reviews() {
           <div className="testimonial-box">
             <div className="box-top">
               <div className="profile">
-                <div className="profile-img">
-                  <img src=" https://th.bing.com/th/id/OIP.IA73K-jpjh4USDQYydWOdgHaEK?w=185&h=104&c=7&r=0&o=5&pid=1.7" />
+                <div className="profile-img" style={{ fontSize: "30px" }}>
+                  🙂
                 </div>
                 <div className="name-user">
                   <h2>
                     {review.patientName}({review.age}year)
                   </h2>
-                  <span>{review.country}</span>
+                  <span style={{ fontSize: "15px" }}>{review.country}</span>
                 </div>
               </div>
               <div className="reviews">

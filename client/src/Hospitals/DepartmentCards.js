@@ -24,7 +24,7 @@ function DepartmentCards() {
       {department.map((value) => (
         <div>
           <h1 className="hos-head"> Department of {value.name}</h1>
-          <DoctorsUser department={value._id} />
+          <DoctorsUser id={value.id} />
 
           <div className="flex boxes"></div>
         </div>

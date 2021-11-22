@@ -9,7 +9,7 @@ function HospitalDashboard() {
   const [department, setdepartment] = useState([]);
   const [doctor, setdoctor] = useState([]);
   const [review, setreview] = useState([]);
-  var id = "617f1c2059fae044a0883111";
+  var id = "6191f51925fc20fe991f771f";
 
   const [Appoinments, setAppionments] = useState([]);
 
@@ -19,7 +19,7 @@ function HospitalDashboard() {
       .then((res) => setappiontment(res.data.data));
 
     axios
-      .get(`http://localhost:8000/api/Department`)
+      .get(`http://localhost:8000/api/Department/${id}`)
       .then((res) => setdepartment(res.data.data));
 
     axios
@@ -27,7 +27,7 @@ function HospitalDashboard() {
       .then((res) => setdoctor(res.data.data));
 
     axios
-      .get(`http://localhost:8000/api/review`)
+      .get(`http://localhost:8000/api/review/${id}`)
       .then((res) => setreview(res.data.reviews));
 
     axios
@@ -112,24 +112,19 @@ function HospitalDashboard() {
             <table>
               <thead>
                 <tr>
-                  <th>Id</th>
                   <th>firstName</th>
                   <th>middleName</th>
                   <th>lastName</th>
                   <th>city</th>
-                  <th>region</th>
                 </tr>
               </thead>
               {Appoinments.map((Appoinment) => (
                 <tbody>
                   <tr>
-                    <td>01</td>
-
                     <td>{Appoinment.firstName}</td>
                     <td>{Appoinment.middleName}</td>
                     <td>{Appoinment.lastName}</td>
                     <td>{Appoinment.city}</td>
-                    <td>{Appoinment.region}</td>
                   </tr>
                 </tbody>
               ))}

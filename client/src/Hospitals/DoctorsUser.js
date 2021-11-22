@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
 
-function DoctorsUser(department) {
+function DoctorsUser(id) {
   const NextArrow = ({ onClick }) => {
     return (
       <div className="arrow next" onClick={onClick}>
@@ -35,7 +35,7 @@ function DoctorsUser(department) {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
   };
-  const { id } = useParams();
+  // const { id } = useParams();
   const [doctor, setdoctor] = useState([]);
 
   useEffect(() => {
@@ -63,15 +63,15 @@ function DoctorsUser(department) {
                     <div className="bb">
                       <div className="cc">
                         <br />
-                        Name:{doctorr.docName}
+                        👨‍⚕️ Doctor Name:{doctorr.docName}
                         <br />
-                        experience: {doctorr.experince}
+                        💼experience: {doctorr.expirence} years
                         <br />
-                        Language: {doctorr.language}
+                        📝Language: {doctorr.language}
                         <br />
-                        Email: {doctorr.email}
+                        📩Email: {doctorr.email}
                         <br />
-                        Hours: {doctorr.hours}
+                        ⏰Hours: {doctorr.hours}
                         <br />
                       </div>
                     </div>

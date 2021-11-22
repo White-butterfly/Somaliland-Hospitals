@@ -5,12 +5,12 @@ import { Link, useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const MyDepartments = () => {
-  const id = "617f1c2059fae044a0883111";
+  const id = "6191f51925fc20fe991f771f";
   const [Alldepartment, setAlldepartment] = useState([]);
   const history = useHistory();
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/department`)
+      .get(`http://localhost:8000/api/department/${id}`)
       .then((res) => setAlldepartment(res.data.data))
 
       .catch((e) => console.log(e.response));

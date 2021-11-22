@@ -68,8 +68,9 @@ exports.updateDoctor = async (req, res) => {
 exports.getDoctor = async (req, res) => {
   try {
     const doctorsss = await doctor
-      .find({ hospital: req.params.id })
-      .populate("hospital");
+      .findById({ department: req.params.id })
+
+      .populate("department");
 
     res.status(200).json({
       message: "found a doctor",
