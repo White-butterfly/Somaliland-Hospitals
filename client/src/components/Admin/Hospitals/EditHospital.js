@@ -65,6 +65,15 @@ function EditHospital() {
                   sethospital({ ...hospital, name: e.target.value })
                 }
               />
+              <label>location map </label>
+              <input
+                type="text"
+                className="form-control"
+                value={hospital.location}
+                onChange={(e) =>
+                  sethospital({ ...hospital, location: e.target.value })
+                }
+              />
 
               <label>Hospital City </label>
               <input
@@ -95,29 +104,10 @@ function EditHospital() {
               <input
                 type="text"
                 className="form-control"
-                value={hospital.description}
+                value={hospital.describtion}
                 onChange={(e) =>
-                  sethospital({ ...hospital, description: e.target.value })
+                  sethospital({ ...hospital, describtion: e.target.value })
                 }
-              />
-              <label>Hospital logo</label>
-              <input
-                type="file"
-                className="form-control"
-                required
-                name="logo"
-                onChange={(e) => {
-                  sethospital({ ...hospital, logo: e.target.files[0] });
-                }}
-              />
-
-              <label>Hospital image</label>
-              <input
-                type="file"
-                className="form-control"
-                onChange={(e) => {
-                  sethospital({ ...hospital, image: e.target.files[0] });
-                }}
               />
 
               <input

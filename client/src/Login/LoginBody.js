@@ -35,7 +35,7 @@ function LoginBody() {
   }
   return (
     <div className="login-body">
-      <div className="login-box">
+      <div className="containerrr">
         <center>
           <b className="title label">Login</b>
         </center>
@@ -94,10 +94,10 @@ function LoginBody() {
 
             <button
               onClick={() => logout()}
+              className="register"
               style={{
-                marginLeft: "70%",
-                padding: "6px",
-                borderRadius: "10px",
+                marginLeft: "10%",
+                width: "120px",
               }}
             >
               LogOut

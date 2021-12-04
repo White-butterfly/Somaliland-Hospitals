@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-// const autoIncrement= require('mongoose-auto-increment');
 const hosShema = mongoose.Schema({
   name: {
     type: String,
@@ -23,13 +22,6 @@ const hosShema = mongoose.Schema({
     region: String,
   },
 });
-
-// hosShema.pre("save", async function (next){
-
-// });
-
-// autoIncrement.initialize(mongoose.connection);
-// hosShema.plugin(autoIncrement.plugin, 'hospital');
 
 const hospitals = mongoose.model("hospital", hosShema);
 module.exports = hospitals;

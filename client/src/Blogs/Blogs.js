@@ -47,7 +47,7 @@ function Blogs() {
                       style={{
                         height: "250px",
                       }}
-                      src="https://th.bing.com/th/id/OIP.1unrluQ9xXvbCcSKjJwkvwHaEp?w=262&h=180&c=7&r=0&o=5&pid=1.7"
+                      src="https://th.bing.com/th/id/OIP.a5YOm_1N-oe-O025Jw4PTQHaE8?w=265&h=180&c=7&r=0&o=5&pid=1.7"
                       class="img-fluid rounded-start "
                       alt=""
                     />

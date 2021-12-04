@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Homee from "./Homee";
-import { Link , useHistory} from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 const AdminDashboard = () => {
   const history = useHistory();
@@ -37,7 +37,7 @@ const AdminDashboard = () => {
   function delContact(id) {
     axios
       .delete(`http://localhost:8000/api/contact/${id}`)
-   
+
       .then(() => {
         toast.success("Contact successfully Removed");
         history.push("/Contactt/:id");
@@ -124,7 +124,6 @@ const AdminDashboard = () => {
               <div className="admincard">
                 <div className="admincard-header">
                   <h2>Contacted People</h2>
-               
                 </div>
               </div>
               <div className="admincard-body">
@@ -137,28 +136,28 @@ const AdminDashboard = () => {
                         <td>Action</td>
                       </tr>
                     </thead>
-                    {contact.map((contacts)=>(
-                    <tbody>
-                      <tr>
-                        <td>{contacts. userName} </td>
-                        <td>{contacts.message}</td>
-                        <td>
-                        <td>
-                  <span class="action_btn">
-                    <Link to={`/Contactt/${contacts._id}`} >
-                    See All 
-                    </Link>
-                         <a href="#"  onClick={() => delContact(contacts._id)} >Remove
-                    </a>
-                  </span>
-                </td>
-          
-                  </td>
-                      </tr>
-                    </tbody>
-           
-                    
-                 
+                    {contact.map((contacts) => (
+                      <tbody>
+                        <tr>
+                          <td>{contacts.userName} </td>
+                          <td>{contacts.message}</td>
+                          <td>
+                            <td>
+                              <span class="action_btn">
+                                <Link to={`/Contactt/${contacts._id}`}>
+                                  See All
+                                </Link>
+                                <a
+                                  href="#"
+                                  onClick={() => delContact(contacts._id)}
+                                >
+                                  Remove
+                                </a>
+                              </span>
+                            </td>
+                          </td>
+                        </tr>
+                      </tbody>
                     ))}
                   </table>
                 </div>

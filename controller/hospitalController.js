@@ -56,7 +56,7 @@ exports.deleteHospital = async (req, res) => {
       message: e.message,
     });
   }
-}; 
+};
 
 exports.getHospitall = async (req, res) => {
   try {
@@ -65,7 +65,7 @@ exports.getHospitall = async (req, res) => {
       message: "you search and it is here",
       data: hospitalsss,
     });
-  } catch (e) { 
+  } catch (e) {
     res.status(400).json({
       message: e.message,
     });

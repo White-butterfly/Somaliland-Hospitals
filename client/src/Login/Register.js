@@ -23,7 +23,10 @@ function Register() {
   }
   return (
     <div>
-      <div className="containerrr">
+      <div
+        className="containerrr"
+        style={{ display: "flex", flexWrap: "wrap" }}
+      >
         <div className="tittlee">Registration</div>
         <form action="#" id="reg-from" name="reg-from">
           <div className="user-details">
@@ -67,7 +70,10 @@ function Register() {
               </label>
             </div>
 
-            <div className="buttonn">
+            <div
+              className="buttonn"
+              style={{ width: "60%", marginLeft: "120px" }}
+            >
               <input type="submit" value="Register" onClick={() => signUp()} />
             </div>
           </div>

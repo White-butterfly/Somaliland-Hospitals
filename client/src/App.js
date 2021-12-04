@@ -1,10 +1,8 @@
 import "./App.css";
 import "./index.css";
 import "./page.css";
-import { useHistory } from "react-router-dom";
-import { BrowserRouter, Route, Switch, Link, Router } from "react-router-dom";
-import { useState, useEffect } from "react";
-import axios from "axios";
+
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -13,26 +11,21 @@ import HeaderUser from "./home/HeaderUser";
 import Section1 from "./home/section1";
 import Section2 from "./home/Section2";
 import Section4 from "./home/Section4";
-
 import LoginBody from "./Login/LoginBody";
 import Register from "./Login/Register";
 import HospitalsUser from "./Hospitals/HospitalsUser";
 import DepartmentUser from "./Hospitals/DepartmentUser";
 import DoctorsUser from "./Hospitals/DoctorsUser";
-
 import DepartmentCards from "./Hospitals/DepartmentCards";
 import Section5 from "./home/Section5";
 import Section6 from "./home/Section6";
 import Blogs from "./Blogs/Blogs";
 
-import Line1 from "./components/Line1";
 import Homee from "./components/Admin/Homee";
 import Appoinment from "./components/Admin/Appoinments/Appoinment";
 import TodayTAppoinments from "./components/Admin/Appoinments/TodayTAppoinments";
-import Hospitals from "./components/Admin/Hospitals/Hospitals";
 import AddHospital from "./components/Admin/Hospitals/AddHospital";
 import AddDepartment from "./components/Admin/Hospitals/AddDepartment";
-
 import AllHospitals from "./components/Admin/Hospitals/AllHospitals";
 import AllDoctors from "./components/Admin/Hospitals/AllDoctors";
 import AdminDashboard from "./components/Admin/AdminDashboard";
@@ -40,8 +33,8 @@ import AllDepartment from "./components/Admin/Hospitals/AllDepartment";
 import EditHospital from "./components/Admin/Hospitals/EditHospital";
 import EditDepartment from "./components/Admin/Hospitals/EditDepartment";
 import EditDoctor from "./components/Admin/Hospitals/EditDoctor";
-
 import AddDoctor from "./components/Doctors/AddDoctor";
+
 import Menu from "./Hospital Dashboard/Menu";
 import HospitalDashboard from "./Hospital Dashboard/HospitalDashboard";
 import AddBlog from "./Hospital Dashboard/AddBlog";
@@ -50,23 +43,8 @@ import MyDoctors from "./Hospital Dashboard/MyDoctors";
 import MyAppointments from "./Hospital Dashboard/MyAppointments";
 import MyReviews from "./Hospital Dashboard/MyReviews";
 import Contactt from "./components/contacts/Contactt";
-import ProtectedRoute from "./ProtectedRoutes";
 
 function App() {
-  const [hospitals, sethospitals] = useState([]);
-  const [currentUser, setcurrentUser] = useState([]);
-  const handeleSettingHospitals = (hospital) => {
-    sethospitals(hospital);
-  };
-  useEffect(() => {
-    axios
-      .get(`http://localhost:8000/api/hospital`, hospitals)
-      .then((res) => sethospitals(res.data.data))
-      .catch((error) => console.log(error));
-
-    setcurrentUser(JSON.parse(localStorage.getItem("admin")));
-  }, []);
-
   return (
     <>
       <BrowserRouter>

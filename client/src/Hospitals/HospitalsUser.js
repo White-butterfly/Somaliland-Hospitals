@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { MdStar } from "react-icons/md";
+import { MdSearch } from "react-icons/md";
 
 function HospitalsUser() {
   const history = useHistory();
@@ -23,8 +23,8 @@ function HospitalsUser() {
         <div className="hos-hea">
           <h1
             style={{
-              fontSize: "300%",
-              marginLeft: "300px",
+              fontSize: "350%",
+              marginLeft: "400px",
               color: "blue",
               fontFamily: "Georgia, Times New Roman, Times, serif",
               marginTop: "20px",
@@ -33,12 +33,14 @@ function HospitalsUser() {
             Best Hospitals in Somaliland{" "}
           </h1>
         </div>
-        <div
+        {/* <div
           className="adminsearch-wrapper"
           style={{
             width: "330px",
             marginLeft: "700px",
             border: "2px solid",
+            fontColor: "white",
+            placeholder: "searching",
           }}
         >
           <input
@@ -46,8 +48,23 @@ function HospitalsUser() {
             placeholder="Search here"
             onChange={(e) => setsearch(e.target.value)}
           />
-
-          {/* <button className="search-btn">search</button> */}
+        </div> */}
+        <div
+          class="input-group mb-3"
+          style={{
+            width: "40%",
+            marginLeft: "500px",
+            marginTop: "20px",
+            marginBottom: "20px",
+          }}
+        >
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Searching Cities"
+            aria-label="Username"
+            onChange={(e) => setsearch(e.target.value)}
+          />
         </div>
 
         {hospital
@@ -70,21 +87,12 @@ function HospitalsUser() {
                   ></iframe>
                 </div>
                 <div className="blog-post_info">
-                  {/* <div className="blog-post_date">
-                    <span>{value.date}</span>
-                  </div> */}
                   <h1 className="blog-post_title">{value.name}</h1>
 
                   <h5>{value.address.city}</h5>
 
                   <p className="blog-post_text">{value.describtion}</p>
-                  {/* <div className="stars">
-                    <MdStar style={{ color: "yellow" }} />
-                    <MdStar style={{ color: "yellow" }} />
-                    <MdStar style={{ color: "yellow" }} />
-                    <MdStar style={{ color: "yellow" }} />
-                    <MdStar />
-                  </div> */}
+
                   <Link
                     to={`DepartmentUser/${value._id}`}
                     className="blog-post_cta"
@@ -97,6 +105,18 @@ function HospitalsUser() {
           ))}
 
         <div className="hos-sidebar">
+          <img
+            className="img-hos-sidebar"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Ads_logo.svg/820px-Google_Ads_logo.svg.png"
+          />
+        </div>
+        <div className="hos-sidebar" style={{ marginTop: "70%" }}>
+          <img
+            className="img-hos-sidebar"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Ads_logo.svg/820px-Google_Ads_logo.svg.png"
+          />
+        </div>
+        <div className="hos-sidebar" style={{ marginTop: "110%" }}>
           <img
             className="img-hos-sidebar"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Ads_logo.svg/820px-Google_Ads_logo.svg.png"

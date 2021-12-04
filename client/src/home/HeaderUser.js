@@ -7,7 +7,7 @@ const HeaderUser = () => {
       <div className="parent">
         <div className="logo">
           <h2>
-            <span className="logo-h2"> Somali</span>
+            <span className="logo-h2">S/land</span>
             <span className="font">Hospitals</span>
           </h2>
         </div>
